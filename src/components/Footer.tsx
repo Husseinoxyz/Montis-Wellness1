@@ -12,11 +12,11 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3">
               <img
                 src="/logo.png"
-                alt="Montis Specialist Center"
+                alt="Montis Specialist Clinic"
                 className="h-16 w-auto object-contain"
               />
               <span className="text-xl font-semibold tracking-tight text-white">
-                Montis Specialist Center
+                Montis Specialist Clinic
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -102,7 +102,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-[#CDB06A] shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">Mon-Fri: 8AM-8PM<br/>Sat: 9AM-6PM<br/>Sun: 10AM-4PM</span>
+                <span className="text-gray-400 text-sm">Daily: 9AM-6PM</span>
               </li>
             </ul>
           </div>
@@ -111,7 +111,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Montis Specialist Center. All rights reserved.
+            © {new Date().getFullYear()} Montis Specialist Clinic. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-gray-500 text-sm">
             <Heart className="w-4 h-4 text-[#CDB06A]" />

@@ -23,27 +23,24 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/hero-contact.png"
-            alt="Montis Specialist Center Contact"
+            alt="Montis Specialist Clinic Contact"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-28 py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="text-sm font-medium tracking-wider uppercase" style={{ color: '#CDB06A' }}>
-              Get in Touch
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mt-4 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Contact <span style={{ color: '#CDB06A' }}>Us</span>
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">

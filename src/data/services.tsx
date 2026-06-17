@@ -11,10 +11,348 @@ export interface Service {
   content: React.ReactNode;
 }
 
-export const services: Service[] = [
+const serviceOrder = [
+  'heart-recovery-health',
+  'weight-loss',
+  'inflammation-root-causes',
+  'men-vitality-program',
+  'revitalization-healthy-aging',
+  'digestive-health',
+  'hormone-balancing',
+  'menopause-perimenopause',
+];
+
+const placeholderContent = (serviceName: string) => (
+  <div className="space-y-8">
+    <section>
+      <h3 className="text-2xl font-semibold text-green mb-4">{serviceName}</h3>
+      <p className="text-gray-700 leading-relaxed">
+        Full service content will be added soon.
+      </p>
+    </section>
+  </div>
+);
+
+const serviceCatalog: Service[] = [
   {
-    id: 'heart-angiotherapy',
-    title: 'Heart via Angiotherapy',
+    id: 'diabetic-management',
+    title: 'Diabetic Management',
+    subtitle: 'Integrated metabolic and blood sugar support',
+    icon: FlaskConical,
+    iconImage: '/service icons/Slenderize for Weight Loss.png',
+    heroImage: '/hero-slenderize.png',
+    description: 'Advanced diabetes management support for blood sugar control, complication prevention, and cardiovascular risk reduction.',
+    content: (
+      <div className="space-y-8">
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Diabetic Management</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Diabetes mellitus is one of the most prevalent chronic diseases, impacting millions worldwide. This condition arises when the body cannot effectively process and utilize blood sugar (glucose), leading to elevated blood sugar levels.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            At Montis, we are committed to offering advanced solutions to manage diabetes and its complications, improving overall health and quality of life.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Understanding Diabetes</h3>
+          <h4 className="text-xl font-semibold text-green mb-3">What is Diabetes?</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Diabetes occurs when insulin, the hormone responsible for regulating blood sugar, is insufficient or ineffective. There are three primary types:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Type 1 Diabetes:</strong> An autoimmune condition causing the destruction of insulin-producing cells.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Type 2 Diabetes:</strong> Characterized by insulin resistance, often linked to obesity and lifestyle factors.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Gestational Diabetes:</strong> Develops during pregnancy, increasing the risk of type 2 diabetes later in life.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Complications of Diabetes</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Without proper management, diabetes can lead to severe health issues, including:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Heart Disease:</strong> Atherosclerosis, hypertension, heart attacks, and strokes.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Neuropathy:</strong> Nerve damage causing tingling, pain, and loss of sensation.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Nephropathy:</strong> Kidney damage leading to potential failure.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Retinopathy:</strong> Eye damage that can result in blindness.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Foot Ulcers:</strong> Poor wound healing that may require amputation.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Erectile Dysfunction:</strong> Common in men with diabetes.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Preeclampsia:</strong> A pregnancy complication in gestational diabetes.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Neurological Issues:</strong> Conditions like dementia.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Managing Diabetes Effectively</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            While diabetes has no permanent cure, effective management can help maintain healthy blood sugar levels and prevent complications.
+          </p>
+          <h4 className="text-xl font-semibold text-green mb-3">Management Strategies</h4>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>For Type 1 Diabetes:</strong> Regular insulin injections to regulate blood sugar.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>For Type 2 Diabetes:</strong> Diet modifications, regular physical activity, blood sugar monitoring, and medications or insulin shots as needed.</span></li>
+          </ul>
+          <ul className="space-y-2 mb-4 ml-4">
+            <li className="text-gray-700">* Limit sugar and incorporate whole foods.</li>
+            <li className="text-gray-700">* Maintain regular physical activity.</li>
+            <li className="text-gray-700">* Monitor blood sugar consistently.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Innovative Solutions at Montis</h3>
+          <h4 className="text-xl font-semibold text-green mb-3">EECP Therapy for Diabetic Heart Disease</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Enhanced External Counter pulsation (EECP) is a non-invasive treatment for improving cardiovascular health in diabetes. Research by Sardina et al. (2015) shows EECP enhances glycemic control, reducing fasting plasma glucose, postprandial glucose, and HbA1c levels. Results persist for up to three months post-therapy.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Our clinics offer EECP Therapy, enabling diabetic patients to manage cardiovascular risks effectively and from the comfort of their homes.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Risk Factors for Diabetes</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Understanding risk factors can help in early detection and prevention:
+          </p>
+          <h4 className="text-xl font-semibold text-green mb-3">Type 1 Diabetes</h4>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Family history of autoimmune diseases.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Viral infections or pancreatic injuries.</span></li>
+          </ul>
+          <h4 className="text-xl font-semibold text-green mb-3">Type 2 Diabetes</h4>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Family history and genetics.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Obesity and physical inactivity.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">High blood pressure or cholesterol levels.</span></li>
+          </ul>
+          <h4 className="text-xl font-semibold text-green mb-3">Gestational Diabetes</h4>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Obesity during pregnancy.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Family history or ethnic predisposition.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Recognizing Symptoms of Diabetes</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">Common signs include:</p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Increased thirst (Polydipsia).</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Frequent urination (Polyuria).</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Excessive hunger (Polyphagia).</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Fatigue, weight loss, and slow-healing wounds.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Tingling sensations in extremities.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Recurrent infections (e.g., yeast or UTIs).</span></li>
+          </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">Why Choose Montis?</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            At Montis, we provide personalized care and cutting-edge therapies for managing diabetes and its complications. From innovative treatments like EECP to holistic care plans, we prioritize your health and well-being.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Contact us today to begin your journey toward better health.
+          </p>
+        </section>
+      </div>
+    ),
+  },
+  {
+    id: 'overall-cleansing',
+    title: 'Overall Cleansing',
+    subtitle: 'Whole-body detoxification and wellness reset',
+    icon: Sparkles,
+    iconImage: '/service icons/Revitalization & Healthy Aging.png',
+    heroImage: '/hero-revitalization.png',
+    description: 'Safe and effective cleansing support to help remove toxins, strengthen natural detox pathways, and promote overall vitality.',
+    content: (
+      <div className="space-y-8">
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Overall Cleansing</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Daily activities often produce toxic waste materials that can accumulate in the body, leading to potential damage over time. While the body has natural mechanisms to remove some of these toxins, regular cleansing is recommended as part of a healthy lifestyle.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">What is Cleansing?</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Cleansing involves removing toxins and harmful substances from the body, going beyond mere detoxification. It encompasses lifestyle changes, such as reducing the intake of unhealthy foods and beverages, to maintain overall well-being.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Cleansing is beneficial for individuals of all ages and health statuses. Even without symptoms, regular cleansing keeps the body functioning at its best.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">The Clinical Basis of Cleansing</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Cleansing and detoxification aim to eliminate toxins to enhance health and optimize bodily functions. Toxins can originate from internal cellular processes or external environmental factors.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The body's natural detox systems, primarily the liver and kidneys, work to neutralize and excrete these toxins. However, excessive accumulation of toxins can overwhelm these systems. Cleansing supports and enhances these natural processes, ensuring better health and vitality.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Cleansing is a common practice that helps remove toxins from your system. Whenever we hear of cleansing or detox, we would probably think of those expensive teas, cocktails, and elixirs that promise to flush "your system" and make you feel refreshed.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Complete overall cleansing is more than these. Overall cleansing also includes changes to diet and lifestyle to reduce the intake of toxins into your body. At Montis, we are experts at cleansing.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Our health professionals provide consultations to guide you on your cleansing journey. Our therapies are safe and effective to really flush your system of toxic materials.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Natural Ways to Detox</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Before turning to commercial detox products, consider natural methods to cleanse your body:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Limit Alcohol Consumption:</strong> Overloading the liver with alcohol can cause long-term damage. Consuming alcohol in moderation supports liver health.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Stay Hydrated:</strong> Water facilitates metabolic processes and helps transport toxins out of the body. Drink plenty of water daily for effective natural detoxification.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Increase Probiotics in Your Diet:</strong> Probiotics, found in foods like yogurt, support gut health by breaking down toxins and maintaining bacterial balance.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Reduce Salt Intake:</strong> Excess salt can lead to water retention and high blood pressure. Cutting back helps the kidneys excrete waste more efficiently.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Incorporate Antioxidants:</strong> Foods rich in antioxidants, such as berries, fruits, vegetables, and nuts, combat harmful oxidative stress that can damage cells and DNA.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Avoid Sugary Foods and Drinks:</strong> High sugar consumption is linked to obesity, heart disease, and diabetes. Reducing sugar intake supports natural detox efforts.</span></li>
+          </ul>
+        </section>
+      </div>
+    ),
+  },
+  {
+    id: 'fatty-liver',
+    title: 'Fatty Liver',
+    subtitle: 'Liver health and metabolic restoration support',
+    icon: Apple,
+    iconImage: '/service icons/Montis Digestive Health.png',
+    heroImage: '/hero-digestive.png',
+    description: 'Targeted liver health support for fatty liver screening, detoxification, lifestyle adjustment, and long-term prevention.',
+    content: (
+      <div className="space-y-8">
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Fatty Liver</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The liver, the largest internal organ in the human body, plays a pivotal role in maintaining overall health. Its functions include:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Regulating blood sugar levels</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Producing essential blood proteins</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Storing iron</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Detoxifying the blood</span></li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed">
+            Additionally, the liver stores carbohydrates, proteins, and fats, providing energy during periods of hunger or fasting. In a healthy liver, fat constitutes less than 5% of its total weight. However, when fat levels rise to 10% or more, fatty liver disease may develop, leading to potentially irreversible damage.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Understanding Liver Health</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Fatty liver disease manifests in two primary forms, depending on its cause:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Alcoholic Fatty Liver Disease (AFLD):</strong> Triggered by excessive alcohol consumption.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Non-Alcoholic Fatty Liver Disease (NAFLD):</strong> Occurs in individuals who may have never consumed alcohol.</span></li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed">
+            Globally, NAFLD is more prevalent, affecting about 25% of the population. If left untreated, NAFLD can progress to non-alcoholic steatohepatitis (NASH), which may result in cirrhosis or liver cancer.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Risk Factors for Fatty Liver</h3>
+          <h4 className="text-xl font-semibold text-green mb-3">For Alcoholic Fatty Liver Disease (AFLD)</h4>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Heavy alcohol consumption (more than 4 drinks per day for men, 3 drinks per day for women).</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Chronic liver diseases like hepatitis C.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Genetic predisposition.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Obesity or malnutrition.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Advancing age.</span></li>
+          </ul>
+          <h4 className="text-xl font-semibold text-green mb-3">For Non-Alcoholic Fatty Liver Disease (NAFLD)</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The exact cause remains unclear, but it is associated with:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Obesity.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Type 2 diabetes.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">High cholesterol.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Sedentary lifestyle.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Fatty Liver Screening and Diagnosis</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Fatty liver often remains asymptomatic in its early stages, making regular screening crucial for early detection. Recommended diagnostic methods include:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Health History Assessment:</strong> To identify risk factors like alcohol use or metabolic conditions.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Liver Function Tests:</strong> To evaluate enzyme levels in the blood.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Imaging:</strong> CT scans or MRIs can detect liver enlargement.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Bio Resonance Scanning:</strong> Detects unhealthy liver cells through energy emissions.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Liver Biopsy:</strong> Provides detailed insights into liver damage.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Blood Layer Encryption:</strong> Simple blood tests that assess liver health.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Potential Complications</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            If left untreated, fatty liver disease may lead to severe complications:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Cirrhosis:</strong> Permanent liver scarring.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Liver cancer.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Ascites:</strong> Fluid buildup in the abdomen.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Liver failure.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Esophageal varices:</strong> Swollen blood vessels that may rupture.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Liver Detoxification and Lifestyle Adjustments</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Improving liver health requires a proactive approach, including:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Reducing alcohol consumption to prevent AFLD.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Adopting a liver-friendly diet by incorporating fruits, vegetables, whole grains, and fiber.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Preventing hepatitis infections through vaccinations and precautions.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Exercising regularly to manage NAFLD and boost overall health.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Liver Detox Support at Montis</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Certain detox treatments can support liver health, including:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Glutathione:</strong> A potent antioxidant that repairs tissue and removes toxins.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vitamin B Complex:</strong> Available in various forms to boost energy and support liver function.</span></li>
+          </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">Conclusion</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Fatty liver disease is a global health concern that often progresses silently. Both alcoholic and non-alcoholic fatty liver diseases can lead to severe health complications if left unaddressed.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Early diagnosis, lifestyle modifications, and liver detoxification are essential steps in managing and preventing fatty liver disease. By embracing holistic approaches, individuals can protect their liver health and lead a healthier, more vibrant life.
+          </p>
+        </section>
+      </div>
+    ),
+  },
+  {
+    id: 'heart-recovery-health',
+    title: 'Heart Recovery Health',
     subtitle: 'Non-invasive heart recovery and cardiovascular wellness',
     icon: Heart,
     iconImage: '/service icons/Heart via Angiotherapy.png',
@@ -125,8 +463,8 @@ export const services: Service[] = [
     ),
   },
   {
-    id: 'hormone-systemic-therapy',
-    title: 'Hormone Systemic Therapy',
+    id: 'hormone-balancing',
+    title: 'Hormone Balancing',
     subtitle: 'Comprehensive hormone balance and replacement therapy',
     icon: FlaskConical,
     iconImage: '/service icons/Hormone Systemic Therapy.png',
@@ -252,323 +590,376 @@ export const services: Service[] = [
     ),
   },
   {
-    id: 'inflammation-root-cause',
-    title: 'Inflammation & Root Cause',
+    id: 'inflammation-root-causes',
+    title: 'Inflammation and Root Causes',
     subtitle: 'Identify and manage chronic inflammation at its source',
     icon: Flame,
     iconImage: '/service icons/Inflammation & Root Cause.png',
     heroImage: '/hero-inflammation.png',
-    description: 'Comprehensive inflammation screening and management therapies including antioxidant therapy, oxygen therapy, and colon hydrotherapy.',
+    description: 'Comprehensive inflammation assessment and root-cause support for chronic conditions, immune balance, and long-term health.',
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Inflammation and Root Cause</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">Inflammation and Root Causes</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Inflammation can be described as one of the various processes by which your body's immune system identifies harmful foreign agents and attempts to remove them. Inflammation is one of the several defense mechanisms to prevent intrusion from foreign agents such as bacteria, parasites, viruses, and even physical irritants.
+            Inflammation is one of the body's natural defence mechanisms, activated when the immune system detects harmful foreign agents like bacteria, parasites, viruses, or physical irritants. While essential for protection and healing, inflammation must be well-regulated to function optimally.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Inflammation needs to be well-regulated so that it can function optimally, and prevent the body from attacking its own tissues. When the body attacks its own cells, tissues, and organs, it can lead to autoimmune diseases, such as lupus. When the body is unable to respond effectively to harmful pathogens, it can result in immunodeficiencies, such as HIV/AIDS.
+            Poor regulation can lead to autoimmune diseases, such as lupus, where the body attacks its tissues, or immunodeficiencies, like HIV/AIDS, where the immune response is insufficient.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Inflammation also contributes to chronic diseases such as heart disease and diabetes. These diseases produce various markers, such as C-reactive protein (CRP) that can be used for diagnosis. At our clinics, we offer various solutions that can help control inflammation, as it is effective in the treatment of chronic conditions.
+            Chronic inflammation is also a contributing factor to various diseases, including heart disease and diabetes. At Montis, we provide comprehensive solutions to manage inflammation effectively, supporting the treatment of chronic conditions.
           </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Inflammation Types</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">To understand inflammation properly, we need to first understand the two types of inflammation. The two types of inflammation are acute and chronic inflammation, depending on the immune cells involved.</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Types of Inflammation</h3>
           
           <h4 className="text-xl font-semibold text-green mb-3">Acute Inflammation</h4>
-          <p className="text-gray-700 leading-relaxed mb-4">Acute inflammation refers to the type of inflammation that is activated immediately in response to an injury or illness. Acute inflammation has a short duration lasting only a few days, and is characterized by five cardinal signs:</p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Acute inflammation is an immediate response to injury or illness and lasts only a few days. It is characterized by:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Swelling</strong> - Swelling develops when fluid builds up at the site of inflammation.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Pain</strong> - Pain in the affected area is very common.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Heat</strong> - Inflammation causes the area affected to be hot to touch.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Redness</strong> - Increased blood supply also causes the area to look red.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Loss of function</strong></span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Swelling:</strong> Fluid buildup at the inflammation site.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Pain:</strong> Common in the affected area.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Heat:</strong> The area becomes hot to the touch.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Redness:</strong> Caused by increased blood flow.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Loss of Function:</strong> Temporary impairment in the affected area.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mb-4">Sometimes, acute inflammation can present without hidden symptoms. When acute inflammation lasts longer than expected, it becomes a subacute inflammation that can last up to 6 weeks.</p>
 
           <h4 className="text-xl font-semibold text-green mb-3">Chronic Inflammation</h4>
-          <p className="text-gray-700 leading-relaxed mb-4">Chronic inflammation is activated later and persists even when the cause of the inflammation has stopped. Chronic inflammation has a longer duration and can last for up to months or years. Chronic inflammation can also cause certain symptoms such as:</p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Chronic inflammation persists even after the initial cause has been resolved and can last for months or years. Symptoms include:
+          </p>
           <ul className="space-y-2 mb-4">
             <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Joint stiffness and pain</span></li>
             <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Persistent fever</span></li>
             <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Fatigue</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Fever</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Skin rashes</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">Chronic inflammation can persist and is linked with various diseases such as heart disease, diabetes, arthritis, pulmonary diseases, and skin rashes. The persistence of chronic inflammation is often seen in individuals with hypersensitivity and autoimmune disorders, and those exposed to irritants.</p>
+          <p className="text-gray-700 leading-relaxed">
+            Chronic inflammation is linked to diseases such as heart disease, diabetes, arthritis, and pulmonary conditions. It is often seen in individuals with hypersensitivity, autoimmune disorders, or those exposed to long-term irritants.
+          </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Monitoring Inflammation while addressing the Root Cause</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Inflammation in the body can be monitored by measuring the level of inflammatory markers in the body. Most of these markers only show that there is inflammation in the body without specifying where the inflammation is happening. A blood test can normally check for the following:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Monitoring Inflammation</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Inflammation can be assessed using various diagnostic tools, including:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>C-reactive protein (CRP)</strong> - CRP is normally produced by the liver during inflammation. CRP levels in the blood rise greatly during inflammation but it does not specify what type of inflammation is occurring.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Erythrocyte sedimentation rate (ESR)</strong> - ESR can be described as the speed at which red blood cells settle in a thin tube. ESR rises during inflammation but it can't tell the specific type of inflammation.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Serum electrophoresis</strong> - Serum electrophoresis can be used to measure the levels of proteins in the blood. This test can be used to measure the level of specific proteins elevated in various forms of inflammation.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Imaging tests</strong> - such as X-rays, CT, and MRI scans. Imaging scans can visualize the effects of inflammation on body organs.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Dried layer test</strong></span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>HRV (Heart rate variability analysis)</strong></span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Live Blood Analysis</strong></span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>C-Reactive Protein (CRP):</strong> Produced by the liver during inflammation.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Erythrocyte Sedimentation Rate (ESR):</strong> Measures red blood cell settlement speed.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Serum Electrophoresis:</strong> Evaluates protein levels in the blood.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Imaging Tests:</strong> X-rays, CT scans, and MRIs visualize the impact of inflammation.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Dried Layer Test:</strong> Analyzes a blood sample for signs of inflammation, toxins, and deficiencies.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Heart Rate Variability (HRV):</strong> Assesses the effects of inflammation on cardiovascular health.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Live Blood Cell Analysis:</strong> Examines blood cells under a microscope for abnormalities.</span></li>
           </ul>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Inflammation and Disease</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">Inflammation and Its Role in Diseases</h3>
           
-          <h4 className="text-xl font-semibold text-green mb-3">Inflammation and Heart Disease</h4>
+          <h4 className="text-xl font-semibold text-green mb-3">Heart Disease</h4>
           <p className="text-gray-700 leading-relaxed mb-4">
-            One of the greatest dangers of inflammation is its contributing role to diseases. Inflammation starts as a body defense mechanism that is meant to be terminated when the trigger has been removed. When inflammation persists or is activated wrongly, it can damage body cells, and result in inflammatory conditions.
+            Chronic inflammation contributes to cardiovascular conditions like atherosclerosis. Here, fatty plaques deposit on artery walls, blocking blood flow.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Chronic inflammation is implicated in many cardiovascular conditions, including atherosclerosis. In atherosclerosis, fatty cholesterol plaques are deposited on the walls of arteries that block arteries. Damage to the walls of the arteries activates inflammation in these arteries resulting in total blockage of the arteries.
+            This can lead to heart attacks or strokes as plaques detach and travel to vital organs.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-4">Atherosclerosis can cause heart attacks and myocardial infarctions. The plaques can also break away from the walls to travel to other organs, such as the brain. When this happens, it can result in a stroke. The influence of inflammation in heart diseases can be confirmed in the control of inflammatory risk factors (such as bad cholesterol and smoking) reducing the risk of heart diseases.</p>
 
-          <h4 className="text-xl font-semibold text-green mb-3">Inflammation and Diabetes</h4>
+          <h4 className="text-xl font-semibold text-green mb-3">Diabetes</h4>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Recent researches also point to the influence of inflammation in both type 1 and type 2 diabetes. Type 1 diabetes is an autoimmune condition where the immune system attacks insulin-producing cells in the pancreas. Continuous attack and destruction of these cells will eventually result in insulin deficiency and high blood sugar.
+            In Type 1 diabetes, the immune system attacks insulin-producing cells in the pancreas, leading to insulin deficiency.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            In type 2 diabetes, the mechanism of inflammation is quite different. Risk factors such as obesity cause an accumulation of fat in the body. This accumulated fat produces pro-inflammatory chemicals (such as cytokines) that affect fat tissue. Inflammation in type 2 diabetes results in the development of insulin resistance that alters insulin action.
+            In Type 2 diabetes, obesity-induced inflammation produces chemicals that cause insulin resistance, affecting glucose metabolism.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-4">Adjustment to an anti-inflammatory lifestyle is often recommended in the management of diabetes. It can normally incorporate increased physical activity, regular exercise, and diet changes that include food with natural anti-inflammatory actions.</p>
 
-          <h4 className="text-xl font-semibold text-green mb-3">Inflammation and Cancer</h4>
+          <h4 className="text-xl font-semibold text-green mb-3">Cancer</h4>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Inflammation also plays a major role in the development of most cancers. In fact, inflammation is often considered a hallmark of cancer and is linked with the development and maintenance of most cancers.
+            Inflammation promotes tumor development by creating a tumor microenvironment (TME) that enables cancer cells to thrive.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Inflammation has been seen to promote all stages of cancer and tumor development. Inflammatory cells and cancer cells interact with each other to form a tumor microenvironment (TME). Pro-inflammatory cells and processes block anti-tumor activity in the TME and permit the sustained growth of cancer.
+          <p className="text-gray-700 leading-relaxed">
+            Chronic inflammation generates reactive oxygen species (ROS) that damage DNA, causing mutations that may lead to cancer.
           </p>
-          <p className="text-gray-700 leading-relaxed">Inflammation also generates large quantities of oxidants such as reactive oxygen species (ROS). Sustained generation of ROS in chronic inflammation can cause DNA damage in affected cells. Continuous DNA damage results in cell mutation which can be passed down to new cells during cellular replication.</p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Management of Inflammation</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Normal, controlled inflammation does not require treatment. After a few hours or days, acute inflammation passes, and normal body function is restored. When inflammation is chronic and unrelenting, that is when it can become a problem.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Management of inflammation is targeted at either preventing inflammation totally or bringing it down before it causes damage. You can prevent inflammation by adopting a healthy lifestyle which should normally include:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Managing Inflammation</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">Management strategies include:</p>
+          <h4 className="text-xl font-semibold text-green mb-3">Lifestyle Adjustments</h4>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Reduction in alcohol consumption and quitting smoking (totally).</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Increased physical activity and exercising.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Cutting out pro-inflammatory food (such as sugar, meat, bad fats, and fried foods) from your diet.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Adopting our dedicated nutritional anti-inflammatory diet.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Stress management.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Avoiding smoking and reducing alcohol consumption.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Increasing physical activity and regular exercise.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Eliminating pro-inflammatory foods, such as sugar and fried foods.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Following Montis's anti-inflammatory diet.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Practicing stress management techniques.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mb-4">Existing inflammation can also be treated by therapies and medications. Here we provide several solutions for the treatment of inflammation after the primary diagnosis, which includes:</p>
+          <h4 className="text-xl font-semibold text-green mb-3">Therapies and Treatments</h4>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Antioxidant Therapy</strong> - These can reduce inflammation by breaking down oxidants.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vitamin D and COQ10 therapy</strong></span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Colon hydrotherapy</strong> - to clear out toxins in the colon.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oxygen therapy</strong> - This therapy can activate antioxidant systems in the body to reduce inflammation.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hypoxia Therapy</strong> - to improve the mitochondrial function and provide more oxygenation into the cells directly.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Antioxidant Drips:</strong> Reduce inflammation by neutralizing oxidants.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vitamin D and CoQ10 Injections:</strong> Support cellular health.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Colon Hydrotherapy:</strong> Removes toxins from the colon.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oxygen Therapy:</strong> Activates the body's antioxidant systems, effective for conditions like diabetic foot ulcers.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Intermittent Hypoxia Training:</strong> Improves endurance, energy levels, and reduces arterial hardening.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">We do provide pre and post clinical screening to determine the results for every client.</p>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">Conclusion</h3>
+          <p className="text-gray-700 leading-relaxed">
+            Inflammation is a critical process that protects the body, but when unregulated, it can cause harm. Understanding and managing inflammation effectively can prevent and alleviate chronic diseases, enhancing overall health and well-being. At Montis, we are committed to providing tailored solutions to help you achieve optimal health.
+          </p>
         </section>
       </div>
     ),
   },
   {
-    id: 'men-up-program',
-    title: 'Men Up Program',
+    id: 'men-vitality-program',
+    title: "Men's Vitality Program",
     subtitle: 'Comprehensive men vitality and wellness program',
     icon: User,
     iconImage: '/service icons/Men Up Program.png',
     heroImage: '/hero-men-up.png',
-    description: 'Specialized men vitality program addressing erectile dysfunction, hormone imbalance, and sexual health through natural and therapeutic approaches.',
+    description: 'A holistic men’s health program addressing energy, hormonal balance, sexual health, lifestyle, and long-term vitality.',
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Men Vitality Program</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">Men's Vitality Program</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            One common misconception is that vitality only relates to sexual performance. In fact, vitality involves more than sexual stamina and includes the overall health and well-being of men. In recent years, vitality has been greatly affected by cigarettes, alcohol, and meat.
+            At Montis, we emphasize a holistic approach to male vitality, addressing the root causes of declining energy, hormonal imbalance, and sexual health rather than simply treating symptoms.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Sexual health still represents a core aspect of every man's life. Vitality reduces with aging and it is common for men to struggle with maintaining an active and enjoyable sex life that is vital for overall health and well-being in adult males.
+          <p className="text-gray-700 leading-relaxed">
+            Vitality is about overall health and well-being, extending far beyond sexual performance.
           </p>
-          <p className="text-gray-700 leading-relaxed">Natural approaches to improve male vitality include diet modification - reducing meat, increasing exercise, and eliminating alcohol intake and smoking. Multiple medications and programs are also available that are aimed at improving vitality in men.</p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Factors affecting Men's Vitality</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">A positive approach to improving vitality starts with being familiar with factors that can affect vitality, and health decisions that can improve vitality. Men's vitality can be influenced by a variety of factors, including lifestyle choices, genetics, and environmental factors.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Aging is a normal natural process that causes a decline in vitality in men. Aging is associated with a drop in testosterone - an essential male sex hormone, and a fall from that peak seen in youth. In addition to aging, factors that can also affect men's vitality include:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Natural Approaches for Improved Vitality</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Lifestyle plays a significant role in male vitality. We incorporate the following as part of every programme:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Regular Exercising</strong> - Exercises and increased physical activity are both essential to keep fit and improving your vitality. A sedentary lifestyle promotes weight gain and increases the risk of chronic diseases, such as hypertension and diabetes. Men who exercise regularly are less likely to have erectile dysfunction, experience better sex, and have an overall healthier lifestyle.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Quit Smoking</strong> - Smoking is a single activity that is heavily linked to health conditions. Smoking increases the likelihood of erectile dysfunction and can cause damage to sperm. Although smoking is addicting and can be challenging to quit, stopping smoking today can greatly improve your vitality, as well as make you healthier.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Alcohol Consumption</strong> - Alcohol drinking is almost as bad as smoking. Unlike smoking, low to moderate alcohol drinking is beneficial to heart health while heavy drinking is associated with several diseases. Heavy drinking can cause erectile dysfunction, and infertility, and influence negative sexual behavior (such as unprotected sex).</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Mental Illness</strong> - Mental illnesses, such as depression can negatively affect a man's libido. A loss of libido can make erections difficult to get and impair a man's vitality. Mental health should not be overlooked, as an illness of the mind can have several physical manifestations.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Medications</strong> - Drugs used to treat chronic conditions such as hypertension, diabetes, and ulcers can cause side effects that negatively affect vitality. Medications used to treat depression (anti-depressants), and other mental illnesses can also cause erectile dysfunction in patients.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Dietary Modifications:</strong> Optimize your nutrition for better health and energy levels.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Increased Exercise:</strong> Enhance overall fitness and vitality through regular physical activity.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Elimination of Alcohol and Smoking:</strong> Avoid substances that negatively impact energy and well-being.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">Vitality starts to peak in a man's youthful years and declines as he grows older. Younger men that aim to maintain levels of vitality should be fully aware of these factors. Cutting alcohol use, quitting smoking, taking care of your mental health, and maintaining regular exercise can increase vitality, even into your older years.</p>
+          <p className="text-gray-700 leading-relaxed">
+            These lifestyle adjustments not only boost energy but also promote a higher quality of life.
+          </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">What is Erectile Dysfunction?</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Erectile dysfunction (ED) can be defined as the inability to get an erection and maintain it enough for sexual intercourse. Erectile dysfunction is also called impotence and can be occasional or frequent.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Occasional erectile dysfunction occurs more commonly in people and may be due to stress or any other lifestyle effects, while frequent erectile dysfunction is associated with more serious mental and physical health issues.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Although ED is more common in older people due to a loss of vitality, it is still a problem for young men. A recent study in 2013 showed that up to 25% of men who seek solutions for erectile dysfunction for the first time were younger than 40.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Most times, ED is a symptom of a greater health concern or an indication of lifestyle habits. Erectile dysfunction can be confirmed when any of these three symptoms are persistent:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Factors Affecting Men's Vitality</h3>
+          <h4 className="text-xl font-semibold text-green mb-3">The Impact of Aging</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Aging naturally leads to a decline in testosterone levels, affecting vitality. Our programme addresses this through:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Reduced libido</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Problems getting an erection</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Problems maintaining an erection</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Understanding the hormonal changes and their effects on energy levels.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Lifestyle interventions including regular exercise and smoking cessation to counteract aging's impact.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">Erectile can present with any of these three symptoms and can become a problem when it constantly affects normal sex life.</p>
+          <h4 className="text-xl font-semibold text-green mb-3">Lifestyle Choices and Their Influence</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Men's vitality is significantly shaped by daily lifestyle choices. Key factors include:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Smoking and alcohol consumption, which reduce physical and mental health over time.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Mental health conditions such as depression, which can lower libido and energy levels.</span></li>
+          </ul>
+          <h4 className="text-xl font-semibold text-green mb-3">Medications and Their Role</h4>
+          <p className="text-gray-700 leading-relaxed">
+            Certain medications for chronic conditions may have side effects that impact vitality. We provide practical advice on maintaining energy and well-being while managing medication side effects.
+          </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Erectile Dysfunction Causes</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Erection is an essential process in sexual intercourse which involves complex interactions between the brain, nerves, blood vessels, hormones, and even emotions. Erectile dysfunction can arise when there is a problem with any of these that causes an inability to get and maintain erections.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">The causes of erectile dysfunction can either be Vasculargenic, Neurogenic, or Psychogenic:</p>
-          
-          <h4 className="text-xl font-semibold text-green mb-3">Vasculogenic causes</h4>
-          <p className="text-gray-700 leading-relaxed mb-4">Erectile dysfunction can be caused by a dysfunction of the normal blood circulation to the penis. Common vasculogenic causes include:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Understanding Erectile Dysfunction (ED)</h3>
+          <h4 className="text-xl font-semibold text-green mb-3">Causes of Erectile Dysfunction</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            ED can stem from various underlying causes, including:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">High blood pressure</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">High blood cholesterol</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Obesity</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Atherosclerosis</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Diabetes</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Metabolic syndrome</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Smoking</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Heavy alcohol consumption</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Medications - such as medications used to treat depression</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vasculogenic Causes:</strong> Issues with blood flow, often linked to high blood pressure and cholesterol.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Neurogenic Causes:</strong> Nerve-related dysfunctions.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Psychogenic Causes:</strong> Mental health challenges such as stress and anxiety.</span></li>
           </ul>
-
-          <h4 className="text-xl font-semibold text-green mb-3">Neurogenic causes</h4>
-          <p className="text-gray-700 leading-relaxed mb-4">ED can also be caused by a dysfunction in the nervous control of erection. Common neurogenic causes include:</p>
+          <h4 className="text-xl font-semibold text-green mb-3">Risk Factors and Preventive Measures</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Key contributors to ED include chronic diseases, smoking, and obesity. Preventive steps include:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Nerve injuries</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Spinal cord injuries</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Multiple sclerosis</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Parkinson's disease</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Epilepsy</span></li>
-          </ul>
-
-          <h4 className="text-xl font-semibold text-green mb-3">Psychogenic causes</h4>
-          <p className="text-gray-700 leading-relaxed mb-4">Psychological issues can also affect the brain's ability to trigger the processes necessary to start and maintain an erection. Psychogenic causes include:</p>
-          <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Stress</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Mental health conditions - such as depression and anxiety</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Insomnia</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Relationship issues</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Maintaining a balanced diet, regular exercise, and avoiding harmful substances.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Empowering men with the knowledge to sustain sexual vitality at every stage of life.</span></li>
           </ul>
         </section>
 
         <section>
           <h3 className="text-2xl font-semibold text-green mb-4">Treatment for Erectile Dysfunction</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Erectile dysfunction is a growing concern for men, both young and old. ED is associated with certain risk factors that can be modifiable or non-modifiable. Age, for example, is a non-modifiable risk factor that will affect the development and maintenance of erections in men.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Apart from age, poor lifestyle habits can also cause ED in young men. Risk factors include:</p>
-          <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Chronic diseases</strong> - such as diabetes and atherosclerosis.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Smoking</strong> - Chemicals in cigarettes can obstruct the blood vessels involved in erection. Consistent tobacco use leads to erectile dysfunction.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Obesity</strong> - Being overweight or obese can cause erectile dysfunction</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Chronic alcohol and drug use</strong></span></li>
-          </ul>
-          <p className="text-gray-700 leading-relaxed mb-4">For young men that want to maintain a high level of sexual vitality, proper management of these risk factors can aid prevent erectile dysfunction.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Erectile dysfunction can also be treated using medications and therapies. At our clinics, we provide consultations and treatment to persons affected by erectile dysfunction. Our therapies available include:</p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Montis offers a variety of advanced therapies for improving men's vitality and treating ED:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Angio Therapy</strong> - Our Angio therapy improves blood circulation to the lower parts of the body, including the erectile tissues and help by opening up the vessels that has no or very low circulation.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oxygen treatment</strong> - This treatment is aimed at improving the oxygen content of the blood.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>IV Therapy</strong> - Brings down inflammation that can cause chronic disease, and improve body circulation. Good circulation is essential for healthy, sustained erections.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Targeted Cellular Therapy</strong> - Aimed at reducing the effects of aging on men's vitality</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hypoxia Therapy</strong> - Intermittent hypoxia therapy involves training and exercise in hypoxic environments (areas with low oxygen). The goal is to increase respiratory efficiency to increase endurance, strength, and overall energy in normal environments. Hypoxic training can help improve strength and vitality in aging men.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>EECP Therapy:</strong> Enhance blood flow and cardiovascular health.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oxygen Therapy:</strong> Boost cellular health and energy levels.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>IV Vitamin Drips:</strong> Deliver essential nutrients directly into the bloodstream.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Montis Dynamic Stem Cell Therapy:</strong> Leverage cutting-edge regenerative medicine.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hypoxia Therapy:</strong> Improve oxygen delivery and reduce inflammation.</span></li>
           </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Our Locations</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Our specialised therapies are available across Malaysia, offering comprehensive solutions for men's health. We are conveniently located in:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Bangsar, Kuala Lumpur</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Eco Botanic, Johor</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">R&amp;F Mall, Johor</span></li>
+          </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">Conclusion: Embracing a Holistic Approach to Men's Vitality</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Vitality is about overall health and well-being, extending far beyond sexual performance. Understanding the key factors, making informed lifestyle choices, and seeking effective treatments are vital steps to sustaining long-term health.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Montis offers a comprehensive Men Vitality Program to support men of all ages. Whether addressing erectile dysfunction or proactively improving your lifestyle, we are here to guide you every step of the way. Embrace this holistic approach and take control of your vitality today.
+          </p>
         </section>
       </div>
     ),
   },
   {
+    id: 'autoimmune-treatment',
+    title: 'Autoimmune Treatment',
+    subtitle: 'Immune balance and chronic inflammation support',
+    icon: Flame,
+    iconImage: '/service icons/Inflammation & Root Cause.png',
+    heroImage: '/hero-inflammation.png',
+    description: 'Personalized support for autoimmune concerns, immune resilience, inflammation patterns, and long-term symptom management.',
+    content: placeholderContent('Autoimmune Treatment'),
+  },
+  {
     id: 'menopause-perimenopause',
-    title: 'Menopause & Perimenopause',
+    title: 'Menopause and Perimenopause',
     subtitle: 'Specialized care for women transitioning through menopause',
     icon: UserCog,
     iconImage: '/service icons/Menopause & Perimenopause.png',
     heroImage: '/hero-menopause.png',
-    description: 'Comprehensive menopause and perimenopause management including hormone replacement therapy, cellular therapy, and symptom relief.',
+    description: 'Compassionate menopause and perimenopause care with hormone testing, symptom support, and personalized treatment planning.',
     content: (
       <div className="space-y-8">
         <section>
           <h3 className="text-2xl font-semibold text-green mb-4">Menopause and Perimenopause</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Menopause marks the end of a woman's regular menstrual cycle. In most women, menopause starts around 45 to 55 years. At menopause, the level of the female hormones drops too low levels and this signifies the end of reproduction in women.
+            Every woman's journey through menopause is different. But one thing is certain: you do not have to navigate it alone. At Montis, we provide compassionate, expert care to help you understand what your body is going through and take control of how you feel.
           </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">What is Menopause?</h3>
+          <p className="text-gray-700 leading-relaxed">
+            Menopause is the natural end of a woman's menstrual cycle, typically occurring between the ages of 45 and 55. It is confirmed after 12 consecutive months without a period and marks a significant shift in hormone levels throughout the body.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">What is Perimenopause?</h3>
+          <p className="text-gray-700 leading-relaxed">
+            Perimenopause is the transition phase leading up to menopause. It can begin as early as the mid-40s and last anywhere from 8 to 10 years. During this time, hormone levels fluctuate, and symptoms can come and go unpredictably.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Recognising the Symptoms</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Perimenopause, on the other hand, refers to the phase just before the beginning of menopause. Perimenopause is a phase in a woman's life which marks the gradual transition to menopause. This phase can usually begin around the mid-40s, eight to 10 years before the start of menopause.
+            Both stages share many of the same symptoms, including:
           </p>
-          <p className="text-gray-700 leading-relaxed">Menopause and perimenopause both have similar symptoms that can affect the general health of women affected. Symptoms of menopause and perimenopause include irregular periods, regular mood swings, hot flashes, and trouble sleeping.</p>
-        </section>
-
-        <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">When do menopause and perimenopause start?</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Normal menopause is described as a phase when female hormone levels fall drastically which usually occurs between ages 45 and 55. Menopause in older women is confirmed on the day when they complete 12 consecutive months, a full year without seeing their period.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Menopause can also start earlier in younger persons when these hormones reduce even before they grow old. This type of menopause is known as early or premature menopause. Some factors that can cause premature menopause include:</p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Surgeries</strong> - Such as oophorectomy (removal of the ovaries), and hysterectomy (removal of the uterus)</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Autoimmune diseases (such as Lupus)</strong> - These diseases can cause premature ovarian failure in young women.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hormonal imbalance</strong></span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Chemotherapy</strong></span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Radiation therapy</strong></span></li>
-          </ul>
-          <p className="text-gray-700 leading-relaxed">On the other hand, perimenopause is that phase when female hormones are still dropping but are not as low as in menopause. Perimenopause can start as early as 10 years before menopause starts, and continue till the start of menopause.</p>
-        </section>
-
-        <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Symptoms of Menopause and Perimenopause</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">The symptoms of menopause and perimenopause are similar in most people and usually uncomfortable. A decline in estrogen and a rise in FSH due to aging, and other conditions are the main causes of these symptoms seen in menopause and perimenopause.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Menopausal can have a huge impact on a woman's personal life, work, social life, and relationship with people around them, including their families.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Perimenopause symptoms can start as early as 10 years before menopause. As estrogen declines in perimenopause, it can result in hormonal imbalances that can affect the production of progesterone. These fluctuations can continue for a few months or years until menopause.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Common symptoms at perimenopause and menopause include:</p>
-          <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Irregular menstrual cycles</strong> - Irregular cycles are usually one of the earliest signs of perimenopause. Hormonal fluctuations cause periods to become irregular and unpredictable during perimenopause</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Heavy periods</strong> - In perimenopause, when the periods appear, they can be heavier than normal.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vaginal dryness</strong> - The decline in female hormones can cause a loss of normal vaginal lubrication. Vaginal dryness can make sex to be painful.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Loss of libido</strong> - As sex becomes more uncomfortable due to vaginal dryness, it is common to see a loss of libido during menopause.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hot flushes</strong> - The skin can feel warm all of a sudden and spread across the body. Hot flushes occur very commonly during perimenopause and menopause.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Problems with sleep</strong> - Night sweats can become more common which can make sleeping uncomfortable.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Mood swings and irritability</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Increased occurrence of headaches and migraines</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Irregular or heavy periods</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Hot flashes and night sweats</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Vaginal dryness and loss of libido</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Sleep disturbances and fatigue</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Mood swings, irritability, and anxiety</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Headaches and migraines</span></li>
             <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Frequent urinary tract infections</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">It is important to be able to differentiate normal menopausal symptoms from disorders. Bleeding that becomes too heavy can be a sign of infections, fibroids, endometriosis, and even hormonal imbalances.</p>
+          <p className="text-gray-700 leading-relaxed">
+            <strong>Note:</strong> Heavy bleeding, severe pain, or unusual symptoms should always be assessed by a medical professional, as they may point to other underlying conditions.
+          </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Screening for Menopause and Perimenopause</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Screening at perimenopause is essential to make sure the symptoms experienced are truly caused by perimenopause and not another condition. It is not absolutely necessary to see a doctor to diagnose yourself with perimenopause and menopause. Once you notice the symptoms, you can visit any of centers around you to see a health professional.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Certain symptoms can warrant you to check with your healthcare provider sooner. These symptoms can indicate irregularities in normal perimenopause, such as bleeding during sex, vaginal spotting, and psychological changes that can affect daily living.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">If any of these symptoms become more concerning, it can become important to consult with your doctor to recommend hormone tests. Hormone tests can detect the level of FSH, thyroid hormones, and estrogen to check for hormone imbalance:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Could It Be Early Menopause?</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Some women experience menopause earlier than expected due to:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Over-the-counter test kits for FSH are available for use at home. These test kits can check for increased FSH levels seen in menopause or perimenopause.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Thyroid function tests can also be recommended to monitor the level of thyroid hormones.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Surgeries such as oophorectomy or hysterectomy</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Autoimmune diseases such as lupus</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Hormonal imbalances, chemotherapy, or radiation therapy</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">Screening tests are also commonly recommended when perimenopause symptoms appear in younger persons. These tests can help determine the root cause (in case it is hormone imbalance or another condition such as endometriosis) and plan treatment.</p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Treatment of Menopause and Perimenopause</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Menopause is normal and usually does not require any form of treatment. Treatment of menopause is focused on alleviating symptoms and preventing conditions from affecting daily living.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">The National Institute of Health emphasizes the need to manage perimenopausal and menopausal symptoms by trying to use a single plan to treat multiple symptoms. Treatment options include medications, lifestyle changes and home remedies to readjust to changes at menopause:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Screening and Diagnosis</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Not every symptom is caused by menopause. At Montis, we help you get clarity through:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hormone Replacement Therapy</strong> - Estrogen replacement therapy is recommended to treat symptoms of menopause, such as hot flashes. Estrogen therapy should be carefully monitored by your doctor to prevent side effects.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vaginal Estrogen</strong> - Vaginal estrogen is available as tablets and topical creams to relieve vaginal dryness.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Antidepressants</strong> - Antidepressants, especially SSRIs can also be administered to treat mood changes and depression caused by menopause.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vitamin supplements</strong> - Vitamin D supplements can be given to treat osteoporosis (weak bones) caused by menopause. Vitamin drips are also available at Montis to treat menopause.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Cellular therapy</strong> - Cellular therapy is available at Montis to improve the symptoms of menopause.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Clonidine patches</strong> - Clonidine patches are also recommended to provide relief from hot flushes.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Improved sleep</strong> - Avoiding alcohol, caffeine, and other things that make sleep hard is essential to improve rest.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Readjustment to diet to include more fruits and vegetables.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>FSH home test kits</strong> to detect hormonal changes</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Thyroid function tests</strong> to rule out conditions often mistaken for menopause</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Professional consultation and comprehensive hormone testing</strong></span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">The treatment of perimenopause symptoms is almost the same as menopause. Treatment is directed at relieving symptoms and preventing early menopause.</p>
+          <p className="text-gray-700 leading-relaxed">
+            Seek medical advice if you notice unusual bleeding, spotting, or severe psychological changes.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">How We Help at Montis</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            We offer a range of personalised treatment options to manage symptoms and improve your quality of life:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hormone Replacement Therapy (HRT)</strong> to address hot flashes and hormonal decline</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vaginal Estrogen</strong> via creams or tablets to relieve dryness and discomfort</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Antidepressants including SSRIs</strong> to support mood stability</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Vitamin D supplements and drips</strong> to protect bone health</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Stem Cell Programs</strong> for innovative symptom relief</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Clonidine Patches</strong> to reduce the frequency of hot flashes</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Simple Lifestyle Changes That Make a Difference</h3>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Avoid alcohol and caffeine, especially in the evening, to improve sleep</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Eat a nutrient-rich diet built around whole foods, fruits, and vegetables</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Stay active to support hormonal balance and overall wellbeing</span></li>
+          </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">You Are Not Alone in This</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Menopause is a transition, not a decline. With the right support and a personalized plan, you can move through this phase feeling strong, informed, and in control.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Contact Montis today and let us help you build a plan that works for you.
+          </p>
         </section>
       </div>
     ),
   },
   {
     id: 'digestive-health',
-    title: 'Montis Digestive Health',
+    title: 'Digestive Health',
     subtitle: 'Comprehensive gut health and digestive wellness solutions',
     icon: Apple,
     iconImage: '/service icons/Montis Digestive Health.png',
@@ -661,225 +1052,269 @@ export const services: Service[] = [
   },
   {
     id: 'revitalization-healthy-aging',
-    title: 'Revitalization & Healthy Aging',
+    title: 'Revitalization and Healthy Aging',
     subtitle: 'Anti-aging therapies and revitalization programs',
     icon: Sparkles,
     iconImage: '/service icons/Revitalization & Healthy Aging.png',
     heroImage: '/hero-revitalization.png',
-    description: 'Stem cell therapy, beauty IV therapy, immune system therapy, and comprehensive anti-aging programs for optimal vitality.',
+    description: 'Innovative therapies and lifestyle support for healthy aging, vitality, immune function, and long-term well-being.',
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Montis Revitalization and Healthy Aging</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">Revitalization and Healthy Aging</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Aging is a normal, continuous process in every living thing that results in the gradual decline of many body functions. Aging does not start or end at a particular age but happens gradually from birth till death.
+            Aging is a natural, continuous process that begins at birth and continues throughout life. While it is inevitable, aging can bring about challenges such as a decline in body functions, leaving individuals more susceptible to conditions like cataracts, osteoarthritis, pulmonary diseases, and dementia.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            As a person ages, it exposes them to certain health conditions that can impair normal well-being. Conditions linked with older age include cataracts, back pain, osteoarthritis, pulmonary diseases, hearing loss, depression, and even dementia.
+            At Montis, we are committed to supporting individuals on their journey to healthy aging through innovative therapies and programs that promote vitality, health, and well-being.
           </p>
-          <p className="text-gray-700 leading-relaxed">To minimize the effects of aging, several kinds of anti-aging health programs are available today. These plans can come in the form of diet plans, pills, IV medications, and other anti-aging remedies aimed at revitalizing and reversing aging.</p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Healthy Aging Explained</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">What is Healthy Aging?</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            The World Health Organization (WHO) defines healthy aging as "the process of developing and maintaining the functional ability necessary for well-being in older age."
+            The World Health Organization (WHO) defines healthy aging as: "The process of developing and maintaining the functional ability necessary for well-being in older age."
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Older age increases the occurrence of certain health conditions known as geriatric syndromes. These conditions are associated with a steady decline in physical and mental capacity, resulting in an increased risk of disease, and eventually death.
+            As we age, the risk of conditions like geriatric syndromes, which impair both physical and mental capacities, increases. While genetics play a role, lifestyle and environment are often the biggest contributors to aging-related health issues.
           </p>
-          <p className="text-gray-700 leading-relaxed">Aging should be healthy to maintain optimal living conditions. Although some of these conditions are linked with aging and underlying genetics, the majority of them are caused by the influence of their environments on their health.</p>
+          <p className="text-gray-700 leading-relaxed">
+            Our goal is to help individuals not just age but age healthily, preserving their quality of life and vitality.
+          </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Anti-aging Explained</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">Understanding Anti-Aging</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Anti-aging is a concept that has received multiple definitions from scientists, health professionals, aestheticians, and even beauty/fitness enthusiasts. Questions like, "what does anti-aging really mean?" "Is it possible to age backward?" "How can I age backward" are commonly asked by persons who seek the fountain of youth hidden in the science of anti-aging.
+            Anti-aging encompasses scientific research and medical practices aimed at slowing or preventing age-related diseases. While reversing aging is not yet possible, advances in medical science have made it possible to delay its effects, promoting longer, healthier lives.
           </p>
+          <p className="text-gray-700 leading-relaxed">
+            At Montis, we focus on solutions that enable healthy aging while addressing the early signs of age-related conditions.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Our Therapies and Programs for Revitalization</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Scientific research on anti-aging is focused on finding solutions to either reverse or slow down aging in humans. Currently, there are no known medications or procedures that can slow down or reverse the natural process of aging which would happen to everyone.
+            We offer a variety of cutting-edge therapies to support healthy aging and revitalization:
           </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            In comparison, medical research on anti-aging is focused on the prevention, detection, and treatment of chronic diseases associated with aging. The focus of anti-aging in the medical community is to promote healthy aging and prevent the early appearance of age-related diseases.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            At Montis, we provide products and therapies that promote optimal health conditions for aging persons and keep them revitalized for their daily activities. Our programs help you to stay beautiful in and out, and age healthily.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">Therapies and programs dedicated to healthy aging and revitalization available include:</p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Stem Cell Therapy</strong> - Stem cells are unique cells that can give rise to any kind of cell and tissue in the body, such as skin, hair, and muscle. Stem cell therapy uses stem cells (that may have been collected when the person was still younger) to replace damaged and old cells in the body.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Beauty IV Therapy</strong> - Our beauty IV Therapy are packed with antioxidants - Glutathione and Vitamin C, and Collagen Forte that keep your skin supple and smooth.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Colon Hydrotherapy</strong> - Our colon hydrotherapy clears toxins out of the colon, and effectively out of the body.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Immune System Therapy</strong> - Packed with powerful antioxidants, these drips help to boost immune system function and maintain optimal function.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oxygen Therapy</strong> - Our oxygen therapy increases oxygen content in the body to improve body metabolism.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Intermittent Hypoxia Therapy</strong> - Intermittent hypoxia therapy involves training and exercise in environments with low oxygen concentrations. Training in these hypoxic conditions improves endurance, strength, and overall energy. Hypoxic training should be done with caution and under the supervision of trained supervisors, especially with older persons.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Montis Stem Cell Program</strong> utilizes ethically sourced stem cells to replace damaged tissues and rejuvenate the body.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Montis Beauty IV Drips</strong> are packed with antioxidants like Glutathione, Vitamin C, and Collagen Forte to keep your skin radiant and smooth.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Colon Hydrotherapy</strong> detoxifies the body by cleansing the colon of harmful toxins.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Immune System Drips</strong> strengthen your immune system with antioxidant-rich formulas for optimal health.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oxygen Therapy</strong> boosts oxygen levels in your body, improving metabolism and overall vitality.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Intermittent Hypoxia Therapy</strong> is a supervised training program in low-oxygen environments to enhance endurance, strength, and energy levels.</span></li>
           </ul>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Factors that can improve healthy aging</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">In young people that want to age in healthy conditions, early adoption of a healthy lifestyle is important to prevent the occurrence of geriatric conditions. Components of a healthy lifestyle include:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Tips for Healthy Aging</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Healthy aging begins with lifestyle choices. Here are key factors to help you age gracefully:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Regular exercising</strong> - Maintaining a physically active lifestyle plays a major role in the prevention of chronic diseases, including diabetes and atherosclerosis. As you grow older, exercise should be more guided by trained professionals to plan proper exercise plans, and prevent harm during exercises.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Healthy diet</strong> - Keeping a healthy diet is essential for maintaining a healthy weight. A healthy diet normally contains fewer calories and can include foods that are packed with nutrients. Whole grains, healthy fat, fruits, and vegetables are great diet choices that should be included in the diet. Refined sugars, soda, and alcohol should be reduced or removed, especially as a person grows older.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Maintaining a healthy weight</strong> - Certain health conditions are associated with being obese/overweight, as well as being as underweight. A healthy diet combined with lifestyle adjustments and more physical activity is recommended to maintain a healthy weight.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Quitting smoking</strong> - Smoking is implicated in multiple health conditions, including heart disease and cancers. Quitting smoking totally is one of the single most important things for your health as you grow older.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Increased participation in hobbies</strong> - As you get older, it is common to get preoccupied with the responsibilities of work and family. Getting involved with the hobbies and social activities you enjoy can increase happiness in older people to reinforce healthy living.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Regular Health Screening</strong> - Regular doctor visits help to screen for diseases, and detect them early. In men for example, as you get older, checking your prostrate regularly is important to catch prostate cancer early, and start treatment early.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Exercise Regularly:</strong> Maintain physical activity to prevent chronic diseases. Seek guidance for age-appropriate exercises.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Adopt a Healthy Diet:</strong> Focus on nutrient-rich foods like whole grains, fruits, vegetables, and healthy fats while avoiding refined sugars and alcohol.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Maintain a Healthy Weight:</strong> Balance diet and physical activity to prevent obesity and related conditions.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Quit Smoking:</strong> Smoking is a major cause of chronic illnesses. Quitting can significantly improve your health.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Pursue Hobbies:</strong> Engage in enjoyable activities to foster happiness and mental well-being.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Regular Health Screenings:</strong> Monitor health conditions and catch potential issues early. For example, prostate health screenings for men can detect issues early.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">Although these tips cannot stop aging (no one really can), they are extremely helpful to prevent health conditions caused by aging. Revitalization starts with a commitment to positive lifestyle changes prior to the introduction of therapies and medications.</p>
         </section>
 
         <section>
           <h3 className="text-2xl font-semibold text-green mb-4">Benefits of Revitalization</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Aging is accompanied by a decline in health which results in a decline in vitality, a decline in sexual performance, hormonal imbalances, an increase in the risk of chronic diseases and neurodegenerative conditions, and a loss of the body's ability to clear toxins.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Revitalization is aimed at preventing the early advent of age-related disease to keep the youthful energy peaking. Multiple benefits can be gained from revitalization which improves general health and well-being. Some of the benefits you can gain from joining a revitalization program today include:</p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Revitalization helps combat the decline in vitality and health associated with aging. Benefits include:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Restoration of vitality and sexual performance.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Increases energy to be able to complete daily tasks.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Reduces the effects of stress from daily activities</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Minimizes the risk of chronic diseases such as atherosclerosis and diabetes.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Boost the immune system to be able to fight diseases</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Restored energy and vitality.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Improved sexual performance and hormonal balance.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Reduced stress and chronic disease risks.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Enhanced immune function for better disease resistance.</span></li>
           </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">The Journey to Healthy Aging Starts Here</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            While aging is inevitable, how we age is a choice. By adopting healthy lifestyle changes and leveraging advanced therapies, you can maintain your vitality and well-being.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            At Montis, we are here to guide you every step of the way. Explore our revitalization programs and embrace a life of energy, health, and happiness.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Let's age beautifully, together.
+          </p>
         </section>
       </div>
     ),
   },
   {
-    id: 'slenderize-weight-loss',
-    title: 'Slenderize for Weight Loss',
+    id: 'weight-loss',
+    title: 'Weight Loss',
     subtitle: 'Effective weight management and metabolic optimization',
     icon: Scale,
     iconImage: '/service icons/Slenderize for Weight Loss.png',
     heroImage: '/hero-slenderize.png',
-    description: 'Comprehensive weight loss programs including colon hydrotherapy, IV weight loss drips, hypoxia therapy, and customized hormone therapy.',
+    description: 'Professionally guided weight management with BMI screening, lifestyle planning, and supportive therapies for long-term success.',
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Slenderize Your Way</h3>
+          <h3 className="text-2xl font-semibold text-green mb-4">Weight Loss</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Weight is one of the most talked about topics globally. Weight loss is recommended in the management of several diseases, including diabetes and heart disease. Weight loss should be carefully monitored by trained persons to achieve an optimal weight.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            In health, weight is commonly measured as BMI which is a ratio of a person's weight to their height. A BMI that is considered overweight is labeled as a risk factor for obesity, diabetes, and heart disease
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Weight loss can be achieved by exercise, lifestyle, and diet changes as recommended by a health professional. Medications such as anti-inflammatory steroids can also be prescribed by doctors and added to weight loss plans.
+            Weight management is a topic of global importance, with weight loss often recommended for managing chronic diseases such as diabetes and heart disease. Effective weight loss requires careful planning and monitoring by trained professionals to achieve and maintain an optimal, healthy weight.
           </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">What is BMI?</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Weight is a common term with tons of different definitions. In health, weight can be described by measuring the body mass index. Body mass index (BMI) can be defined as a common parameter employed by most health professionals to measure body weight.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Body mass index can be expressed as a person's weight in kilograms divided by the square of the height in meters. The ranges for BMI can be used to determine the level of body fatness of an individual:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Understanding BMI</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Body Mass Index (BMI) is a commonly used metric to assess weight in relation to height. It serves as a screening tool for evaluating body fat levels and the potential risk of weight-related health issues.
+          </p>
+          <h4 className="text-xl font-semibold text-green mb-3">BMI Ranges</h4>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">BMI less than 18.5 is considered underweight</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">BMI between 18.5 and 24.9 is normal or healthy</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">BMI between 25.0 and 29.9 is overweight</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">BMI higher than 30.0 is obese</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">BMI higher than 40.0 is severely obese</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Underweight:</strong> Less than 18.5</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Normal (Healthy):</strong> 18.5 to 24.9</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Overweight:</strong> 25.0 to 29.9</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Obese:</strong> Higher than 30.0</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Severely Obese:</strong> Higher than 40.0</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mb-4">For easier estimation, BMI can also be calculated using BMI charts that match weight and height to their BMI. BMI is commonly measured with waist circumference as disease screening tools.</p>
-         
-          <p className="text-gray-700 leading-relaxed mb-4">Waist circumference is another screening test used to monitor body weight. Stores of abdominal fat can increase the risk of several diseases. Healthy ranges of waist circumference are different for men and women:</p>
-          <p className="text-gray-700 leading-relaxed mb-2"><strong>In men:</strong></p>
-          <ul className="space-y-1 mb-4 ml-4">
-            <li className="text-gray-700">* A waist circumference above 102cm is considered very high risk.</li>
-            <li className="text-gray-700">* A waist circumference between 94cm and 102cm is considered high risk.</li>
-            <li className="text-gray-700">* A circumference lower than 94cm is considered low risk.</li>
-          </ul>
-          <p className="text-gray-700 leading-relaxed mb-2"><strong>In women:</strong></p>
-          <ul className="space-y-1 mb-4 ml-4">
-            <li className="text-gray-700">* A waist circumference above 88cm is considered very high risk.</li>
-            <li className="text-gray-700">* A waist circumference between 80cm and 88cm is considered high risk.</li>
-            <li className="text-gray-700">* A circumference lower than 80cm is considered low risk.</li>
-          </ul>
-          <p className="text-gray-700 leading-relaxed">High BMI and waist circumference values are indicative of high body weight and are considered risk factors for certain diseases, such as diabetes and heart disease. These two parameters are not diagnostic tools, and a health assessment is required to confirm health conditions.</p>
+          <p className="text-gray-700 leading-relaxed">
+            BMI can be calculated using the formula: weight in kg divided by height in meters squared. Alternatively, BMI charts provide a quick reference by matching weight and height.
+          </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">BMI and Disease</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">A healthy BMI measures between 18.5 and 24.9. Maintaining a healthy BMI within this range is a common health recommendation to prevent obesity, and reduce the risk of non-communicable diseases including cancer, heart disease, and type 2 diabetes.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">The risk of type 2 diabetes is higher in persons who are overweight or obese, and lower in persons with a lower BMI. Several theories point to an increased release of pro-inflammatory cytokines by fat cells in these groups. These pro-inflammatory chemicals cause insulin resistance seen in type 2 diabetes.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">In heart disease, higher BMI results increase the risk of plaque deposition in blood vessels. When this happens, blood vessels can become clogged (atherosclerosis) and cause damage to the organs they supply. Atherosclerosis can cause angina, hypertension, coronary heart disease, arrhythmias, and even stroke.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">In summary, high BMI levels in the range of being overweight and/or obese can cause serious diseases including:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Waist Circumference and Health Risks</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Waist circumference is another critical measure for assessing abdominal fat, which is linked to diseases such as diabetes and heart disease.
+          </p>
+          <h4 className="text-xl font-semibold text-green mb-3">Healthy Waist Circumference Ranges</h4>
+          <p className="text-gray-700 leading-relaxed mb-2"><strong>Men:</strong></p>
+          <ul className="space-y-1 mb-4 ml-4">
+            <li className="text-gray-700">* Low Risk: Below 94 cm</li>
+            <li className="text-gray-700">* High Risk: 94 to 102 cm</li>
+            <li className="text-gray-700">* Very High Risk: Above 102 cm</li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mb-2"><strong>Women:</strong></p>
+          <ul className="space-y-1 mb-4 ml-4">
+            <li className="text-gray-700">* Low Risk: Below 80 cm</li>
+            <li className="text-gray-700">* High Risk: 80 to 88 cm</li>
+            <li className="text-gray-700">* Very High Risk: Above 88 cm</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">BMI and Its Link to Diseases</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            A healthy BMI (18.5 to 24.9) significantly reduces the risk of non-communicable diseases, including:
+          </p>
           <ul className="space-y-2 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Type 2 diabetes</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Hypertension</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Coronary heart disease</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Stroke</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Dyslipidemia - Abnormally high levels of lipids</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Mental illness - Such as depression</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Increased risk of mortality</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Several kinds of cancer</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Type 2 Diabetes:</strong> Excess fat releases pro-inflammatory chemicals that contribute to insulin resistance.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Heart Disease:</strong> High BMI increases plaque buildup in arteries, leading to hypertension, coronary artery disease, and stroke.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Other Conditions:</strong> Obesity can result in mental health challenges, dyslipidemia, certain cancers, and increased mortality risks.</span></li>
           </ul>
         </section>
 
         <section>
           <h3 className="text-2xl font-semibold text-green mb-4">Weight Screening Tests</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">In this article, we have already discussed the use of body mass index and waist circumference to assess body weight. In addition, several tests are also available used to monitor weight and disease:</p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            In addition to BMI and waist circumference, other diagnostic tests include:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Skinfold measurement</strong> - Used to measure the thickness of fat in the skin and subcutaneous tissue.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Blood lipid panel</strong> - A lipid panel is used to measure the levels of good fats (HDL) and bad fats (such as LDL and triglycerides) in the blood</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Fasting/Random blood sugar test</strong> - Used to measure high blood sugar in diabetes</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Oral glucose tolerance test</strong> - Used to check for insulin response in patients with diabetes.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Liver function tests (LFTs)</strong> - LFTs are used to monitor liver function.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>DNA test</strong> - DNA testing can check for genes that can increase the risk of obesity.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Metabolism test</strong> - Such as direct and indirect calorimetry.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Skinfold Measurements:</strong> Assess subcutaneous fat thickness.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Blood Lipid Panel:</strong> Measures levels of HDL (good fats) and LDL/triglycerides (bad fats).</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Blood Sugar Tests:</strong> Monitor glucose levels for diabetes.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Metabolism Tests:</strong> Evaluate caloric energy expenditure.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>DNA Tests:</strong> Identify genetic predispositions to obesity.</span></li>
           </ul>
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-green mb-4">Tips for Losing Weight</h3>
-          <p className="text-gray-700 leading-relaxed mb-4">Before beginning your weight loss journey, it is important to remember that although a healthy weight is essential for healthy living, weight loss is not the solution to every health issue. If recommended by your health professional, weight loss should be focused on the long term to be sustainable.</p>
-          <p className="text-gray-700 leading-relaxed mb-4">Sustainable weight loss is aimed at maintaining a healthy weight that can improve your general health. Tips that can be employed to make weight loss effective include:</p>
+          <h3 className="text-2xl font-semibold text-green mb-4">Effective Weight Loss Strategies</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Achieving sustainable weight loss involves a combination of dietary, lifestyle, and medical interventions:
+          </p>
+          <h4 className="text-xl font-semibold text-green mb-3">Diet Adjustments</h4>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Cut out carbohydrates</strong> - Carbohydrates have large calories and contribute greatly to weight gain. One of the best ways to lose weight is to reduce sugars and carbohydrates in your diet. Replacing refined carbohydrates with whole grains can aid to lower body mass index and weight. You should be careful when planning a low-carb diet to prevent excessive weight loss.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Add more protein, fat, and vegetables</strong> - A weight loss plan should also include more proteins, healthy fats, and vegetables. Proteins are great for health and help to restore muscle mass that could be lost when losing weight. Healthy fats such as olive oils, nuts, and seeds contain low levels of saturated fat that are great for health. Vegetables are rich in nutrients and fiber.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Do more exercise</strong> - In addition to diet adjustments, increasing physical activity is extremely helpful in weight loss. Exercise helps a lot to burn calories faster, and lose weight quicker. Gym culture is popular with everyone doing cardio and lifting weights. Exercising improves weight loss and is also linked with numerous health benefits</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Reduce carbohydrates to lower caloric intake.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Incorporate lean proteins, healthy fats such as olive oil and nuts, and nutrient-dense vegetables.</span></li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mb-4">Combining diet readjustments and increasing physical activity are proven methods to lose weight effectively. Here, we also provide therapies that can improve weight loss. Some of our therapies include:</p>
+          <h4 className="text-xl font-semibold text-green mb-3">Increased Physical Activity</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Regular exercise, including cardio and strength training, accelerates calorie burning and improves overall health.
+          </p>
+          <h4 className="text-xl font-semibold text-green mb-3">Medical Support</h4>
+          <p className="text-gray-700 leading-relaxed">
+            Medications, if prescribed, and therapies can complement lifestyle changes.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Innovative Therapies at Montis</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            We offer specialized therapies to aid in weight loss:
+          </p>
           <ul className="space-y-3 mb-4">
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Colon Hydrotherapy</strong> - Our colon hydrotherapy helps to flush out toxic build-up in the digestive system. This helps to improve digestive activity and increase body metabolism for weight loss</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Weight loss drips</strong> - IV therapy commonly contain a cocktail of vitamins, minerals, and other fat-burning chemicals (such as methionine inositol choline) that help to burn fat. Methionine inositol choline (MIC) works by targeting and breaking down fatty deposits in the body. MIC should be used with caution to prevent excessive weight loss. IV Therapy also contain B vitamins such as vitamin B1, B2, B3, and B12. B vitamins improve metabolism and are effective in weight loss.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hypoxia Therapy</strong> - Hypoxic therapy puts the body in low oxygen conditions to improve endurance, boost energy, and break down excess fat. A recent study in 2021 also proved the effect of intermittent hypoxic-hyperoxic therapy (IHHT) to improve the lipid levels in patients with metabolic syndrome.</span></li>
-            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Customized Hormone and Supplement Therapy</strong> - Prescribed plant based hormone therapy are very good for weight loss and including Metaboost - patented from Spain - specifically designed to lose weight.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Colon Hydrotherapy:</strong> Flushes out toxins, enhancing digestion and metabolism.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Weight Loss Drips:</strong> IV infusions with vitamins such as B12, minerals, and MIC compounds that target fat breakdown.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hypoxia Therapy:</strong> Intermittent low-oxygen sessions improve lipid metabolism and energy levels.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>EECP Therapy:</strong> Enhances blood circulation, supporting metabolic efficiency and fat reduction.</span></li>
           </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">Conclusion</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Weight loss is a crucial step toward better health and disease prevention. Monitoring weight through tools like BMI and waist circumference provides valuable insights, but sustainable weight loss requires expert guidance.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            At Montis, we offer tailored therapies to complement your weight loss journey and ensure long-term success.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Take the first step to a healthier you today!
+          </p>
         </section>
       </div>
     ),
   },
 ];
 
+export const services: Service[] = serviceOrder
+  .map((id) => serviceCatalog.find((service) => service.id === id))
+  .filter((service): service is Service => Boolean(service));
+
 export const testimonials = [
   {
     name: "Sarah M.",
-    service: "Hormone Systemic Therapy",
-    text: "After struggling with hormonal imbalance for years, Montis Specialist Center helped me find balance. Their comprehensive screening and personalized treatment plan changed my life. I feel like myself again!",
+    service: "Hormone Balancing",
+    text: "After struggling with hormonal imbalance for years, Montis Specialist Clinic helped me find balance. Their comprehensive screening and personalized treatment plan changed my life. I feel like myself again!",
     rating: 5,
   },
   {
     name: "James K.",
-    service: "Men Up Program",
-    text: "The Men Up Program at Montis is exceptional. The team's approach to men's vitality is both professional and effective. I've seen remarkable improvements in my overall health and energy levels.",
+    service: "Men Vitality Program",
+    text: "The Men Vitality Program at Montis is exceptional. The team's approach to men's vitality is both professional and effective. I've seen remarkable improvements in my overall health and energy levels.",
     rating: 5,
   },
   {
     name: "Dr. Elena R.",
-    service: "Heart via Angiotherapy",
+    service: "Heart Recovery Health",
     text: "As a medical professional myself, I was impressed by the scientific rigor behind Montis's angiotherapy program. The results speak for themselves - my cardiovascular health has improved significantly.",
     rating: 5,
   },
   {
     name: "Patricia L.",
-    service: "Menopause Management",
-    text: "Navigating menopause was challenging until I found Montis Specialist Center. Their compassionate care and effective treatments made this transition so much easier. Highly recommend their menopause program!",
+    service: "Menopause and Perimenopause",
+    text: "Navigating menopause was challenging until I found Montis Specialist Clinic. Their compassionate care and effective treatments made this transition so much easier. Highly recommend their menopause program!",
     rating: 5,
   },
   {
     name: "Michael T.",
-    service: "Slenderize Program",
-    text: "Lost 15kg in 3 months with Montis's slenderize program! The combination of IV therapy, hypoxia training, and nutritional guidance was exactly what I needed. Professional team, amazing results.",
+    service: "Weight Loss",
+    text: "Lost 15kg in 3 months with Montis's weight loss program! The combination of IV therapy, hypoxia training, and nutritional guidance was exactly what I needed. Professional team, amazing results.",
     rating: 5,
   },
   {
@@ -890,14 +1325,14 @@ export const testimonials = [
   },
   {
     name: "David H.",
-    service: "Heart via Angiotherapy",
+    service: "Heart Recovery Health",
     text: "I was skeptical about angiotherapy at first, but the results are undeniable. My chest pain has decreased dramatically, and I have more energy than I've had in years. The team at Montis is incredibly knowledgeable and supportive.",
     rating: 5,
   },
   {
     name: "Lisa Chen",
-    service: "Anti-Aging Wellness",
-    text: "The anti-aging program at Montis Specialist Center is absolutely transformative. From IV therapies to personalized wellness plans, every detail is thoughtfully designed. I look and feel 10 years younger!",
+    service: "Revitalization and Healthy Aging",
+    text: "The anti-aging program at Montis Specialist Clinic is absolutely transformative. From IV therapies to personalized wellness plans, every detail is thoughtfully designed. I look and feel 10 years younger!",
     rating: 5,
   },
 ];
@@ -908,12 +1343,12 @@ export const contactInfo = {
   email: "Oxyz.rabten@gmail.com",
   whatsapp: "+60 10-264 8685",
   hours: {
-    monday: "08:00 - 20:00",
-    tuesday: "08:00 - 20:00",
-    wednesday: "08:00 - 20:00",
-    thursday: "08:00 - 20:00",
-    friday: "08:00 - 20:00",
+    monday: "09:00 - 18:00",
+    tuesday: "09:00 - 18:00",
+    wednesday: "09:00 - 18:00",
+    thursday: "09:00 - 18:00",
+    friday: "09:00 - 18:00",
     saturday: "09:00 - 18:00",
-    sunday: "10:00 - 16:00",
+    sunday: "09:00 - 18:00",
   },
 };

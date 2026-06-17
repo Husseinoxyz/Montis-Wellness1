@@ -20,7 +20,7 @@ export const team = [
   {
     name: 'Dr. Tan Ing Shin',
     role: 'Aesthetic and Anti-Aging Physician Medical Director',
-    image: '/Team/Doctor 4.png',
+    image: '/Team/Doctor 4.jpeg',
     bio: 'Letter of Credentialing and Privileging (LCP), Ministry of Health Malaysia.',
   },
 ] as const;

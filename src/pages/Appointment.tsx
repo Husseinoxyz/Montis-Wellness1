@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle, ArrowRight, Stethoscope } from 'lucide-react';
-import { services } from '../data/services';
+import { contactInfo, services } from '../data/services';
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
@@ -19,6 +19,22 @@ export default function Appointment() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const selectedService = services.find((service) => service.id === formData.service);
+    const appointmentMessage = [
+      'Hello Montis Specialist Clinic, I would like to request an appointment.',
+      '',
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email}`,
+      `Service: ${selectedService?.title ?? formData.service}`,
+      `Preferred Date: ${formData.date}`,
+      `Preferred Time: ${formData.time}`,
+      `Additional Notes: ${formData.notes || 'None'}`,
+    ].join('\n');
+
+    const whatsappNumber = contactInfo.whatsapp.replace(/\D/g, '');
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(appointmentMessage)}`;
     setSubmitted(true);
   };
 
@@ -31,7 +47,7 @@ export default function Appointment() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/hero-appointment.png"
@@ -41,17 +57,14 @@ export default function Appointment() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-28 py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="text-sm font-medium tracking-wider uppercase" style={{ color: '#CDB06A' }}>
-              Book Your Visit
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mt-4 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Request an <span style={{ color: '#CDB06A' }}>Appointment</span>
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">
@@ -78,7 +91,7 @@ export default function Appointment() {
                 Appointment Requested!
               </h2>
               <p className="text-gray-600 text-lg mb-8 max-w-lg mx-auto">
-                Thank you for booking with Montis Specialist Center. Our team will review your request and confirm your appointment within 2 hours via email or phone.
+                Thank you for booking with Montis Specialist Clinic. Our team will review your request and confirm your appointment within 2 hours via email or phone.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
@@ -147,6 +160,7 @@ export default function Appointment() {
                           type="radio"
                           name="service"
                           value={service.id}
+                          required
                           checked={formData.service === service.id}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                           className="sr-only"
@@ -194,7 +208,6 @@ export default function Appointment() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#007A59] focus:ring-2 focus:ring-[#007A59]/20 outline-none transition-all"
                     >
                       <option value="">Select a time</option>
-                      <option value="08:00">8:00 AM</option>
                       <option value="09:00">9:00 AM</option>
                       <option value="10:00">10:00 AM</option>
                       <option value="11:00">11:00 AM</option>

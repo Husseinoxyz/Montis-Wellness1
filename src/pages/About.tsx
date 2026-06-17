@@ -40,31 +40,28 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/hero-about.png"
-            alt="Montis Specialist Center Team"
+            alt="Montis Specialist Clinic Team"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-28 py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="text-sm font-medium tracking-wider uppercase" style={{ color: '#CDB06A' }}>
-              About Us
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mt-4 mb-6">
-              Montis <span style={{ color: '#CDB06A' }}>Specialist Center</span>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Montis <span style={{ color: '#CDB06A' }}>Specialist Clinic</span>
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">
-              A modern therapy and aesthetics studio built on clarity, comfort, and consistency. We blend hands-on care with thoughtful technology.
+              Our goal is not only adding years to life, but more life to years. Montis is your one-stop destination for integrative and regenerative medicine.
             </p>
           </motion.div>
         </div>
@@ -72,49 +69,102 @@ export default function About() {
 
       {/* Mission */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden bg-[#F6F6F2] min-h-[620px]">
+          <div className="max-w-7xl w-full ml-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex flex-col justify-center px-6 py-8 md:px-10 md:py-12 lg:px-12 h-full"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Our <span style={{ color: '#007A59' }}>Mission</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                At Montis Specialist Center, we believe that optimal health is not just the absence of disease, but a state of complete physical, mental, and social well-being. Our mission is to empower individuals to take control of their health through personalized, science-backed wellness solutions.
+                Recognized as the home of Biological Medicine in Southeast Asia, Montis provides a comprehensive spectrum of innovative therapies rooted in the principles of Biological Medicine. We begin with the understanding that disease and chronic health issues are often the result of deeper underlying imbalances.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Founded by a team of international medical professionals, we combine cutting-edge diagnostic technology with time-tested therapeutic approaches to deliver results that matter. From hormone balance to cardiovascular health, digestive wellness to anti-aging—every program is designed with your unique biology in mind.
+                Rather than masking symptoms, we focus on treating root causes and empowering the body to heal and restore itself naturally. When wellness is disrupted by toxins, poor nutrition, stress, genetics, or lifestyle habits, our goal is to guide patients back toward long-term vitality and well-being.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Driven by a mission to help individuals live healthier lives and reverse the signs of aging, Montis was established with more than 30 years of medical experience in Biological Medicine behind its expert team.
               </p>
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="text-center">
-                  <p className="text-4xl font-bold" style={{ color: '#007A59' }}>15K+</p>
-                  <p className="text-gray-500 mt-1">Happy Clients</p>
+                  <p className="text-4xl font-bold" style={{ color: '#007A59' }}>30+</p>
+                  <p className="text-gray-500 mt-1">Years of Medical Experience</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold" style={{ color: '#007A59' }}>8+</p>
-                  <p className="text-gray-500 mt-1">Years of Excellence</p>
+                  <p className="text-4xl font-bold" style={{ color: '#007A59' }}>12+</p>
+                  <p className="text-gray-500 mt-1">Focused Health Programs</p>
                 </div>
               </div>
             </motion.div>
+          </div>
 
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
+          >
+            <img
+              src="/hero-home.png"
+              alt="Montis Specialist Clinic Interior"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="py-24 bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden bg-[#F6F6F2] min-h-[620px]">
+          <div className="max-w-7xl w-full ml-auto">
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="flex flex-col justify-center px-6 py-8 md:px-10 md:py-12 lg:px-12 h-full"
             >
-              <img
-                src="/hero-home.png"
-                alt="Montis Specialist Center Interior"
-                className="rounded-3xl shadow-2xl w-full"
-              />
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Our <span style={{ color: '#007A59' }}>Approach</span>
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                We integrate evidence-based diagnostics with personalized treatment pathways to address root causes and restore long-term vitality.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Our multi-dimensional approach combines advanced testing, detoxification, immune support, cellular regeneration and nutrition to deliver measurable outcomes.
+              </p>
+              <div className="grid grid-cols-2 gap-6 mt-8">
+                <div className="text-center">
+                  <p className="text-4xl font-bold" style={{ color: '#007A59' }}>5</p>
+                  <p className="text-gray-500 mt-1">Core Dimensions</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-4xl font-bold" style={{ color: '#007A59' }}>Personalized</p>
+                  <p className="text-gray-500 mt-1">Care Pathways</p>
+                </div>
+              </div>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
+          >
+            <img
+              src="/5%20D%20hero1.png"
+              alt="5D Approach"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 

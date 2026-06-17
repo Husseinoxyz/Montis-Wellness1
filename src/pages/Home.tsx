@@ -2,8 +2,37 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Star, ChevronRight } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { services, testimonials } from '../data/services';
 import { team } from '../data/team';
+
+const faqs = [
+  {
+    question: 'What services does Montis offer?',
+    answer:
+      'Montis provides health assessments, detox therapies, defence programs, dynamic treatments, dietary support, and specialized programs for hormone balance, heart recovery, weight loss, digestive health, revitalization, and healthy aging.',
+  },
+  {
+    question: 'What is Resonance Scanning at Montis?',
+    answer:
+      'Resonance Scanning is a non-invasive diagnostic tool used to assess energetic imbalances in the body and help detect potential health concerns early.',
+  },
+  {
+    question: 'What does the Comprehensive Blood Test include?',
+    answer:
+      'It evaluates multiple blood parameters to provide insight into organ function, nutritional status, inflammation patterns, and potential infections as part of an overall health review.',
+  },
+  {
+    question: 'What is Colon Hydrotherapy at Montis?',
+    answer:
+      'Colon Hydrotherapy is a gentle detoxification procedure that uses warm water to help flush waste and toxins from the colon while supporting digestive health.',
+  },
+  {
+    question: 'How does Chelation Therapy help?',
+    answer:
+      'Chelation Therapy uses binding agents to support the removal of heavy metals from the body, helping reduce toxic load where medically appropriate.',
+  },
+];
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -18,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
@@ -32,18 +61,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-28 py-24">
           <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="inline-block px-4 py-2 rounded-full text-sm font-medium text-white border border-[#CDB06A]/50 mb-6" style={{ backgroundColor: 'rgba(205, 176, 106, 0.15)' }}>
-                Premium Wellness & Medical Spa
-              </span>
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -60,8 +79,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-xl text-gray-200 mb-10 leading-relaxed"
             >
-              A calm space for recovery, balance, and care—designed around you. 
-              From targeted therapy to everyday wellness, we keep care personal and results visible.
+              Montis is your destination for integrative and regenerative medicine, built around the principle that lasting wellness comes from treating root causes, not only symptoms.
             </motion.p>
 
             <motion.div
@@ -89,59 +107,38 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Floating Stats */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="absolute bottom-20 right-8 lg:right-20 hidden lg:block"
-        >
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <p className="text-3xl font-bold text-white">8+</p>
-                <p className="text-sm text-gray-300">Specialized Services</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">15K+</p>
-                <p className="text-sm text-gray-300">Happy Clients</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">20+</p>
-                <p className="text-sm text-gray-300">Expert Doctors</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">98%</p>
-                <p className="text-sm text-gray-300">Success Rate</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 bg-white">
+      <section className="pt-24 pb-0 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1.1fr] gap-8 lg:gap-12 items-start mb-16"
           >
-            <span className="text-sm font-medium tracking-wider uppercase" style={{ color: '#CDB06A' }}>
-              What We Offer
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6 text-gray-900">
-              Our <span style={{ color: '#007A59' }}>Services</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Everything in one place—therapy, diagnostics, beauty, and recovery—planned around your schedule.
+            <div>
+              <span className="text-sm font-medium tracking-[0.28em] uppercase" style={{ color: '#CDB06A' }}>
+                What We Offer
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 text-gray-900 leading-tight">
+                Complete care for
+                {' '}
+                <span style={{ color: '#007A59' }}>modern wellness</span>
+              </h2>
+            </div>
+
+            <div className="hidden lg:block w-px h-24 bg-gray-900/80 mx-auto mt-2" />
+
+            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+              Discovery, detoxification, regenerative support, and targeted medical programs presented as one connected wellness journey for long-term vitality.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
+            {services.slice(0, 6).map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -151,22 +148,33 @@ export default function Home() {
               >
                 <Link
                   to={`/services/${service.id}`}
-                  className="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="group block"
                 >
-                  <img
-                    src={service.iconImage}
-                    alt={service.title}
-                    className="w-40 h-40 object-contain mb-5 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#007A59] transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm mb-4 line-clamp-2">
+                  <div className="relative overflow-hidden mb-5">
+                    <img
+                      src={service.heroImage}
+                      alt={service.title}
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute left-0 right-8 bottom-0 flex items-end">
+                      <div className="w-3 h-14 shrink-0" style={{ backgroundColor: '#CDB06A' }} />
+                      <div
+                        className="px-6 py-4 text-white font-semibold text-xl leading-tight"
+                        style={{
+                          backgroundColor: '#007A59',
+                          clipPath: 'polygon(0 0, calc(100% - 26px) 0, 100% 50%, calc(100% - 26px) 100%, 0 100%)',
+                        }}
+                      >
+                        {service.title}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-base leading-relaxed mb-4 line-clamp-2">
                     {service.subtitle}
                   </p>
-                  <div className="flex items-center text-sm font-medium" style={{ color: '#007A59' }}>
-                    Learn More
-                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-center text-xl font-semibold" style={{ color: '#007A59' }}>
+                    Continue Reading
+                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               </motion.div>
@@ -187,14 +195,15 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24" style={{ backgroundColor: '#F6F6F2' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-24 bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden bg-[#F6F6F2] min-h-[560px]">
+          <div className="max-w-7xl w-full ml-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="flex flex-col justify-center px-6 py-8 md:px-10 md:py-12 lg:px-12 h-full"
             >
               <span className="text-sm font-medium tracking-wider uppercase" style={{ color: '#CDB06A' }}>
                 Why Montis
@@ -204,15 +213,15 @@ export default function Home() {
                 <span style={{ color: '#007A59' }}>Science</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Montis Specialist Center is a modern therapy and aesthetics studio built on clarity, comfort, and consistency. We blend hands-on care with thoughtful technology to deliver results you can see and feel.
+                The body’s natural state is health. When toxins, poor nutrition, stress, genetics, or lifestyle habits disrupt that balance, our role is to identify the deeper cause and help restore the body’s own healing capacity.
               </p>
 
               <div className="space-y-6">
                 {[
-                  { title: 'Expert Medical Team', desc: 'Our panel of international medical professionals ensures the highest standard of care.' },
-                  { title: 'Personalized Treatment', desc: 'Every program is tailored to your unique needs, health history, and wellness goals.' },
-                  { title: 'Advanced Technology', desc: 'We use cutting-edge diagnostic and therapeutic equipment for optimal results.' },
-                  { title: 'Holistic Approach', desc: 'We address root causes, not just symptoms, for lasting wellness.' },
+                  { title: 'Root-Cause Focus', desc: 'We aim to understand the deeper imbalances behind symptoms instead of only suppressing what appears on the surface.' },
+                  { title: 'Biological Medicine Principles', desc: 'Our therapies are guided by regenerative and integrative medical thinking designed to support natural restoration.' },
+                  { title: 'Advanced Diagnostics', desc: 'Comprehensive testing and assessments help us build treatment pathways with greater clarity and precision.' },
+                  { title: 'Long-Term Vitality', desc: 'Every program is shaped to help patients live healthier lives and maintain energy, function, and well-being over time.' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(0, 122, 89, 0.1)' }}>
@@ -226,32 +235,21 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <img
-                src="/hero-about.png"
-                alt="Montis Specialist Center Team"
-                className="rounded-3xl shadow-2xl w-full"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 122, 89, 0.1)' }}>
-                    <Star className="w-6 h-6" style={{ color: '#CDB06A' }} fill="#CDB06A" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">4.9/5 Rating</p>
-                    <p className="text-sm text-gray-500">From 2,000+ reviews</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[560px]"
+          >
+            <img
+              src="/hero-about.png"
+              alt="Montis Specialist Clinic Team"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -332,7 +330,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           src="/5 D hero.png"
-          alt="Montis Specialist Center 5D model"
+          alt="Montis Specialist Clinic 5D model"
           className="w-full h-full object-cover"
         />
       </section>
@@ -382,6 +380,60 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch overflow-hidden bg-[#F6F6F2] min-h-[520px]">
+          <div className="max-w-7xl w-full ml-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col justify-center px-6 py-8 md:px-10 md:py-12 lg:px-12"
+            >
+              <span className="text-sm font-medium tracking-[0.28em] uppercase" style={{ color: '#CDB06A' }}>
+                FAQ
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-gray-900 leading-tight">
+                Answers for your
+                {' '}
+                <span style={{ color: '#007A59' }}>wellness journey</span>
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                A clearer look at how Montis approaches diagnostics, detoxification, regenerative support, and long-term care planning.
+              </p>
+
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`home-faq-${index}`} className="border-gray-200">
+                    <AccordionTrigger className="text-base md:text-lg font-semibold text-gray-900 hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[520px]"
+          >
+            <img
+              src="/hero-contact.png"
+              alt="Montis Specialist Clinic consultation"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 

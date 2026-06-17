@@ -39,7 +39,7 @@ export default function ServiceDetail() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={service.heroImage}
@@ -49,7 +49,7 @@ export default function ServiceDetail() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-28 py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,12 +64,11 @@ export default function ServiceDetail() {
             </Link>
 
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                <service.icon className="w-7 h-7 text-[#CDB06A]" />
-              </div>
-              <span className="text-sm font-medium tracking-wider uppercase text-[#CDB06A]">
-                {service.subtitle}
-              </span>
+              <img
+                src={service.iconImage}
+                alt={service.title}
+                className="w-20 h-20 object-cover shrink-0"
+              />
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">

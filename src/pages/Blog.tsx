@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function Blog() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative overflow-hidden py-32">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
@@ -12,22 +12,12 @@ export default function Blog() {
           }}
         />
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block text-sm font-medium tracking-[0.3em] uppercase"
-            style={{ color: '#CDB06A' }}
-          >
-            Blog
-          </motion.span>
-
+        <div className="relative w-full px-4 sm:px-8 lg:px-20 xl:px-28 py-24">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-6 text-5xl md:text-6xl font-bold text-gray-900"
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-6xl font-bold text-gray-900"
           >
             Coming Soon
           </motion.h1>
@@ -36,9 +26,9 @@ export default function Blog() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed"
+            className="mt-6 max-w-2xl text-lg md:text-xl text-gray-600 leading-relaxed"
           >
-            We are preparing articles, updates, and expert insights from Montis Specialist Center.
+            We are preparing articles, updates, and expert insights from Montis Specialist Clinic.
           </motion.p>
         </div>
       </section>
