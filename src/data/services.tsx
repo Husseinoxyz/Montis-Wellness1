@@ -13,8 +13,12 @@ export interface Service {
 
 const serviceOrder = [
   'heart-recovery-health',
+  'diabetic-management',
   'weight-loss',
   'inflammation-root-causes',
+  'autoimmune-treatment',
+  'fatty-liver',
+  'overall-cleansing',
   'men-vitality-program',
   'revitalization-healthy-aging',
   'digestive-health',
@@ -22,25 +26,14 @@ const serviceOrder = [
   'menopause-perimenopause',
 ];
 
-const placeholderContent = (serviceName: string) => (
-  <div className="space-y-8">
-    <section>
-      <h3 className="text-2xl font-semibold text-green mb-4">{serviceName}</h3>
-      <p className="text-gray-700 leading-relaxed">
-        Full service content will be added soon.
-      </p>
-    </section>
-  </div>
-);
-
 const serviceCatalog: Service[] = [
   {
     id: 'diabetic-management',
     title: 'Diabetic Management',
     subtitle: 'Integrated metabolic and blood sugar support',
     icon: FlaskConical,
-    iconImage: '/service icons/Slenderize for Weight Loss.png',
-    heroImage: '/hero-slenderize.png',
+    iconImage: '/service icons/Diabetic Management.png',
+    heroImage: '/Diabetic Management.png',
     description: 'Advanced diabetes management support for blood sugar control, complication prevention, and cardiovascular risk reduction.',
     content: (
       <div className="space-y-8">
@@ -165,8 +158,8 @@ const serviceCatalog: Service[] = [
     title: 'Overall Cleansing',
     subtitle: 'Whole-body detoxification and wellness reset',
     icon: Sparkles,
-    iconImage: '/service icons/Revitalization & Healthy Aging.png',
-    heroImage: '/hero-revitalization.png',
+    iconImage: '/service icons/Overall Cleansing.png',
+    heroImage: '/Overall Cleansing.png',
     description: 'Safe and effective cleansing support to help remove toxins, strengthen natural detox pathways, and promote overall vitality.',
     content: (
       <div className="space-y-8">
@@ -228,8 +221,8 @@ const serviceCatalog: Service[] = [
     title: 'Fatty Liver',
     subtitle: 'Liver health and metabolic restoration support',
     icon: Apple,
-    iconImage: '/service icons/Montis Digestive Health.png',
-    heroImage: '/hero-digestive.png',
+    iconImage: '/service icons/Fatty Liver.png',
+    heroImage: '/Fatty Liver.png',
     description: 'Targeted liver health support for fatty liver screening, detoxification, lifestyle adjustment, and long-term prevention.',
     content: (
       <div className="space-y-8">
@@ -839,10 +832,133 @@ const serviceCatalog: Service[] = [
     title: 'Autoimmune Treatment',
     subtitle: 'Immune balance and chronic inflammation support',
     icon: Flame,
-    iconImage: '/service icons/Inflammation & Root Cause.png',
-    heroImage: '/hero-inflammation.png',
+    iconImage: '/service icons/Autoimmune Treatment.png',
+    heroImage: '/Autoimmune Treatment.png',
     description: 'Personalized support for autoimmune concerns, immune resilience, inflammation patterns, and long-term symptom management.',
-    content: placeholderContent('Autoimmune Treatment'),
+    content: (
+      <div className="space-y-8">
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Autoimmune Treatment</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Autoimmune diseases occur when the body's immune system mistakenly attacks its own cells, organs, and tissues. Instead of defending the body against harmful agents, it identifies parts of itself like nerves, joints, or the pancreas as threats, causing significant damage.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            While the exact causes of most autoimmune diseases remain unclear, they are not infectious and cannot be transmitted between individuals. Factors such as genetics, toxins, and medications play a significant role in developing these conditions.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Women are particularly at risk, with approximately 78% of autoimmune disease cases occurring in women. This prevalence is attributed to hormonal fluctuations during puberty, pregnancy, and menopause.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Managing Autoimmune Diseases</h3>
+          <p className="text-gray-700 leading-relaxed">
+            Although there is no known cure, several therapies exist to alleviate symptoms and improve the quality of life for individuals affected by autoimmune diseases.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Common Symptoms of Autoimmune Diseases</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Autoimmune diseases manifest in various ways, depending on the type and organs affected. The most frequent symptoms include:
+          </p>
+          <ul className="space-y-2 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Pain and inflammation.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Muscle aches.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Low-grade fever.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Chronic fatigue.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Abdominal pain and diarrhea, as seen in inflammatory bowel disease.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Excessive thirst, as seen in type 1 diabetes.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Numbness and mobility issues, as seen in multiple sclerosis.</span></li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed">
+            Symptoms may flare up periodically, causing acute discomfort and then subside during remission periods.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Examples of Autoimmune Diseases</h3>
+
+          <h4 className="text-xl font-semibold text-green mb-3">Lupus (Systemic Lupus Erythematosus)</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            A systemic condition primarily affecting women, lupus targets multiple organs, including the joints, skin, heart, brain, and kidneys. Characterized by its distinctive butterfly-shaped facial rash, lupus can cause joint pain, fever, and severe organ damage.
+          </p>
+
+          <h4 className="text-xl font-semibold text-green mb-3">Rheumatoid Arthritis</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            This condition results from immune attacks on the joints, causing redness, soreness, and immobility. Unlike typical arthritis, rheumatoid arthritis can affect individuals as young as their 20s or 30s.
+          </p>
+
+          <h4 className="text-xl font-semibold text-green mb-3">Type 1 Diabetes</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            This autoimmune disease specifically targets the pancreas, reducing insulin production. Often diagnosed in children, it can lead to high blood sugar levels, damaging the kidneys, blood vessels, and eyes.
+          </p>
+
+          <h4 className="text-xl font-semibold text-green mb-3">Multiple Sclerosis (MS)</h4>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Immune cells attack the nervous system, leading to the degeneration of nerve function. Symptoms include muscle weakness, numbness, and difficulty walking.
+          </p>
+
+          <h4 className="text-xl font-semibold text-green mb-3">Inflammatory Bowel Disease (IBD)</h4>
+          <p className="text-gray-700 leading-relaxed">
+            This group of disorders involves immune attacks on the digestive system, leading to conditions like Crohn's disease, characterized by diarrhea, fever, abdominal pain, and poor appetite.
+          </p>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Screening for Autoimmune Diseases</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Diagnosing autoimmune diseases often requires advanced tests beyond basic medical exams. Key diagnostic tools include:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Antinuclear Antibody Test (ANA):</strong> Detects antibodies targeting the cell nucleus.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Anti-dsDNA Test:</strong> Often used for diagnosing lupus.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Rheumatoid Factor (RF):</strong> Diagnoses rheumatoid arthritis.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Anti-CCP Antibody Test:</strong> Confirms rheumatoid arthritis in symptomatic individuals.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Hair Tissue Mineral Analysis:</strong> Identifies stress-related mineral imbalances or toxic metal accumulation.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Dried Blood Layer Test:</strong> Evaluates inflammation, toxicity, and deficiencies using a simple finger-prick sample.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Detox and Immune Health Therapies</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            At Montis, we provide a range of cutting-edge therapies to support detoxification and immune health:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Detox Drips with Colon Hydrotherapy.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Intravenous (IV) Vitamin and Mineral Drips.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Glutathione Drips.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Chelation Therapy for heavy metal detoxification.</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="text-2xl font-semibold text-green mb-4">Montis Immune BREATH+</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Immune BREATH+ is our revolutionary product designed to combat autoimmune diseases. It features:
+          </p>
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700"><strong>Lactobacillus sakei ProBio65:</strong> A South Korean probiotic strain that balances immunity, reduces inflammation, and counters hyperactive immune responses.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Proven activity against harmful microbes like <em>Staphylococcus aureus</em> and <em>Escherichia coli</em>, which may worsen autoimmune symptoms.</span></li>
+            <li className="flex items-start gap-3"><span className="text-gold mt-1">*</span><span className="text-gray-700">Vitamin C and antioxidant properties to further support healthy immunity.</span></li>
+          </ul>
+        </section>
+
+        <section className="bg-[#F6F6F2] p-8 rounded-2xl">
+          <h3 className="text-2xl font-semibold text-green mb-4">Why Choose Montis?</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            As autoimmune diseases continue to rise due to increased exposure to environmental toxins, it is vital to prioritize immune health. At Montis, we are dedicated to offering comprehensive detox programs and scientifically-backed products like Immune BREATH+ to enhance immunity and reduce inflammation.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Autoimmune diseases challenge the immune system, forcing it to attack the body it is meant to protect. Through innovative screening methods, targeted therapies, and advanced products like Immune BREATH+, Montis empowers individuals to reclaim their health and vitality.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Explore our solutions today and take the first step toward balanced immunity.
+          </p>
+        </section>
+      </div>
+    ),
   },
   {
     id: 'menopause-perimenopause',
