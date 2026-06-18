@@ -1,7 +1,7 @@
 export const team = [
   {
     name: 'Dr. Abdullah Asad Siddiqui',
-    role: 'Emergency and Regenerative',
+    role: 'Emergency and Regenerative Medical Director',
     image: '/Team/Doctor 1.png',
     bio: 'Provides expert care in acute and critical emergencies, trauma, and occupational health medicine.',
   },
