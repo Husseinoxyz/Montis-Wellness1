@@ -83,7 +83,7 @@ export default function FiveD() {
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/5 D hero1.png"
+            src="/Montis 5D Hero.png"
             alt="5D Medical Model"
             className="w-full h-full object-cover"
           />
@@ -98,10 +98,10 @@ export default function FiveD() {
             className="max-w-2xl"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              OXYZ 5D <span style={{ color: '#CDB06A' }}>Regenerative Model</span>
+              Montis Specialist clinic 5D <span style={{ color: '#CDB06A' }}>Regenerative Model</span>
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">
-              A structured framework guiding patient care, clinical decisions, and operational consistency across all OXYZ-aligned practices.
+              A structured framework guiding patient care, clinical decisions, and operational consistency across all Montis Specialist clinic-aligned practices.
             </p>
           </motion.div>
         </div>
@@ -121,7 +121,7 @@ export default function FiveD() {
               One Model. <span style={{ color: '#007A59' }}>Consistent Outcomes.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              This framework ensures every OXYZ-aligned practice delivers consistent, reproducible, and scalable medical outcomes. Medical clarity before intervention, responsible regenerative application, and consistent patient journeys across all centers.
+              This framework ensures every Montis Specialist clinic-aligned practice delivers consistent, reproducible, and scalable medical outcomes. Medical clarity before intervention, responsible regenerative application, and consistent patient journeys across all centers.
             </p>
           </motion.div>
         </div>
@@ -225,7 +225,7 @@ export default function FiveD() {
               A Model Built for <span style={{ color: '#007A59' }}>Medical Consistency</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The OXYZ 5D Model is not a flexible concept — it is a standardised clinical system. Across all OXYZ-aligned practices, it ensures medical integrity and reproducible outcomes.
+              The Montis Specialist clinic 5D Model is not a flexible concept — it is a standardised clinical system. Across all Montis Specialist clinic-aligned practices, it ensures medical integrity and reproducible outcomes.
             </p>
           </motion.div>
 
@@ -304,7 +304,7 @@ export default function FiveD() {
               </p>
               <div className="border-l-4 border-[#007A59] pl-6">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  The OXYZ 5D Biological Regenerative Medical Model reflects our commitment to medical integrity, patient-centred outcomes, ethical practice, and sustainable, long-term healthcare development.
+                  The Montis Specialist clinic 5D Biological Regenerative Medical Model reflects our commitment to medical integrity, patient-centred outcomes, ethical practice, and sustainable, long-term healthcare development.
                 </p>
               </div>
             </motion.div>

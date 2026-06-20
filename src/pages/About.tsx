@@ -182,7 +182,7 @@ export default function About() {
                 Our Framework
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6">
-                OXYZ 5D <span style={{ color: '#007A59' }}>Medical Model</span>
+                Montis Specialist clinic 5D <span style={{ color: '#007A59' }}>Medical Model</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 At the core of our practice lies a structured, standardized clinical system that ensures consistent, reproducible, and scalable medical outcomes. One model. Consistent results.
