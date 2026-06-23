@@ -160,7 +160,7 @@ export default function About() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
             <img
-              src="/5%20D%20hero1.png"
+              src="/Montis 5D Hero.png"
               alt="5D Approach"
               className="w-full h-full object-cover"
             />

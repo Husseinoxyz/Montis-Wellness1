@@ -48,7 +48,7 @@ export default function Footer() {
                     to={`/services/${service.id}`}
                     className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <service.icon className="w-4 h-4" />
+                    <img src={service.iconImage} alt={service.title} className="w-4 h-4" />
                     {service.title}
                   </Link>
                 </li>
@@ -66,7 +66,7 @@ export default function Footer() {
                     to={`/services/${service.id}`}
                     className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <service.icon className="w-4 h-4" />
+                    <img src={service.iconImage} alt={service.title} className="w-4 h-4" />
                     {service.title}
                   </Link>
                 </li>
