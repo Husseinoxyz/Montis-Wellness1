@@ -41,14 +41,14 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-6" style={{ color: '#CDB06A' }}>Our Services</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {services.slice(0, 4).map((service) => (
                 <li key={service.id}>
                   <Link
                     to={`/services/${service.id}`}
-                    className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2"
+                    className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-3"
                   >
-                    <img src={service.iconImage} alt={service.title} className="w-4 h-4" />
+                    <img src={service.iconImage} alt={service.title} className="w-10 h-10 shrink-0" />
                     {service.title}
                   </Link>
                 </li>
@@ -59,14 +59,14 @@ export default function Footer() {
           {/* More Services */}
           <div>
             <h4 className="text-lg font-semibold mb-6" style={{ color: '#CDB06A' }}>More Services</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {services.slice(4).map((service) => (
                 <li key={service.id}>
                   <Link
                     to={`/services/${service.id}`}
-                    className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2"
+                    className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-3"
                   >
-                    <img src={service.iconImage} alt={service.title} className="w-4 h-4" />
+                    <img src={service.iconImage} alt={service.title} className="w-10 h-10 shrink-0" />
                     {service.title}
                   </Link>
                 </li>
