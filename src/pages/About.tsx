@@ -160,8 +160,8 @@ export default function About() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
             <img
-              src="/Montis 5D Hero.png"
-              alt="5D Approach"
+              src="/approach.png"
+              alt="Our Approach"
               className="w-full h-full object-cover"
             />
           </motion.div>
