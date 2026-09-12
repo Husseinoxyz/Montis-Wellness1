@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Services', path: '/services' },
   { label: 'Medical Screening', path: '/medical-screening' },
   { label: '5D Model', path: '/5d' },
-  { label: 'Blog', path: '/blog' },
+  { label: 'Blog', path: 'https://wellness-blogs.montis-clinic.com/' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -63,21 +63,30 @@ export default function Navbar() {
               isSolid ? 'bg-gray-100/80' : 'bg-white/10 backdrop-blur-md border border-white/15'
             }`}
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                  location.pathname === link.path
-                    ? 'bg-white text-[#007A59] shadow-sm'
-                    : isSolid
-                      ? 'text-gray-700 hover:bg-white hover:text-[#007A59]'
-                      : 'text-white/90 hover:bg-white/15 hover:text-white'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.path.startsWith('http');
+              const className = `relative rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                location.pathname === link.path
+                  ? 'bg-white text-[#007A59] shadow-sm'
+                  : isSolid
+                    ? 'text-gray-700 hover:bg-white hover:text-[#007A59]'
+                    : 'text-white/90 hover:bg-white/15 hover:text-white'
+              }`;
+
+              if (isExternal) {
+                return (
+                  <a key={link.path} href={link.path} className={className}>
+                    {link.label}
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={link.path} to={link.path} className={className}>
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -119,19 +128,28 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-4 py-4 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-[#007A59] bg-[#007A59]/5'
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.path.startsWith('http');
+              const className = `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                location.pathname === link.path
+                  ? 'text-[#007A59] bg-[#007A59]/5'
+                  : 'text-gray-700 hover:bg-gray-50'
+              }`;
+
+              if (isExternal) {
+                return (
+                  <a key={link.path} href={link.path} className={className}>
+                    {link.label}
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={link.path} to={link.path} className={className}>
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               to="/appointment"
               className={`flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-medium ${
