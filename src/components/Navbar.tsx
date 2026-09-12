@@ -16,7 +16,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isSolid = scrolled || isOpen;
+  const isLightPage = location.pathname.startsWith('/blog');
+  const isSolid = scrolled || isOpen || isLightPage;
 
   useEffect(() => {
     const handleScroll = () => {
