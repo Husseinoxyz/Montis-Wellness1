@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { FacebookIcon, InstagramIcon, TikTokIcon } from './SocialIcons';
 
 // Profiles without a URL yet (empty href) are hidden.
@@ -125,10 +125,6 @@ export default function Footer() {
           <p className="text-gray-600 text-sm">
             © {new Date().getFullYear()} Montis Specialist Clinic. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-gray-600 text-sm">
-            <Heart className="w-4 h-4 text-[#007A59]" />
-            <span>Made with care for your wellness</span>
-          </div>
         </div>
       </div>
     </footer>
