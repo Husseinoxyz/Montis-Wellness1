@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const dimensions = [
   {
     step: '01',
     title: 'Discovery',
     subtitle: 'Assessment & Diagnosis',
-    iconImage: '/5D icons/Discovery.png',
+    iconImage: '/5D icons/Discovery.webp',
     description: 'The Discovery phase involves comprehensive diagnostics and root-cause assessment. This forms the foundation of every patient journey.',
     highlights: [
       'Comprehensive health profiling',
@@ -19,7 +20,7 @@ const dimensions = [
     step: '02',
     title: 'Detox',
     subtitle: 'Cleanse & Optimize',
-    iconImage: '/5D icons/Detox.png',
+    iconImage: '/5D icons/Detox.webp',
     description: 'The Detox phase focuses on systemic burden reduction and internal environment optimization, preparing the body for regenerative interventions.',
     highlights: [
       'Systemic burden reduction',
@@ -32,7 +33,7 @@ const dimensions = [
     step: '03',
     title: 'Defence',
     subtitle: 'Support & Strengthen',
-    iconImage: '/5D icons/Defence.png',
+    iconImage: '/5D icons/Defence.webp',
     description: 'Defence focuses on immune support, repair, and resilience. This phase ensures regenerative strategies are supported by a robust internal defence system.',
     highlights: [
       'Immune system optimization',
@@ -45,7 +46,7 @@ const dimensions = [
     step: '04',
     title: 'Dynamic',
     subtitle: 'Activation & Regeneration',
-    iconImage: '/5D icons/Dynamic.png',
+    iconImage: '/5D icons/Dynamic.webp',
     description: 'Dynamic represents the regenerative activation phase, where targeted interventions support cellular renewal, vitality, and anti-aging outcomes.',
     highlights: [
       'Cellular renewal and restoration',
@@ -58,7 +59,7 @@ const dimensions = [
     step: '05',
     title: 'Dietary',
     subtitle: 'Maintenance & Longevity',
-    iconImage: '/5D icons/Dietary.png',
+    iconImage: '/5D icons/Dietary.webp',
     description: 'The Dietary phase ensures regenerative gains are sustained long-term through personalized nutrition, lifestyle optimization, and ongoing support.',
     highlights: [
       'Personalized nutrition strategies',
@@ -70,20 +71,26 @@ const dimensions = [
 ];
 
 const benefits = [
-  { iconImage: '/5D icons/Consistent Patient Journeys.png', title: 'Consistent Patient Journeys', description: 'Every patient follows a structured, proven pathway for optimal outcomes.' },
-  { iconImage: '/5D icons/Reproducible Clinical Logic.png', title: 'Reproducible Clinical Logic', description: 'Medical clarity before intervention ensures responsible and predictable results.' },
-  { iconImage: '/5D icons/Alignment & Governance.png', title: 'Alignment & Governance', description: 'Seamless coordination between doctors, teams, and operations across all centers.' },
-  { iconImage: '/5D icons/Scalable Excellence.png', title: 'Scalable Excellence', description: 'Deliver regenerative medicine responsibly at scale without compromising standards.' },
+  { iconImage: '/5D icons/Consistent Patient Journeys.webp', title: 'Consistent Patient Journeys', description: 'Every patient follows a structured, proven pathway for optimal outcomes.' },
+  { iconImage: '/5D icons/Reproducible Clinical Logic.webp', title: 'Reproducible Clinical Logic', description: 'Medical clarity before intervention ensures responsible and predictable results.' },
+  { iconImage: '/5D icons/Alignment & Governance.webp', title: 'Alignment & Governance', description: 'Seamless coordination between doctors, teams, and operations across all centers.' },
+  { iconImage: '/5D icons/Scalable Excellence.webp', title: 'Scalable Excellence', description: 'Deliver regenerative medicine responsibly at scale without compromising standards.' },
 ];
 
 export default function FiveD() {
   return (
     <div className="min-h-screen">
+      <Seo
+        title="The Montis 5D Regenerative Model"
+        description="The Montis 5D model (Discovery, Detox, Defence, Dietary and Dynamic) is our structured approach to root-cause, regenerative care in Kuala Lumpur."
+        path="/5d"
+        image="/Montis 5D Hero.webp"
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/Montis 5D Hero.png"
+            src="/Montis 5D Hero.webp"
             alt="5D Medical Model"
             className="w-full h-full object-cover"
           />
@@ -335,7 +342,7 @@ export default function FiveD() {
             className="flex justify-center"
           >
             <img
-              src="/5D.png"
+              src="/5D.webp"
               alt="5D Model Framework"
               className="max-w-2xl w-full h-auto"
             />

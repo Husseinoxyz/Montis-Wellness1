@@ -16,7 +16,7 @@ export const screenings: Screening[] = [
     title: 'Bio-Resonance Scanning',
     shortName: 'BR Scan',
     icon: Activity,
-    image: '/screening/Bio-Resonance Scanning (BR Scan).png',
+    image: '/screening/Bio-Resonance Scanning (BR Scan).webp',
     description: "See what standard tests can't before symptoms even appear.",
     content: (
       <div className="space-y-8">
@@ -79,7 +79,7 @@ export const screenings: Screening[] = [
     title: 'Heart Rate Variability',
     shortName: 'HRV Analysis',
     icon: HeartPulse,
-    image: '/screening/Heart Rate Variability (HRV) Analysis.png',
+    image: '/screening/Heart Rate Variability (HRV) Analysis.webp',
     description: "Your heart tells the truth - even when you think you're fine.",
     content: (
       <div className="space-y-8">
@@ -166,7 +166,7 @@ export const screenings: Screening[] = [
     title: 'Dried Layer Blood Encryption',
     shortName: 'DLBE',
     icon: Droplets,
-    image: '/screening/Dried Layer Blood Encryption (DLBE).png',
+    image: '/screening/Dried Layer Blood Encryption (DLBE).webp',
     description: 'Uncover what your immune system has been hiding.',
     content: (
       <div className="space-y-8">
@@ -275,7 +275,7 @@ export const screenings: Screening[] = [
     title: 'Live Blood Analysis',
     shortName: 'LBA',
     icon: Microscope,
-    image: '/screening/Live Blood Analysis (LBA).png',
+    image: '/screening/Live Blood Analysis (LBA).webp',
     description: 'See your living biology in real time and understand your body like never before.',
     content: (
       <div className="space-y-8">

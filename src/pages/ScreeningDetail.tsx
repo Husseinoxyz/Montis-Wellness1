@@ -2,24 +2,15 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calendar, CheckCircle, Clock, Phone } from 'lucide-react';
 import { screenings } from '../data/screenings';
+import Seo from '../components/Seo';
+import { breadcrumbJsonLd } from '../lib/seo';
+import NotFound from './NotFound';
 
 export default function ScreeningDetail() {
   const { id } = useParams<{ id: string }>();
   const screening = screenings.find((item) => item.id === id);
 
-  if (!screening) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Screening Not Found</h2>
-          <Link to="/medical-screening" className="inline-flex items-center gap-2 text-[#007A59] font-medium">
-            <ArrowLeft className="w-5 h-5" />
-            Back to Medical Screening
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  if (!screening) return <NotFound />;
 
   const currentIndex = screenings.findIndex((item) => item.id === id);
   const prevScreening = currentIndex > 0 ? screenings[currentIndex - 1] : null;
@@ -34,6 +25,17 @@ export default function ScreeningDetail() {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title={`${screening.title} in Kuala Lumpur`}
+        description={screening.description}
+        path={`/medical-screening/${screening.id}`}
+        image={screening.image}
+        jsonLd={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Medical Screening', path: '/medical-screening' },
+          { name: screening.title, path: `/medical-screening/${screening.id}` },
+        ])}
+      />
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={screening.image} alt={screening.title} className="w-full h-full object-cover" />

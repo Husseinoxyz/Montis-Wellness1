@@ -5,6 +5,10 @@ import { ArrowRight, Play, Star, ChevronRight } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { services, testimonials } from '../data/services';
 import { team } from '../data/team';
+import { blogPosts } from '../data/blog';
+import { BlogCard } from './Blog';
+import Seo from '../components/Seo';
+import { clinicJsonLd } from '../lib/seo';
 
 const faqs = [
   {
@@ -46,12 +50,31 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Montis Specialist Clinic | Integrative & Regenerative Medicine in Kuala Lumpur"
+        description="Integrative and regenerative medicine clinic in Bangsar, Kuala Lumpur. Stem cell and cell therapy, IV drips, EECP heart therapy, chelation, detox, diabetes care and health screening."
+        path="/"
+        jsonLd={[
+          clinicJsonLd,
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.question,
+              acceptedAnswer: { '@type': 'Answer', text: f.answer },
+            })),
+          },
+        ]}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
             src="/hero-video.mp4"
+            poster="/hero-home.webp"
+            preload="metadata"
             autoPlay
             muted
             loop
@@ -245,7 +268,7 @@ export default function Home() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[560px]"
           >
             <img
-              src="/hero-about.png"
+              src="/hero-about.webp"
               alt="Montis Specialist Clinic Team"
               className="w-full h-full object-cover"
             />
@@ -329,7 +352,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          src="/5 D hero.png"
+          src="/5 D hero.webp"
           alt="Montis Specialist Clinic 5D model"
           className="w-full h-full object-cover"
         />
@@ -429,7 +452,7 @@ export default function Home() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[520px]"
           >
             <img
-              src="/hero-contact.png"
+              src="/hero-contact.webp"
               alt="Montis Specialist Clinic consultation"
               className="w-full h-full object-cover"
             />
@@ -437,11 +460,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Blog */}
+      <section className="py-24 bg-[#F6F6F2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div>
+              <span className="text-sm font-semibold uppercase tracking-widest text-[#007A59]">Health Library</span>
+              <h2 className="text-4xl md:text-5xl font-bold mt-3 text-gray-900">Latest from our blog</h2>
+            </div>
+            <Link to="/blog" className="inline-flex items-center gap-2 font-semibold text-[#007A59]">
+              View all articles
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-services.png"
+            src="/hero-services.webp"
             alt="Wellness Background"
             className="w-full h-full object-cover"
           />

@@ -1,14 +1,35 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { CalendarCheck, Menu, Phone, X } from 'lucide-react';
+import { CalendarCheck, ChevronDown, Menu, Phone, X } from 'lucide-react';
 
-const navLinks = [
+type NavLink = {
+  label: string;
+  path: string;
+  children?: { label: string; description: string; path: string }[];
+};
+
+const navLinks: NavLink[] = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Medical Screening', path: '/medical-screening' },
   { label: '5D Model', path: '/5d' },
-  { label: 'Blog', path: 'https://wellness-blogs.montis-clinic.com/' },
+  {
+    label: 'Blog',
+    path: '/blog',
+    children: [
+      {
+        label: 'Wellness Blog',
+        description: 'Our original articles on drips, screening and therapies',
+        path: 'https://wellness-blogs.montis-clinic.com/',
+      },
+      {
+        label: 'Health Library',
+        description: 'Doctor-led guides to treatments and conditions',
+        path: '/blog',
+      },
+    ],
+  },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -16,8 +37,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isLightPage = location.pathname.startsWith('/blog');
+  const isLightPage = location.pathname === '/blog';
   const isSolid = scrolled || isOpen || isLightPage;
+  const isActive = (path: string) =>
+    path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +67,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Montis Specialist Clinic home">
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="Montis Specialist Clinic"
               className="h-14 lg:h-16 w-auto object-contain"
             />
@@ -66,12 +89,45 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isExternal = link.path.startsWith('http');
               const className = `relative rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                location.pathname === link.path
+                isActive(link.path)
                   ? 'bg-white text-[#007A59] shadow-sm'
                   : isSolid
                     ? 'text-gray-700 hover:bg-white hover:text-[#007A59]'
                     : 'text-white/90 hover:bg-white/15 hover:text-white'
               }`;
+
+              if (link.children) {
+                return (
+                  <div key={link.path} className="group relative">
+                    <button type="button" className={`${className} inline-flex items-center gap-1`} aria-haspopup="true">
+                      {link.label}
+                      <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
+                    </button>
+                    <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                      <div className="w-72 rounded-2xl border border-gray-100 bg-white p-2 shadow-xl">
+                        {link.children.map((child) => {
+                          const content = (
+                            <>
+                              <span className="block text-sm font-semibold text-gray-900">{child.label}</span>
+                              <span className="mt-0.5 block text-xs text-gray-500">{child.description}</span>
+                            </>
+                          );
+                          const childClass = 'block rounded-xl px-4 py-3 transition-colors hover:bg-[#007A59]/5';
+                          return child.path.startsWith('http') ? (
+                            <a key={child.path} href={child.path} target="_blank" rel="noopener" className={childClass}>
+                              {content}
+                            </a>
+                          ) : (
+                            <Link key={child.path} to={child.path} className={childClass}>
+                              {content}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
 
               if (isExternal) {
                 return (
@@ -131,10 +187,43 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isExternal = link.path.startsWith('http');
               const className = `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                location.pathname === link.path
+                isActive(link.path)
                   ? 'text-[#007A59] bg-[#007A59]/5'
                   : 'text-gray-700 hover:bg-gray-50'
               }`;
+
+              if (link.children) {
+                return (
+                  <div key={link.path}>
+                    <p className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      {link.label}
+                    </p>
+                    {link.children.map((child) =>
+                      child.path.startsWith('http') ? (
+                        <a
+                          key={child.path}
+                          href={child.path}
+                          target="_blank"
+                          rel="noopener"
+                          className="block px-6 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
+                        >
+                          {child.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className={`block px-6 py-3 rounded-lg text-sm font-medium ${
+                            isActive(child.path) ? 'text-[#007A59] bg-[#007A59]/5' : 'text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          {child.label}
+                        </Link>
+                      ),
+                    )}
+                  </div>
+                );
+              }
 
               if (isExternal) {
                 return (

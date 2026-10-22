@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle } from 'lucide-react';
 import { contactInfo } from '../data/services';
+import Seo from '../components/Seo';
+import { clinicJsonLd } from '../lib/seo';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,11 +24,18 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Contact Us"
+        description="Contact Montis Specialist Clinic at Menara BRDB, Bangsar Shopping Centre (BSC), Bangsar, Kuala Lumpur. Call or WhatsApp +60 10-264 8685. Open daily 9am–6pm."
+        path="/contact"
+        image="/hero-contact.webp"
+        jsonLd={clinicJsonLd}
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-contact.png"
+            src="/hero-contact.webp"
             alt="Montis Specialist Clinic Contact"
             className="w-full h-full object-cover"
           />

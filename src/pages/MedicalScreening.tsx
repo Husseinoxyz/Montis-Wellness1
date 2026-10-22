@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { screenings } from '../data/screenings';
+import Seo from '../components/Seo';
 
 const screeningHighlights: Record<string, string[]> = {
   'bio-resonance-scanning': [
@@ -33,11 +34,17 @@ const screeningHighlights: Record<string, string[]> = {
 export default function MedicalScreening() {
   return (
     <div className="min-h-screen bg-white">
+      <Seo
+        title="Health Screening in Kuala Lumpur"
+        description="Health screening at Montis Specialist Clinic, Kuala Lumpur: Live Blood Analysis, Heart Rate Variability, Bio-Resonance Scanning, DLBE and screening packages to find root causes early."
+        path="/medical-screening"
+        image="/screening/Medical Screening Hero.webp"
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/screening/Medical Screening Hero.png"
+            src="/screening/Medical Screening Hero.webp"
             alt="Montis health screening consultation"
             className="w-full h-full object-cover"
           />
@@ -131,7 +138,7 @@ export default function MedicalScreening() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
             <img
-              src="/approach.png"
+              src="/approach.webp"
               alt="Montis medical screening approach"
               className="w-full h-full object-cover"
             />
@@ -234,7 +241,7 @@ export default function MedicalScreening() {
             </h2>
             <div className="overflow-hidden">
               <img
-                src="/screening/Screening Packages.png"
+                src="/screening/Screening Packages.webp"
                 alt="Montis screening package details"
                 className="w-full h-auto object-contain"
               />

@@ -10,6 +10,8 @@ import ScreeningDetail from './pages/ScreeningDetail';
 import Contact from './pages/Contact';
 import Appointment from './pages/Appointment';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -23,8 +25,10 @@ function App() {
         <Route path="/medical-screening/:id" element={<ScreeningDetail />} />
         <Route path="/5d" element={<FiveD />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/appointment" element={<Appointment />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

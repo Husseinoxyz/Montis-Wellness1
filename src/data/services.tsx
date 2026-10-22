@@ -32,8 +32,8 @@ const serviceCatalog: Service[] = [
     title: 'Diabetic Management',
     subtitle: 'Integrated metabolic and blood sugar support',
     icon: FlaskConical,
-    iconImage: '/service icons/Diabetic Management.png',
-    heroImage: '/Diabetic Management.png',
+    iconImage: '/service icons/Diabetic Management.webp',
+    heroImage: '/Diabetic Management.webp',
     description: 'Advanced diabetes management support for blood sugar control, complication prevention, and cardiovascular risk reduction.',
     content: (
       <div className="space-y-8">
@@ -158,8 +158,8 @@ const serviceCatalog: Service[] = [
     title: 'Overall Cleansing',
     subtitle: 'Whole-body detoxification and wellness reset',
     icon: Sparkles,
-    iconImage: '/service icons/Overall Cleansing.png',
-    heroImage: '/Overall Cleansing.png',
+    iconImage: '/service icons/Overall Cleansing.webp',
+    heroImage: '/Overall Cleansing.webp',
     description: 'Safe and effective cleansing support to help remove toxins, strengthen natural detox pathways, and promote overall vitality.',
     content: (
       <div className="space-y-8">
@@ -221,8 +221,8 @@ const serviceCatalog: Service[] = [
     title: 'Fatty Liver',
     subtitle: 'Liver health and metabolic restoration support',
     icon: Apple,
-    iconImage: '/service icons/Fatty Liver.png',
-    heroImage: '/Fatty Liver.png',
+    iconImage: '/service icons/Fatty Liver.webp',
+    heroImage: '/Fatty Liver.webp',
     description: 'Targeted liver health support for fatty liver screening, detoxification, lifestyle adjustment, and long-term prevention.',
     content: (
       <div className="space-y-8">
@@ -348,8 +348,8 @@ const serviceCatalog: Service[] = [
     title: 'Heart Recovery Health',
     subtitle: 'Non-invasive heart recovery and cardiovascular wellness',
     icon: Heart,
-    iconImage: '/service icons/Heart via Angiotherapy.png',
-    heroImage: '/hero-heart.png',
+    iconImage: '/service icons/Heart via Angiotherapy.webp',
+    heroImage: '/hero-heart.webp',
     description: 'Advanced non-invasive angiotherapy treatment for chronic angina, heart disease recovery, and COQ10 therapy.',
     content: (
       <div className="space-y-8">
@@ -460,8 +460,8 @@ const serviceCatalog: Service[] = [
     title: 'Hormone Balancing',
     subtitle: 'Comprehensive hormone balance and replacement therapy',
     icon: FlaskConical,
-    iconImage: '/service icons/Hormone Systemic Therapy.png',
-    heroImage: '/hero-hormone.png',
+    iconImage: '/service icons/Hormone Systemic Therapy.webp',
+    heroImage: '/hero-hormone.webp',
     description: 'Expert hormone screening, profiling, and Bioidentical Hormone Replacement Therapy (BHRT) for men and women.',
     content: (
       <div className="space-y-8">
@@ -587,8 +587,8 @@ const serviceCatalog: Service[] = [
     title: 'Inflammation and Root Causes',
     subtitle: 'Identify and manage chronic inflammation at its source',
     icon: Flame,
-    iconImage: '/service icons/Inflammation & Root Cause.png',
-    heroImage: '/hero-inflammation.png',
+    iconImage: '/service icons/Inflammation & Root Cause.webp',
+    heroImage: '/hero-inflammation.webp',
     description: 'Comprehensive inflammation assessment and root-cause support for chronic conditions, immune balance, and long-term health.',
     content: (
       <div className="space-y-8">
@@ -714,8 +714,8 @@ const serviceCatalog: Service[] = [
     title: "Men's Vitality Program",
     subtitle: 'Comprehensive men vitality and wellness program',
     icon: User,
-    iconImage: '/service icons/Men Up Program.png',
-    heroImage: '/hero-men-up.png',
+    iconImage: '/service icons/Men Up Program.webp',
+    heroImage: '/hero-men-up.webp',
     description: 'A holistic men’s health program addressing energy, hormonal balance, sexual health, lifestyle, and long-term vitality.',
     content: (
       <div className="space-y-8">
@@ -832,8 +832,8 @@ const serviceCatalog: Service[] = [
     title: 'Autoimmune Treatment',
     subtitle: 'Immune balance and chronic inflammation support',
     icon: Flame,
-    iconImage: '/service icons/Autoimmune Treatment.png',
-    heroImage: '/Autoimmune Treatment.png',
+    iconImage: '/service icons/Autoimmune Treatment.webp',
+    heroImage: '/Autoimmune Treatment.webp',
     description: 'Personalized support for autoimmune concerns, immune resilience, inflammation patterns, and long-term symptom management.',
     content: (
       <div className="space-y-8">
@@ -965,8 +965,8 @@ const serviceCatalog: Service[] = [
     title: 'Menopause and Perimenopause',
     subtitle: 'Specialized care for women transitioning through menopause',
     icon: UserCog,
-    iconImage: '/service icons/Menopause & Perimenopause.png',
-    heroImage: '/hero-menopause.png',
+    iconImage: '/service icons/Menopause & Perimenopause.webp',
+    heroImage: '/hero-menopause.webp',
     description: 'Compassionate menopause and perimenopause care with hormone testing, symptom support, and personalized treatment planning.',
     content: (
       <div className="space-y-8">
@@ -1078,8 +1078,8 @@ const serviceCatalog: Service[] = [
     title: 'Digestive Health',
     subtitle: 'Comprehensive gut health and digestive wellness solutions',
     icon: Apple,
-    iconImage: '/service icons/Montis Digestive Health.png',
-    heroImage: '/hero-digestive.png',
+    iconImage: '/service icons/Montis Digestive Health.webp',
+    heroImage: '/hero-digestive.webp',
     description: 'Advanced digestive disease screening, colon hydrotherapy, detox programs, and our patented Gut+ Probiotic formulation.',
     content: (
       <div className="space-y-8">
@@ -1171,8 +1171,8 @@ const serviceCatalog: Service[] = [
     title: 'Revitalization and Healthy Aging',
     subtitle: 'Anti-aging therapies and revitalization programs',
     icon: Sparkles,
-    iconImage: '/service icons/Revitalization & Healthy Aging.png',
-    heroImage: '/hero-revitalization.png',
+    iconImage: '/service icons/Revitalization & Healthy Aging.webp',
+    heroImage: '/hero-revitalization.webp',
     description: 'Innovative therapies and lifestyle support for healthy aging, vitality, immune function, and long-term well-being.',
     content: (
       <div className="space-y-8">
@@ -1272,8 +1272,8 @@ const serviceCatalog: Service[] = [
     title: 'Weight Loss',
     subtitle: 'Effective weight management and metabolic optimization',
     icon: Scale,
-    iconImage: '/service icons/Slenderize for Weight Loss.png',
-    heroImage: '/hero-slenderize.png',
+    iconImage: '/service icons/Slenderize for Weight Loss.webp',
+    heroImage: '/hero-slenderize.webp',
     description: 'Professionally guided weight management with BMI screening, lifestyle planning, and supportive therapies for long-term success.',
     content: (
       <div className="space-y-8">

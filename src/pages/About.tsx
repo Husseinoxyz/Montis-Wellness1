@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Award, Clock, Heart, Shield, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { team } from '../data/team';
+import Seo from '../components/Seo';
 
 const values = [
   {
@@ -10,7 +11,7 @@ const values = [
     description: 'Every treatment plan is designed around your unique needs, health history, and wellness goals.',
   },
   {
-    iconImage: '/About icons/Results-Driven Approach.png',
+    iconImage: '/About icons/Results-Driven Approach.webp',
     title: 'Results-Driven Approach',
     description: 'We focus on measurable outcomes and visible improvements in your health and well-being.',
   },
@@ -25,7 +26,7 @@ const values = [
     description: 'Our panel of international medical professionals brings decades of combined experience.',
   },
   {
-    iconImage: '/About icons/Holistic Wellness.png',
+    iconImage: '/About icons/Holistic Wellness.webp',
     title: 'Holistic Wellness',
     description: 'We treat the whole person—body, mind, and lifestyle—not just isolated symptoms.',
   },
@@ -39,11 +40,17 @@ const values = [
 export default function About() {
   return (
     <div className="min-h-screen">
+      <Seo
+        title="About Us"
+        description="Meet Montis Specialist Clinic in Bangsar, Kuala Lumpur: our doctors, values and root-cause approach to integrative and regenerative medicine."
+        path="/about"
+        image="/hero-about.webp"
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-about.png"
+            src="/hero-about.webp"
             alt="Montis Specialist Clinic Team"
             className="w-full h-full object-cover"
           />
@@ -111,7 +118,7 @@ export default function About() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
             <img
-              src="/hero-home.png"
+              src="/hero-home.webp"
               alt="Montis Specialist Clinic Interior"
               className="w-full h-full object-cover"
             />
@@ -160,7 +167,7 @@ export default function About() {
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
             <img
-              src="/approach.png"
+              src="/approach.webp"
               alt="Our Approach"
               className="w-full h-full object-cover"
             />

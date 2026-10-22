@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle, ArrowRight, Stethoscope } from 'lucide-react';
 import { contactInfo, services } from '../data/services';
+import Seo from '../components/Seo';
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
@@ -46,11 +47,17 @@ export default function Appointment() {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Book an Appointment"
+        description="Book a consultation at Montis Specialist Clinic in Bangsar, Kuala Lumpur. Request an appointment online or via WhatsApp."
+        path="/appointment"
+        image="/hero-appointment.webp"
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-appointment.png"
+            src="/hero-appointment.webp"
             alt="Book Appointment"
             className="w-full h-full object-cover"
           />

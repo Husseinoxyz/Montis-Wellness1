@@ -2,27 +2,17 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calendar, Phone, Clock, CheckCircle } from 'lucide-react';
 import { services } from '../data/services';
+import { blogPosts } from '../data/blog';
+import Seo from '../components/Seo';
+import { breadcrumbJsonLd } from '../lib/seo';
+import { BlogCard } from './Blog';
+import NotFound from './NotFound';
 
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const service = services.find((s) => s.id === id);
 
-  if (!service) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Service Not Found</h2>
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-[#007A59] font-medium"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Back to Services
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  if (!service) return <NotFound />;
 
   const currentIndex = services.findIndex((s) => s.id === id);
   const prevService = currentIndex > 0 ? services[currentIndex - 1] : null;
@@ -36,8 +26,30 @@ export default function ServiceDetail() {
     'Post-treatment follow-up',
   ];
 
+  const articles = blogPosts.filter((p) => p.relatedService === service.id);
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title={`${service.title} in Kuala Lumpur`}
+        description={service.description}
+        path={`/services/${service.id}`}
+        image={service.heroImage}
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'MedicalWebPage',
+            name: service.title,
+            description: service.description,
+            about: { '@type': 'MedicalTherapy', name: service.title },
+          },
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+            { name: service.title, path: `/services/${service.id}` },
+          ]),
+        ]}
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -153,6 +165,19 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {articles.length > 0 && (
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10">Learn more on our blog</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {articles.slice(0, 3).map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Navigation */}
       <section className="py-12 bg-[#F6F6F2]">

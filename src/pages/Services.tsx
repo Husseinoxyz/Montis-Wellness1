@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { services } from '../data/services';
+import Seo from '../components/Seo';
 
 const serviceHighlights: Record<string, string[]> = {
   'heart-recovery-health': [
@@ -57,11 +58,17 @@ const serviceHighlights: Record<string, string[]> = {
 export default function Services() {
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Treatments & Services"
+        description="Explore Montis treatments in Kuala Lumpur: heart recovery and EECP, diabetic management, weight loss, detox and cleansing, digestive health, hormone balancing, healthy aging and more."
+        path="/services"
+        image="/hero-services.webp"
+      />
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/hero-services.png"
+            src="/hero-services.webp"
             alt="Montis Specialist Clinic Services"
             className="w-full h-full object-cover"
           />
