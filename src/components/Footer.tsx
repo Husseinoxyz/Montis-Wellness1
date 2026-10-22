@@ -6,7 +6,7 @@ import { FacebookIcon, InstagramIcon, TikTokIcon } from './SocialIcons';
 const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com/share/1BzqcxQKBh/', Icon: FacebookIcon },
   { label: 'Instagram', href: 'https://www.instagram.com/montis.specialist/', Icon: InstagramIcon },
-  { label: 'TikTok', href: '', Icon: TikTokIcon },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@montis.clinic', Icon: TikTokIcon },
 ].filter((link) => link.href);
 import { services } from '../data/services';
 

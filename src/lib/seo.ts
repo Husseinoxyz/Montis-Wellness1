@@ -104,5 +104,5 @@ export const clinicJsonLd = {
   },
   medicalSpecialty: ['Cardiovascular', 'Endocrine', 'Gastroenterologic', 'Renal'],
   areaServed: 'Kuala Lumpur, Malaysia',
-  sameAs: ['https://www.facebook.com/share/1BzqcxQKBh/', 'https://www.instagram.com/montis.specialist/'],
+  sameAs: ['https://www.facebook.com/share/1BzqcxQKBh/', 'https://www.instagram.com/montis.specialist/', 'https://www.tiktok.com/@montis.clinic'],
 };
