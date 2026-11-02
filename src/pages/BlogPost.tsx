@@ -69,22 +69,28 @@ export default function BlogPost() {
             dateModified: post.date,
             mainEntityOfPage: absoluteUrl(path),
             articleSection: post.category,
-            author: { '@type': 'Organization', name: `${SITE_NAME} Medical Team`, url: SITE_URL },
+            author: post.author
+              ? { '@type': 'Person', name: post.author }
+              : { '@type': 'Organization', name: `${SITE_NAME} Medical Team`, url: SITE_URL },
             publisher: {
               '@type': 'Organization',
               name: SITE_NAME,
               logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
             },
           },
-          {
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: post.faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
-          },
+          ...(post.faqs.length
+            ? [
+                {
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: post.faqs.map((f) => ({
+                    '@type': 'Question',
+                    name: f.q,
+                    acceptedAnswer: { '@type': 'Answer', text: f.a },
+                  })),
+                },
+              ]
+            : []),
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
             { name: 'Health Library', path: '/blog' },
@@ -119,7 +125,7 @@ export default function BlogPost() {
                 <Clock className="h-4 w-4" />
                 {readingMinutes(post)} min read
               </span>
-              <span>By the {SITE_NAME} medical team</span>
+              <span>{post.author ? `By ${post.author}` : `By the ${SITE_NAME} medical team`}</span>
             </div>
           </motion.div>
         </div>
@@ -133,18 +139,22 @@ export default function BlogPost() {
               <BodyBlock key={i} block={block} />
             ))}
 
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 pt-6">Frequently asked questions</h2>
-            <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200">
-              {post.faqs.map((faq) => (
-                <details key={faq.q} className="group p-5 [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-gray-900">
-                    {faq.q}
-                    <ChevronDown className="h-5 w-5 shrink-0 text-[#007A59] transition-transform group-open:rotate-180" />
-                  </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{faq.a}</p>
-                </details>
-              ))}
-            </div>
+            {post.faqs.length > 0 && (
+              <>
+                <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 pt-6">Frequently asked questions</h2>
+                <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200">
+                  {post.faqs.map((faq) => (
+                    <details key={faq.q} className="group p-5 [&_summary::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-gray-900">
+                        {faq.q}
+                        <ChevronDown className="h-5 w-5 shrink-0 text-[#007A59] transition-transform group-open:rotate-180" />
+                      </summary>
+                      <p className="mt-3 text-gray-700 leading-relaxed">{faq.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </>
+            )}
 
             {post.furtherReading && (
               <div className="rounded-2xl bg-[#F6F6F2] p-6">

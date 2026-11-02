@@ -16,6 +16,8 @@ export interface BlogPost {
   date: string;
   image: string;
   imageAlt: string;
+  /** Named author; posts without one are credited to the medical team. */
+  author?: string;
   body: Block[];
   faqs: { q: string; a: string }[];
   relatedService?: string;
@@ -25,6 +27,635 @@ export interface BlogPost {
 const WP = 'https://wellness-blogs.montis-clinic.com';
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'skin-issues-check-your-gut',
+    title: 'Skin Issues? Check Your Gut',
+    seoTitle: 'Skin Issues? Check Your Gut: The Gut-Skin Axis',
+    description:
+      'Breakouts that won’t clear up may start in your gut. A nutritionist explains the gut-skin axis, dysbiosis, and how fiber and fermented foods support clearer skin.',
+    excerpt:
+      'You’ve probably thought of skin issues as merely cosmetic, but there’s much more happening inside your body. Here is how your gut and skin “talk” to each other.',
+    category: 'Digestive Health',
+    date: '2026-11-02',
+    image: '/blog/gut-skin.webp',
+    imageAlt: 'Woman resting her chin in her hand, looking at her skin concerns',
+    author: 'Nutritionist Cheryl Dorothy Jusuf',
+    relatedService: 'digestive-health',
+    body: [
+      {
+        type: 'p',
+        text: 'A friend of mine struggled with breakouts for years, assuming they were just from stress. It wasn’t until she visited a dermatologist that she found the real cause: her diet. You’ve probably thought of skin issues as merely cosmetic, but there’s much more happening inside your body.',
+      },
+      { type: 'h2', text: 'The gut-skin axis' },
+      {
+        type: 'p',
+        text: 'Did you know that your gut contains around 38–39 trillion bacteria? Nearly the same as the total number of cells in your body. They are the tiny organisms that aid your gut’s ability to absorb nutrients, like B vitamins, vitamin C, and zinc.',
+      },
+      {
+        type: 'p',
+        text: 'These gut bacteria are key players in a communication system called the **gut-skin axis** – the way your gut and skin constantly “talk” to each other. One example of their conversation: your gut bacteria facilitate your absorption of the nutrients mentioned earlier, which your skin uses to boost collagen production and stay healthy.',
+      },
+      { type: 'h2', text: 'How an unhealthy gut shows up' },
+      {
+        type: 'p',
+        text: 'Yet like any conversation, things don’t always go smoothly. When your gut bacteria fall out of balance – known as **dysbiosis** – harmful bacteria can start to outnumber the beneficial bacteria. This imbalance often triggers inflammation, and because of the gut-skin axis, the effect can appear as breakouts, or other skin issues.',
+      },
+      { type: 'h2', text: 'Does that mean skincare is useless?' },
+      {
+        type: 'p',
+        text: 'Of course not. Skincare can genuinely hydrate your skin, keeping the plumpness even as you age. The right ingredients can soothe irritation and shield your skin against sun and pollution.',
+      },
+      {
+        type: 'p',
+        text: 'That said, when the root cause starts in your gut, no matter how good your serum is, it won’t solve the problem. Topical products may be effective in treating the surface, but inflammation happens at a cellular level – deeper than anything you can apply.',
+      },
+      { type: 'h2', text: 'Feeding your gut bacteria' },
+      {
+        type: 'p',
+        text: 'Think of your gut bacteria like a garden. Feed them properly, and they will flourish. Now, what should you feed them?',
+      },
+      {
+        type: 'p',
+        text: 'Gut bacteria’s favorite: **fiber**. Your small intestine absorbs most of the nutrients from the food you eat, except for fiber, as it passes through your large intestine, where your gut bacteria make their home. You’ll find fiber in whole grains, lentils, green leafy veggies, and sweet potatoes. If these examples aren’t part of your routine, you can simply swap them into your daily meals.',
+      },
+      {
+        type: 'p',
+        text: 'And then, there’s **fermented food**. While fiber feeds your gut bacteria, fermented food, such as yogurt, kimchi, miso, and tempeh, adds new bacteria directly to your gut. Together, the two keep your gut balanced.',
+      },
+      { type: 'h2', text: 'Your gut bacteria’s support system' },
+      {
+        type: 'p',
+        text: 'Following a healthy diet encourages a balanced gut, but sometimes it’s easier said than done. Remember my friend from earlier? Alongside her diet changes, she took a probiotic supplement – OXYZ’s **Gut+ Probiotic** – to support her gut on days her meals alone weren’t enough.',
+      },
+      {
+        type: 'p',
+        text: 'Want to see if Gut+ Probiotic could support your gut too? [Talk to our team](/contact).',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'magnesium-for-sleep',
+    title: 'Struggling to Sleep? The Secret May Be Hiding in Your Diet',
+    seoTitle: 'Struggling to Sleep? Magnesium and Your Diet',
+    description:
+      'Why magnesium matters for sleep: how it supports GABA and melatonin, which types of magnesium help with sleep, and the everyday foods that contain it.',
+    excerpt:
+      'Ever laid in bed at 3am wondering why your body won’t switch off? Magnesium plays a bigger role in sleep quality than most people realize.',
+    category: 'Sleep & Nutrition',
+    date: '2026-11-02',
+    image: '/blog/sleep-magnesium.webp',
+    imageAlt: 'Woman sleeping peacefully in a white bed',
+    author: 'Nutritionist Cheryl Dorothy Jusuf',
+    relatedService: 'hormone-balancing',
+    body: [
+      {
+        type: 'p',
+        text: 'Have you ever laid in bed at 3am, tossing and turning, wondering why your body won’t switch off? Been there – way too many times, honestly. My mind would race through everything. I always figured it was just me overthinking something awkward I did yesterday, or last week. Turns out, that wasn’t the only thing.',
+      },
+      { type: 'h2', text: 'The missing piece: magnesium' },
+      {
+        type: 'p',
+        text: 'I started digging deeper until I learned that magnesium plays a bigger role in managing sleep quality than people realize. Not exactly the first thing you would guess, right? Struggling to sleep often means your nervous system is stuck in overdrive mode. And here’s where magnesium steps up.',
+      },
+      {
+        type: 'p',
+        text: 'Magnesium works on two fronts. Let’s start with **GABA**. Think of GABA as a brake pedal. It stops your brain from racing so you can relax, especially at bedtime. As magnesium boosts GABA activity, your nervous system settles instead of staying alert. Second, there’s **melatonin**. Magnesium supports melatonin production, the hormone that whispers to your body, “Hey, time to sleep.” Every night, your melatonin levels naturally rise, making you feel sleepy until you drift off.',
+      },
+      {
+        type: 'p',
+        text: 'Now, we flip the script. What happens if you don’t have enough magnesium? Your brain’s brake pedal isn’t doing its job properly. That’s why you’ve been lying down with your eyes closed for a solid 20 minutes, still choosing what you’ll wear tomorrow.',
+      },
+      { type: 'h2', text: 'Magnesium isn’t one-size-fits-all' },
+      {
+        type: 'p',
+        text: 'The catch is, you can’t just grab any bottle of magnesium and expect to sleep like a baby. There are multiple types of magnesium, and each serves its own purpose.',
+      },
+      {
+        type: 'p',
+        text: 'Magnesium malate, taurate, and orotate are taken by most people to enhance overall metabolic function. For people who want to support their digestion, magnesium citrate and oxide are the go-tos, while magnesium chloride and sulfate are commonly applied to the skin to reduce muscle soreness. Interestingly, outside of supplementation, the F&B industry uses magnesium lactate as a food additive.',
+      },
+      {
+        type: 'p',
+        text: 'And for sleep-related concerns, two stand out: **magnesium glycinate** and **L-threonate**.',
+      },
+      {
+        type: 'p',
+        text: 'The crowd favorite is magnesium glycinate – magnesium paired with glycine, known for giving you a calming effect to sleep. It’s gentle on digestion, safe for people with sensitive stomachs. Meanwhile, another choice worth knowing is magnesium L-threonate, the one that’s able to reach the brain effectively. With magnesium L-threonate, the goal goes beyond falling asleep alone – your body may slip into deep sleep, the phase for its real recovery.',
+      },
+      {
+        type: 'p',
+        text: 'Still, not everyone needs to immediately jump into a supplement. You’ll find magnesium in your daily foods too, like avocados, soybeans, bananas, or even a little chunk of dark chocolate in your fridge.',
+      },
+      { type: 'h2', text: 'Still guessing?' },
+      {
+        type: 'p',
+        text: 'One thing to remember: I can’t say which magnesium is the best, but you can find out which one suits you the most. Rather than guessing by yourself, [talk to us](/contact). We won’t let you stare at the ceiling at 3am again.',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'healing-leaky-gut-beyond-fiber',
+    title: 'Beyond Fiber: The Three-Tier Approach to Healing a Leaky Gut',
+    seoTitle: 'Beyond Fiber: A Three-Tier Approach to Leaky Gut',
+    description:
+      'Eating more fiber but still bloated? A nutritionist explains why fiber alone may not be enough, and how prebiotics, probiotics and postbiotics work together for gut health.',
+    excerpt:
+      '“I’ve been eating more vegetables and whole grains… so why do I still feel bloated?” Why fiber sometimes isn’t enough on its own, and what your gut may need instead.',
+    category: 'Digestive Health',
+    date: '2026-11-02',
+    image: '/blog/leaky-gut-fiber.webp',
+    imageAlt: 'Fresh fibre-rich vegetables, mushrooms and raspberries',
+    author: 'Nutritionist Nema Seeboruth',
+    relatedService: 'digestive-health',
+    body: [
+      {
+        type: 'p',
+        text: '*“I’ve been eating more vegetables, switched to whole grains, and even started taking fiber supplements… So why do I still feel bloated?”*',
+      },
+      { type: 'p', text: 'It’s a question I hear surprisingly often.' },
+      {
+        type: 'p',
+        text: 'Many people assume that once they start eating healthier, their digestive issues will disappear. But after speaking with clients who continue to struggle despite making all the “right” food choices, I began noticing a pattern.',
+      },
+      {
+        type: 'p',
+        text: 'It wasn’t that they weren’t eating enough fiber. It was that they were expecting fiber to do everything.',
+      },
+      { type: 'h2', text: 'When fiber isn’t the whole answer' },
+      {
+        type: 'p',
+        text: 'As nutritionists, we’re taught that fiber is the foundation of gut health, and that’s absolutely true. Whole grains, fruits, vegetables, and legumes feed the beneficial bacteria living in our gut. In return, these bacteria produce **short-chain fatty acids (SCFAs)** that help nourish and protect the intestinal lining.',
+      },
+      {
+        type: 'p',
+        text: 'But here’s something I think we don’t talk about enough. What if those beneficial bacteria have already been reduced?',
+      },
+      {
+        type: 'p',
+        text: 'Many of us have gone through rounds of antibiotics, periods of chronic stress, illness, or years of inconsistent eating habits. Over time, these can disrupt the gut microbiome.',
+      },
+      {
+        type: 'p',
+        text: 'Imagine trying to feed a community that has slowly disappeared. No matter how much food you provide, there simply aren’t enough people left to make full use of it. That’s exactly why fiber sometimes isn’t enough on its own.',
+      },
+      { type: 'h2', text: 'Thinking beyond fiber' },
+      {
+        type: 'p',
+        text: 'Once I understood this, the conversation around gut health started to make much more sense. Instead of asking, “How can I eat more fiber?” perhaps the better question is, “What does my gut actually need right now?”',
+      },
+      { type: 'p', text: 'A healthy gut ecosystem depends on three things:' },
+      {
+        type: 'ul',
+        items: [
+          '**It needs to be fed.** That’s where prebiotic fibers like psyllium husk come in.',
+          '**It may need to be rebuilt.** Beneficial bacteria such as *Lactobacillus acidophilus* can help restore balance to the gut microbiome.',
+          '**It needs support to repair itself.** This is where postbiotics – the beneficial compounds produced by healthy bacteria – play an important role. These compounds help support the intestinal barrier while the microbiome continues to recover.',
+        ],
+      },
+      { type: 'p', text: 'Different jobs. Different roles. One healthier gut.' },
+      { type: 'h2', text: 'Putting it all together' },
+      {
+        type: 'p',
+        text: 'This is the idea behind **Tribiomic**. Rather than focusing on just one aspect of gut health, it combines psyllium husk to nourish beneficial bacteria, *Lactobacillus acidophilus* to support a balanced microbiome, and PosBion, a source of postbiotics, to help support the gut lining.',
+      },
+      {
+        type: 'p',
+        text: 'It’s not about replacing the advice to eat more fiber. It’s about recognizing that sometimes, the gut needs more than just fuel.',
+      },
+      { type: 'h2', text: 'Something worth thinking about' },
+      {
+        type: 'p',
+        text: 'The next time your gut isn’t feeling its best, don’t just ask yourself, “Am I eating enough fiber?” Try asking instead, “Am I supporting my gut in every way it needs?”',
+      },
+      {
+        type: 'p',
+        text: 'Healing the gut isn’t usually about finding one magical ingredient. It’s about understanding that your gut is an ecosystem, and like any ecosystem, it thrives when every part works together.',
+      },
+      {
+        type: 'p',
+        text: 'So keep eating your fiber-rich foods. They’re still the foundation. But remember that sometimes, building a healthier gut means looking beyond the basics and giving your gut the complete support it deserves.',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'h-pylori-digestion',
+    title: 'The Silent Invader: How H. Pylori Hijacks Digestion (And How to Evict It)',
+    seoTitle: 'H. Pylori: How It Hijacks Digestion and How to Evict It',
+    description:
+      'Bloating, fatigue and low iron or B12 that keep coming back may point to H. pylori. A nutritionist explains how it affects digestion and how it is tested and managed.',
+    excerpt:
+      '“I’ve been taking iron supplements for months, but I’m still exhausted.” Bloating, fatigue and recurring deficiencies can share one hidden culprit.',
+    category: 'Digestive Health',
+    date: '2026-11-02',
+    image: '/blog/h-pylori-stomach.webp',
+    imageAlt: 'Tired man sitting on the edge of his bed, feeling unwell',
+    author: 'Nutritionist Nema Seeboruth',
+    relatedService: 'digestive-health',
+    body: [
+      {
+        type: 'p',
+        text: '*“I don’t understand. I’ve been taking iron supplements for months, but I’m still exhausted.”*',
+      },
+      { type: 'p', text: 'I’ve heard some version of this more than once.' },
+      {
+        type: 'p',
+        text: 'Sometimes it’s bloating after almost every meal. Sometimes it’s a vitamin B12 deficiency that keeps coming back despite supplements. Others simply tell me, “I just don’t feel like myself anymore.”',
+      },
+      {
+        type: 'p',
+        text: 'At first, these seem like separate problems. A sensitive stomach. A busy lifestyle. Maybe just stress.',
+      },
+      {
+        type: 'p',
+        text: 'But every now and then, they point to the same hidden culprit: **Helicobacter pylori (H. pylori)**, a bacterium that quietly lives in the stomach. In fact, it’s estimated that nearly half of the world’s population carries it, often without realizing it.',
+      },
+      { type: 'h2', text: 'When the real problem isn’t what you think' },
+      {
+        type: 'p',
+        text: 'One thing I’ve noticed is that many people focus on treating the symptoms. They take supplements for low iron. They avoid foods that seem to trigger bloating. They drink more coffee to push through the fatigue.',
+      },
+      {
+        type: 'p',
+        text: 'But if the underlying cause isn’t addressed, those symptoms often find a way back.',
+      },
+      {
+        type: 'p',
+        text: 'That’s because H. pylori doesn’t just sit in the stomach. Over time, it can interfere with stomach acid production and irritate the stomach lining. Since stomach acid plays an important role in breaking down food and absorbing nutrients like iron and vitamin B12, digestion becomes less efficient.',
+      },
+      {
+        type: 'p',
+        text: 'Suddenly, the bloating, tiredness, and nutrient deficiencies don’t seem like separate problems anymore. They’re all connected.',
+      },
+      { type: 'h2', text: 'A different way to think about treatment' },
+      {
+        type: 'p',
+        text: 'For many years, antibiotics have been the standard treatment for H. pylori, and they continue to play an important role under medical supervision. But researchers have also been looking at ways to support the body using more targeted approaches.',
+      },
+      {
+        type: 'p',
+        text: 'One example is **Lactobacillus reuteri DSM 17648**, a specific probiotic strain with a fascinating mechanism. Instead of trying to kill H. pylori directly, it works through **coaggregation**, a process where different bacteria physically bind to one another.',
+      },
+      {
+        type: 'p',
+        text: 'I like to think of it as tiny pieces of Velcro. The probiotic attaches itself to H. pylori, making it harder for the bacteria to remain attached to the stomach lining. It can then pass through the digestive tract and be removed naturally.',
+      },
+      {
+        type: 'p',
+        text: 'This is the science behind **Gut+**, which uses *Lactobacillus reuteri* DSM 17648 to support a more targeted approach to managing H. pylori.',
+      },
+      { type: 'h2', text: 'Don’t just silence the symptoms' },
+      {
+        type: 'p',
+        text: 'The next time your body keeps sending the same signals – persistent bloating, unexplained fatigue, or recurring low iron or vitamin B12 – pause before assuming they’re unrelated. Ask yourself: **“Am I treating the symptom… or looking for what’s causing it?”**',
+      },
+      {
+        type: 'note',
+        text: 'If these issues continue, speak with a healthcare professional. Simple tests, such as a breath or stool test, can determine whether H. pylori is present and help guide the most appropriate treatment.',
+      },
+      {
+        type: 'p',
+        text: 'Sometimes, better health doesn’t begin with another supplement. Sometimes, it begins with asking a better question. Because when we stop chasing symptoms and start understanding the story behind them, we’re one step closer to lasting gut health.',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'weight-gain-same-calories',
+    title: 'Why Do Some People Gain Weight on the Same Calories?',
+    seoTitle: 'Why Do Some People Gain Weight on the Same Calories?',
+    description:
+      'Two people eat the same, yet only one gains weight. A nutritionist explains metabolic adaptation, the gut microbiome, visceral fat, and a smarter way to support metabolism.',
+    excerpt:
+      'Most of us grow up believing weight management is simple: eat less, move more. So why can the results be so different from one person to another?',
+    category: 'Metabolic Health',
+    date: '2026-11-02',
+    image: '/blog/weight-scale.webp',
+    imageAlt: 'Person standing on a digital bathroom scale',
+    author: 'Nutritionist Nema Seeboruth',
+    relatedService: 'weight-loss',
+    body: [
+      {
+        type: 'p',
+        text: '**One thing that’s always fascinated me is how differently our bodies respond to food.**',
+      },
+      {
+        type: 'p',
+        text: 'I’ve seen two people with almost identical lifestyles. They eat similar meals, have similar activity levels, yet one maintains their weight effortlessly while the other struggles to lose even a few kilograms.',
+      },
+      { type: 'p', text: 'At first glance, it doesn’t seem fair.' },
+      {
+        type: 'p',
+        text: 'Most of us grow up believing weight management is simple: eat less, move more. And while that’s certainly part of the picture, it doesn’t explain why the results can be so different from one person to another.',
+      },
+      {
+        type: 'p',
+        text: 'So I started asking a different question. What if it’s not just about how much we eat, but how our bodies process what we eat?',
+      },
+      { type: 'h2', text: 'When eating less stops working' },
+      {
+        type: 'p',
+        text: 'Many people eventually reach a point where cutting calories no longer seems to help. They skip meals, avoid their favourite foods, and spend more time exercising. The scale might move at first, but after a while, everything slows down.',
+      },
+      {
+        type: 'p',
+        text: 'It’s frustrating because they’re putting in more effort than ever, yet seeing fewer results. The truth is, our bodies are designed to adapt.',
+      },
+      {
+        type: 'p',
+        text: 'When we consistently eat too little, the body can become more efficient at conserving energy. At the same time, blood sugar fluctuations may increase hunger and cravings, making it even harder to stay on track.',
+      },
+      {
+        type: 'p',
+        text: 'That’s why weight management isn’t always as straightforward as calories in versus calories out.',
+      },
+      { type: 'h2', text: 'There’s more happening inside your gut than you think' },
+      {
+        type: 'p',
+        text: 'Over the past few years, scientists have uncovered something really interesting. The bacteria living in our gut don’t just help digest food; they also communicate with our metabolism.',
+      },
+      {
+        type: 'p',
+        text: 'Together, these microbes form the **gut microbiome**, which plays a role in how our bodies use energy, regulate fat storage, and respond to the foods we eat. This could help explain why some people are more likely to store excess body fat even when they’re making healthy choices.',
+      },
+      {
+        type: 'p',
+        text: 'One area researchers are particularly interested in is **visceral fat**, the fat that surrounds our internal organs. Unlike the fat just beneath the skin, visceral fat is more closely linked to metabolic and cardiovascular health risks.',
+      },
+      { type: 'h2', text: 'Supporting metabolism in a smarter way' },
+      {
+        type: 'p',
+        text: 'One ingredient that caught my attention is **Bifidobacterium animalis subsp. lactis BPL1**, a heat-treated postbiotic used in **Meta Boost**.',
+      },
+      {
+        type: 'p',
+        text: 'What I find interesting is that its focus isn’t on helping people eat less. Instead, research suggests it may help support metabolic pathways involved in body composition and fat storage, particularly visceral fat.',
+      },
+      {
+        type: 'p',
+        text: 'Rather than relying on stricter diets or endless calorie counting, it’s about giving your metabolism the support it needs to function more effectively.',
+      },
+      { type: 'h2', text: 'Looking at weight management differently' },
+      {
+        type: 'p',
+        text: 'The next time you find yourself thinking, “Maybe I just need to eat even less,” take a moment to consider another possibility. Could your metabolism simply need better support?',
+      },
+      {
+        type: 'p',
+        text: 'Healthy eating, regular exercise, quality sleep, and stress management will always be the foundation of good health. But understanding your gut adds another piece to the puzzle.',
+      },
+      {
+        type: 'p',
+        text: 'Because sometimes the goal isn’t to fight your body harder. It’s to understand how it works and give it the support it needs to do what it was designed to do.',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'magnesium-calcium-metabolism',
+    title: 'The Mineral Connection Between Your Metabolism and Magnesium and Calcium',
+    seoTitle: 'Magnesium, Calcium and Your Metabolism',
+    description:
+      'Feeling tired with a “slow” metabolism despite eating well? A nutritionist explains how magnesium and calcium power ATP, muscle and cell signalling, and why the basics come first.',
+    excerpt:
+      'On paper, everything looked right, yet they still felt tired every afternoon. Sometimes it’s the small nutrients working behind the scenes that make all the difference.',
+    category: 'Metabolic Health',
+    date: '2026-11-02',
+    image: '/blog/magnesium-almonds.webp',
+    imageAlt: 'Magnesium-rich almonds spilling from a glass jar',
+    author: 'Nutritionist Nema Seeboruth',
+    relatedService: 'weight-loss',
+    body: [
+      {
+        type: 'p',
+        text: 'I remember reviewing a client’s food diary once. On paper, everything looked right. There was enough protein, plenty of vegetables, regular exercise, and even a consistent sleep schedule.',
+      },
+      {
+        type: 'p',
+        text: 'Yet they still felt tired most afternoons and constantly described their metabolism as “slow.”',
+      },
+      {
+        type: 'p',
+        text: 'It made me think about something we don’t talk about often. Sometimes, it isn’t the big things holding us back. Sometimes, it’s the small nutrients quietly working behind the scenes that make all the difference.',
+      },
+      { type: 'h2', text: 'Your metabolism runs on more than calories' },
+      {
+        type: 'p',
+        text: 'When most people think about metabolism, they immediately think about burning fat. But metabolism is much bigger than weight loss.',
+      },
+      {
+        type: 'p',
+        text: 'Every heartbeat, every breath, every step you take depends on thousands of chemical reactions happening inside your body every second. To keep those reactions running efficiently, your body relies on a steady supply of nutrients, including minerals that are often overlooked.',
+      },
+      { type: 'p', text: 'Two of the most important are **magnesium** and **calcium**.' },
+      { type: 'h2', text: 'The nutrients your cells depend on' },
+      {
+        type: 'p',
+        text: 'Every cell in your body needs energy to function. That energy comes from **ATP (adenosine triphosphate)**, often called the body’s energy currency.',
+      },
+      {
+        type: 'p',
+        text: 'Magnesium helps activate the processes that produce and use ATP, while calcium supports muscle contraction and allows cells to communicate with one another.',
+      },
+      {
+        type: 'p',
+        text: 'They may not receive the same attention as protein or vitamins, but without them, many of the body’s normal functions simply can’t work as efficiently.',
+      },
+      { type: 'h2', text: 'Why the basics matter' },
+      {
+        type: 'p',
+        text: 'It’s easy to be drawn to the latest metabolism hacks or trending supplements. I understand why everyone wants results. But before we look for ways to optimize metabolism, we have to ask whether the body has the building blocks it needs in the first place.',
+      },
+      {
+        type: 'p',
+        text: 'Think of it like building a house. You wouldn’t start decorating before pouring the foundation. The same idea applies to your metabolism.',
+      },
+      {
+        type: 'p',
+        text: 'Magnesium and calcium provide part of that foundation by supporting the processes your body depends on every day. Once those basics are covered, targeted support like **Meta Boost** can complement your efforts by helping support metabolic pathways involved in energy balance. Read more in [why some people gain weight on the same calories](/blog/weight-gain-same-calories).',
+      },
+      { type: 'h2', text: 'Looking at metabolism differently' },
+      {
+        type: 'p',
+        text: 'The next time you feel like your metabolism isn’t keeping up, don’t just ask, “What else should I add?” Instead, ask, “Have I covered the basics that my body relies on every day?”',
+      },
+      {
+        type: 'p',
+        text: 'Healthy metabolism isn’t built overnight, and it isn’t built on shortcuts. It starts with balanced nutrition, essential minerals, regular movement, and consistent habits.',
+      },
+      {
+        type: 'p',
+        text: 'Because sometimes, the strongest foundation isn’t the most exciting part of the journey, but it’s the part everything else depends on.',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'gut-lung-axis-immunity',
+    title: 'Healthy Lungs Begin in Your Gut',
+    seoTitle: 'Healthy Lungs Begin in Your Gut: The Gut-Lung Axis',
+    description:
+      'Seasonal allergies, eczema and frequent colds may be linked to your gut. A nutritionist explains the gut-lung axis, cytokine balance and supporting immunity from the inside out.',
+    excerpt:
+      'A blocked nose every allergy season, eczema that flares for no reason, every cold going around. What if the real issue begins in your gut?',
+    category: 'Immune Health',
+    date: '2026-11-02',
+    image: '/blog/gut-lung-breathing.webp',
+    imageAlt: 'Woman taking a deep breath of fresh air outdoors',
+    author: 'Nutritionist Nema Seeboruth',
+    relatedService: 'autoimmune-treatment',
+    body: [
+      {
+        type: 'p',
+        text: 'For some people, it’s a blocked nose that returns every allergy season. Others struggle with eczema that flares up for no obvious reason. Some seem to catch every cold that’s going around, even though they’re already taking vitamin C, zinc, or elderberry every day.',
+      },
+      {
+        type: 'p',
+        text: 'Most people assume the problem starts with their lungs, nose, or skin. But what if it actually starts somewhere else? What if the real issue begins in your gut?',
+      },
+      { type: 'h2', text: 'Your gut does more than digest food' },
+      {
+        type: 'p',
+        text: 'When we think about gut health, digestion is usually the first thing that comes to mind. Bloating, constipation, or an upset stomach are easy to connect to the gut.',
+      },
+      {
+        type: 'p',
+        text: 'What many people don’t realize is that the gut also plays a major role in regulating the immune system. In fact, many immune-related issues that seem completely unrelated to digestion, like seasonal allergies, eczema, or frequent respiratory infections, may be linked to what’s happening inside your gut.',
+      },
+      {
+        type: 'p',
+        text: 'When the gut microbiome is healthy and balanced, it helps the immune system respond appropriately to harmful bacteria and viruses. But when that balance is disrupted, the immune system can become overly sensitive, triggering more inflammation than necessary.',
+      },
+      { type: 'h2', text: 'The hidden connection between your gut and your lungs' },
+      {
+        type: 'p',
+        text: 'Scientists call this relationship the **gut-lung axis**. I think of it as a communication pathway between your gut and your respiratory system. They may seem far apart, but they’re constantly sending signals to each other.',
+      },
+      {
+        type: 'p',
+        text: 'One of the ways they communicate is through molecules called **cytokines**, which help control inflammation and immune responses. When these signals stay balanced, your immune system knows when to react and when to stay calm.',
+      },
+      {
+        type: 'p',
+        text: 'However, if cytokine signalling becomes unbalanced, the immune system may overreact. This can contribute to seasonal allergies, respiratory irritation, and inflammatory skin conditions such as eczema.',
+      },
+      {
+        type: 'p',
+        text: 'That’s why supporting your gut isn’t only about improving digestion. It’s also about helping your immune system stay balanced.',
+      },
+      { type: 'h2', text: 'Supporting immunity from the inside out' },
+      {
+        type: 'p',
+        text: 'One probiotic strain that has attracted attention is **Lactobacillus sakei ProBio-65**, originally isolated from traditional fermented foods. Research suggests this strain may help support healthy immune communication by helping regulate cytokine activity.',
+      },
+      {
+        type: 'p',
+        text: 'By promoting a more balanced inflammatory response, it may support respiratory health while also helping to reduce symptoms associated with atopic dermatitis (eczema).',
+      },
+      {
+        type: 'p',
+        text: 'This is the idea behind **Immune Breathe**. Rather than simply masking symptoms, it focuses on supporting the body’s natural connection between the gut and the immune system.',
+      },
+      { type: 'h2', text: 'A different way to think about allergies' },
+      {
+        type: 'p',
+        text: 'The next time allergy season arrives, or your eczema starts acting up again, try asking yourself a different question. Instead of wondering, “How do I stop these symptoms?” ask, “Could my gut be influencing how my immune system responds?”',
+      },
+      {
+        type: 'p',
+        text: 'Of course, nutrients like vitamin C, zinc, and a balanced diet are still important for maintaining a healthy immune system. But they may only be one part of the picture. Supporting your gut could be another missing piece.',
+      },
+      {
+        type: 'p',
+        text: 'Because when your gut and immune system work together, your body is better equipped to respond appropriately instead of overreacting. Sometimes, protecting your breath really does begin with protecting your gut.',
+      },
+    ],
+    faqs: [],
+  },
+  {
+    slug: 'whartons-jelly-vs-collagen',
+    title: 'Why Wharton’s Jelly Signaling Matters More Than Collagen',
+    seoTitle: 'Why Wharton’s Jelly Signaling Matters More Than Collagen',
+    description:
+      'Collagen provides the building blocks, but cells also need the right signals. A nutritionist explains the extracellular matrix, cell signalling and Wharton’s jelly for healthy ageing.',
+    excerpt:
+      '“I’ve finished so many tubs of collagen, but I don’t really know if it’s doing much anymore.” What if healthy ageing is about more than adding collagen?',
+    category: 'Regenerative Medicine',
+    date: '2026-11-02',
+    image: '/blog/collagen-serum.webp',
+    imageAlt: 'Woman applying a facial serum for healthy ageing skin',
+    author: 'Nutritionist Nema Seeboruth',
+    relatedService: 'revitalization-healthy-aging',
+    body: [
+      {
+        type: 'p',
+        text: 'A few months ago, I was chatting with someone who had been taking collagen every single day for almost a year. She smiled and said, “I’ve finished so many tubs of collagen, but I don’t really know if it’s doing much anymore.”',
+      },
+      {
+        type: 'p',
+        text: 'It wasn’t that the collagen wasn’t good. It simply made me think about something we don’t often talk about. What if healthy aging isn’t just about giving the body more collagen? What if our cells also need the right signals to know what to do with it?',
+      },
+      {
+        type: 'p',
+        text: 'That conversation stayed with me because it’s easy to assume that more is always better. More collagen, more protein, more supplements. But our bodies are far more intelligent than that.',
+      },
+      { type: 'h2', text: 'Collagen is important, but it’s only part of the story' },
+      {
+        type: 'p',
+        text: 'Collagen is one of the main proteins that gives our skin, joints, and connective tissues their strength and structure. That’s why it’s often recommended for healthy aging, skin health, and joint support. And it absolutely has its place.',
+      },
+      {
+        type: 'p',
+        text: 'But providing the raw materials is only one part of the repair process. Our cells also need instructions that tell them when and how to repair damaged tissue.',
+      },
+      { type: 'h2', text: 'Your cells are constantly talking to each other' },
+      {
+        type: 'p',
+        text: 'One thing I find fascinating is that our bodies are communicating all the time. Every day, billions of cells send and receive messages that help coordinate repair, recovery, and renewal.',
+      },
+      {
+        type: 'p',
+        text: 'Much of this happens within the **extracellular matrix**, the supportive framework surrounding our cells that helps maintain tissue strength, flexibility, and structure. It isn’t just a scaffold that holds everything together. It’s also part of the environment where cells receive the signals that guide how tissues grow and repair themselves.',
+      },
+      {
+        type: 'p',
+        text: 'As we get older, these communication signals naturally become less efficient, which is one reason our skin, joints, and recovery don’t feel quite the same as they used to.',
+      },
+      { type: 'h2', text: 'Looking beyond traditional collagen' },
+      {
+        type: 'p',
+        text: 'This is why I became interested in **Sheep Umbilical Cord Wharton’s Jelly**, the key ingredient in **Oral MSC**.',
+      },
+      {
+        type: 'p',
+        text: 'Unlike collagen, which mainly provides structural proteins, Wharton’s jelly naturally contains signaling proteins, growth factors, and extracellular matrix components that researchers are studying for their role in supporting cellular communication.',
+      },
+      {
+        type: 'p',
+        text: 'I like to think of it this way: if collagen provides the bricks, Wharton’s jelly helps provide the blueprint that tells the builders where those bricks are needed.',
+      },
+      {
+        type: 'p',
+        text: 'It’s not about replacing collagen; it’s about understanding that healthy tissue repair involves much more than just one ingredient. For the wider science, see our guides to [stem cell therapy](/blog/stem-cell-therapy-kuala-lumpur) and [cell therapy](/blog/cell-therapy-guide).',
+      },
+      { type: 'h2', text: 'A different way to think about healthy aging' },
+      {
+        type: 'p',
+        text: 'These days, whenever someone asks me whether collagen is enough, my answer is usually the same. Collagen is important. But healthy aging is about more than simply adding building blocks. Our bodies also rely on the biological signals that help guide repair and renewal every single day.',
+      },
+      {
+        type: 'p',
+        text: 'Of course, no supplement can replace a balanced diet, regular exercise, good sleep, and healthy lifestyle habits. But as our understanding of nutrition continues to evolve, we’re learning that supporting our cells isn’t only about giving them the materials they need.',
+      },
+      {
+        type: 'p',
+        text: 'Sometimes, it’s also about helping them remember what to do with those materials.',
+      },
+    ],
+    faqs: [],
+  },
   {
     slug: 'stem-cell-therapy-kuala-lumpur',
     title: 'Stem Cell Therapy in Kuala Lumpur: What It Is, Who It May Help and What to Ask',

@@ -69,16 +69,16 @@ export default function Blog() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 max-w-2xl text-lg md:text-xl text-gray-600 leading-relaxed"
           >
-            Clear, balanced guides to regenerative, detox, heart and metabolic treatments, written by
-            the medical team at Montis Specialist Clinic, Kuala Lumpur.
+            Clear, balanced guides to gut health, nutrition, regenerative, detox, heart and metabolic
+            care, written by the doctors and nutritionists at Montis Specialist Clinic, Kuala Lumpur.
           </motion.p>
 
-          <div className="mt-10 flex flex-wrap gap-2">
+          <div className="mt-8 flex flex-wrap gap-1.5 sm:mt-10 sm:gap-2">
             {categories.map((c) => (
               <button
                 key={c}
                 onClick={() => setCategory(c)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#007A59]/40 sm:px-4 sm:py-2 sm:text-sm ${
                   category === c
                     ? 'bg-[#007A59] text-white shadow-sm'
                     : 'bg-white text-gray-700 hover:text-[#007A59] border border-gray-200'
