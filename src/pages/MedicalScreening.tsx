@@ -43,7 +43,7 @@ export default function MedicalScreening() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src="/screening/Medical Screening Hero.webp"
             alt="Montis health screening consultation"
             className="w-full h-full object-cover"
@@ -137,7 +137,7 @@ export default function MedicalScreening() {
             transition={{ duration: 0.6 }}
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src="/approach.webp"
               alt="Montis medical screening approach"
               className="w-full h-full object-cover"
@@ -218,7 +218,7 @@ export default function MedicalScreening() {
                   </div>
 
                   <div className="relative overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={card.image}
                       alt={card.title}
                       className="w-full h-[360px] md:h-[460px] object-cover"
@@ -240,7 +240,7 @@ export default function MedicalScreening() {
               Screening Package <span style={{ color: '#007A59' }}>Details</span>
             </h2>
             <div className="overflow-hidden">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/screening/Screening Packages.webp"
                 alt="Montis screening package details"
                 className="w-full h-auto object-contain"

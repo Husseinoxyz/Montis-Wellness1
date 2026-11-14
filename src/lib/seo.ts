@@ -11,6 +11,7 @@ export interface SeoProps {
   description: string;
   path: string;
   image?: string;
+  imageAlt?: string;
   type?: 'website' | 'article';
   jsonLd?: JsonLd | JsonLd[];
   noindex?: boolean;
@@ -29,8 +30,15 @@ const escapeHtml = (value: string) =>
 export const absoluteUrl = (path: string) =>
   path.startsWith('http') ? path : `${SITE_URL}${encodeURI(path)}`;
 
+/** Google cuts titles at roughly 60 characters, so the brand suffix is only added when it fits. */
+const MAX_TITLE = 62;
+
 export function fullTitle(title: string) {
-  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  if (title.includes(SITE_NAME)) return title;
+  const withBrand = `${title} | ${SITE_NAME}`;
+  if (withBrand.length <= MAX_TITLE) return withBrand;
+  const withShortBrand = `${title} | Montis Clinic`;
+  return withShortBrand.length <= MAX_TITLE ? withShortBrand : title;
 }
 
 /** Head tags (everything except <title>) for a page; each tag is marked data-seo so it can be swapped on navigation. */
@@ -51,11 +59,13 @@ export function buildHeadTags(seo: SeoProps) {
     meta('property', 'og:description', seo.description),
     meta('property', 'og:url', url),
     meta('property', 'og:image', image),
+    meta('property', 'og:image:alt', seo.imageAlt ?? title),
     meta('property', 'og:locale', 'en_MY'),
     meta('name', 'twitter:card', 'summary_large_image'),
     meta('name', 'twitter:title', title),
     meta('name', 'twitter:description', seo.description),
     meta('name', 'twitter:image', image),
+    meta('name', 'twitter:image:alt', seo.imageAlt ?? title),
   ];
 
   const jsonLd = seo.jsonLd ? (Array.isArray(seo.jsonLd) ? seo.jsonLd : [seo.jsonLd]) : [];
@@ -84,8 +94,11 @@ export const clinicJsonLd = {
   '@type': 'MedicalClinic',
   '@id': `${SITE_URL}/#clinic`,
   name: SITE_NAME,
+  alternateName: ['Montis Clinic', 'Montis Specialist Center', 'Montis Wellness'],
+  description:
+    'Integrative and regenerative medicine clinic in Bangsar, Kuala Lumpur offering heart recovery (EECP), diabetes care, detox, hormone therapy, IV drips and health screening.',
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo-512.png`, width: 512, height: 512 },
   image: `${SITE_URL}/hero-home.webp`,
   telephone: '+60102648685',
   email: 'Oxyz.rabten@gmail.com',
@@ -103,6 +116,34 @@ export const clinicJsonLd = {
     closes: '18:00',
   },
   medicalSpecialty: ['Cardiovascular', 'Endocrine', 'Gastroenterologic', 'Renal'],
-  areaServed: 'Kuala Lumpur, Malaysia',
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=Montis+Specialist+Clinic+Menara+BRDB+Bangsar+Kuala+Lumpur',
+  areaServed: [
+    { '@type': 'City', name: 'Kuala Lumpur' },
+    { '@type': 'AdministrativeArea', name: 'Selangor' },
+    { '@type': 'Country', name: 'Malaysia' },
+  ],
+  availableService: [
+    'EECP heart therapy',
+    'Diabetes management',
+    'Weight loss',
+    'Detox and cleansing',
+    'Hormone balancing (BHRT)',
+    'Menopause care',
+    "Men's health",
+    'Digestive health and colon hydrotherapy',
+    'Healthy aging',
+    'Health screening',
+  ].map((name) => ({ '@type': 'MedicalTherapy', name })),
   sameAs: ['https://www.facebook.com/share/1BzqcxQKBh/', 'https://www.instagram.com/montis.specialist/', 'https://www.tiktok.com/@montis.clinic'],
+};
+
+export const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  alternateName: 'Montis Clinic',
+  url: `${SITE_URL}/`,
+  inLanguage: 'en-MY',
+  publisher: { '@id': `${SITE_URL}/#clinic` },
 };

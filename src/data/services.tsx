@@ -8,6 +8,10 @@ export interface Service {
   iconImage: string;
   heroImage: string;
   description: string;
+  /** Search result title (without the clinic name). */
+  seoTitle: string;
+  /** Search result description, ideally 140-160 characters. */
+  metaDescription: string;
   content: React.ReactNode;
 }
 
@@ -35,6 +39,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Diabetic Management.webp',
     heroImage: '/Diabetic Management.webp',
     description: 'Advanced diabetes management support for blood sugar control, complication prevention, and cardiovascular risk reduction.',
+    seoTitle: "Diabetes Treatment & Management in Kuala Lumpur",
+    metaDescription: "Integrated diabetes care in Bangsar, KL: blood sugar control, insulin resistance support, complication prevention and heart risk reduction by our doctors.",
     content: (
       <div className="space-y-8">
         <section>
@@ -161,6 +167,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Overall Cleansing.webp',
     heroImage: '/Overall Cleansing.webp',
     description: 'Safe and effective cleansing support to help remove toxins, strengthen natural detox pathways, and promote overall vitality.',
+    seoTitle: "Detox & Full-Body Cleansing Programme in KL",
+    metaDescription: "Doctor-supervised detox in Kuala Lumpur: chelation, heavy metal and toxin removal, liver support and whole-body cleansing to restore energy and vitality.",
     content: (
       <div className="space-y-8">
         <section>
@@ -224,6 +232,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Fatty Liver.webp',
     heroImage: '/Fatty Liver.webp',
     description: 'Targeted liver health support for fatty liver screening, detoxification, lifestyle adjustment, and long-term prevention.',
+    seoTitle: "Fatty Liver Treatment in Kuala Lumpur",
+    metaDescription: "Fatty liver (NAFLD) screening and treatment in Bangsar, KL: liver detox, metabolic support, diet and lifestyle plans to reduce liver fat and prevent damage.",
     content: (
       <div className="space-y-8">
         <section>
@@ -351,6 +361,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Heart via Angiotherapy.webp',
     heroImage: '/hero-heart.webp',
     description: 'Advanced non-invasive angiotherapy treatment for chronic angina, heart disease recovery, and COQ10 therapy.',
+    seoTitle: "EECP Heart Therapy & Angina Treatment in KL",
+    metaDescription: "Non-invasive EECP angiotherapy in Kuala Lumpur for chronic angina, heart disease recovery and poor circulation, with CoQ10 support and doctor monitoring.",
     content: (
       <div className="space-y-8">
         <section>
@@ -463,6 +475,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Hormone Systemic Therapy.webp',
     heroImage: '/hero-hormone.webp',
     description: 'Expert hormone screening, profiling, and Bioidentical Hormone Replacement Therapy (BHRT) for men and women.',
+    seoTitle: "Hormone Balancing & BHRT in Kuala Lumpur",
+    metaDescription: "Hormone testing and Bioidentical Hormone Replacement Therapy (BHRT) for men and women in Bangsar, KL, for fatigue, weight gain, low libido and mood swings.",
     content: (
       <div className="space-y-8">
         <section>
@@ -590,6 +604,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Inflammation & Root Cause.webp',
     heroImage: '/hero-inflammation.webp',
     description: 'Comprehensive inflammation assessment and root-cause support for chronic conditions, immune balance, and long-term health.',
+    seoTitle: "Chronic Inflammation Treatment in Kuala Lumpur",
+    metaDescription: "Find and treat the root causes of chronic inflammation in Kuala Lumpur: advanced testing, immune balance, gut repair and personalised anti-inflammatory plans.",
     content: (
       <div className="space-y-8">
         <section>
@@ -717,6 +733,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Men Up Program.webp',
     heroImage: '/hero-men-up.webp',
     description: 'A holistic men’s health program addressing energy, hormonal balance, sexual health, lifestyle, and long-term vitality.',
+    seoTitle: "Men's Health & Vitality Program in Kuala Lumpur",
+    metaDescription: "Men's health clinic in Bangsar, KL: low testosterone, erectile dysfunction, energy, weight and healthy aging, with discreet, doctor-led personalised care.",
     content: (
       <div className="space-y-8">
         <section>
@@ -835,6 +853,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Autoimmune Treatment.webp',
     heroImage: '/Autoimmune Treatment.webp',
     description: 'Personalized support for autoimmune concerns, immune resilience, inflammation patterns, and long-term symptom management.',
+    seoTitle: "Autoimmune Disease Treatment in Kuala Lumpur",
+    metaDescription: "Integrative autoimmune care in Kuala Lumpur: root-cause testing, inflammation control, gut and immune support for thyroid, joint, skin and chronic conditions.",
     content: (
       <div className="space-y-8">
         <section>
@@ -968,6 +988,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Menopause & Perimenopause.webp',
     heroImage: '/hero-menopause.webp',
     description: 'Compassionate menopause and perimenopause care with hormone testing, symptom support, and personalized treatment planning.',
+    seoTitle: "Menopause & Perimenopause Treatment in KL",
+    metaDescription: "Menopause and perimenopause care in Bangsar, KL: hormone testing, BHRT and natural support for hot flushes, poor sleep, mood changes and weight gain.",
     content: (
       <div className="space-y-8">
         <section>
@@ -1081,6 +1103,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Montis Digestive Health.webp',
     heroImage: '/hero-digestive.webp',
     description: 'Advanced digestive disease screening, colon hydrotherapy, detox programs, and our patented Gut+ Probiotic formulation.',
+    seoTitle: "Digestive Health & Gut Treatment in Kuala Lumpur",
+    metaDescription: "Gut health clinic in Kuala Lumpur: digestive screening, colon hydrotherapy, leaky gut, bloating and IBS support, detox and our patented Gut+ probiotic.",
     content: (
       <div className="space-y-8">
         <section>
@@ -1174,6 +1198,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Revitalization & Healthy Aging.webp',
     heroImage: '/hero-revitalization.webp',
     description: 'Innovative therapies and lifestyle support for healthy aging, vitality, immune function, and long-term well-being.',
+    seoTitle: "Anti-Aging & Healthy Aging Treatment in KL",
+    metaDescription: "Regenerative anti-aging therapies in Bangsar, Kuala Lumpur: cell therapy, IV drips and lifestyle programmes for energy, immunity and long-term vitality.",
     content: (
       <div className="space-y-8">
         <section>
@@ -1275,6 +1301,8 @@ const serviceCatalog: Service[] = [
     iconImage: '/service icons/Slenderize for Weight Loss.webp',
     heroImage: '/hero-slenderize.webp',
     description: 'Professionally guided weight management with BMI screening, lifestyle planning, and supportive therapies for long-term success.',
+    seoTitle: "Medical Weight Loss Programme in Kuala Lumpur",
+    metaDescription: "Doctor-guided weight loss in Kuala Lumpur: metabolic and BMI screening, personalised nutrition, supportive therapies and follow-up for lasting results.",
     content: (
       <div className="space-y-8">
         <section>

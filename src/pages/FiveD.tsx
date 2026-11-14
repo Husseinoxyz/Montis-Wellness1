@@ -89,7 +89,7 @@ export default function FiveD() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src="/Montis 5D Hero.webp"
             alt="5D Medical Model"
             className="w-full h-full object-cover"
@@ -207,7 +207,7 @@ export default function FiveD() {
                         style={{ backgroundColor: '#007A59' }}
                       />
                       <div className="relative w-72 h-72 rounded-full flex items-center justify-center overflow-hidden bg-white shadow-2xl border-4" style={{ borderColor: '#CDB06A' }}>
-                        <img src={dimension.iconImage} alt={dimension.title} className="w-full h-full object-cover" />
+                        <img loading="lazy" decoding="async" src={dimension.iconImage} alt={dimension.title} className="w-full h-full object-cover" />
                       </div>
                     </motion.div>
                   </div>
@@ -246,7 +246,7 @@ export default function FiveD() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-[#F6F6F2] rounded-2xl p-8 hover:shadow-lg transition-shadow"
               >
-                <img src={benefit.iconImage} alt={benefit.title} className="w-36 h-36 object-contain mb-6" />
+                <img loading="lazy" decoding="async" src={benefit.iconImage} alt={benefit.title} className="w-36 h-36 object-contain mb-6" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
                   {benefit.title}
                 </h3>
@@ -341,7 +341,7 @@ export default function FiveD() {
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src="/5D.webp"
               alt="5D Model Framework"
               className="max-w-2xl w-full h-auto"

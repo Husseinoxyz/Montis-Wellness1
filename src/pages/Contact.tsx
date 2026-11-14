@@ -34,7 +34,7 @@ export default function Contact() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src="/hero-contact.webp"
             alt="Montis Specialist Clinic Contact"
             className="w-full h-full object-cover"

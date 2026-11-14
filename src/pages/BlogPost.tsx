@@ -75,7 +75,7 @@ export default function BlogPost() {
             publisher: {
               '@type': 'Organization',
               name: SITE_NAME,
-              logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
+              logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo-512.png`, width: 512, height: 512 },
             },
           },
           ...(post.faqs.length
@@ -102,7 +102,7 @@ export default function BlogPost() {
       {/* Hero */}
       <section className="relative min-h-[480px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={post.image} alt={post.imageAlt} className="w-full h-full object-cover" />
+          <img fetchPriority="high" src={post.image} alt={post.imageAlt} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/55" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/40" />
         </div>
@@ -212,7 +212,7 @@ export default function BlogPost() {
                   to={`/services/${service.id}`}
                   className="mt-6 flex items-center gap-4 border-t border-gray-200 pt-6 group"
                 >
-                  <img src={service.iconImage} alt="" className="h-12 w-12 shrink-0" />
+                  <img loading="lazy" decoding="async" src={service.iconImage} alt="" className="h-12 w-12 shrink-0" />
                   <span>
                     <span className="block text-xs uppercase tracking-wide text-gray-400">Related service</span>
                     <span className="font-semibold text-gray-900 group-hover:text-[#007A59]">{service.title}</span>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Star, ChevronRight } from 'lucide-react';
@@ -8,7 +8,7 @@ import { team } from '../data/team';
 import { blogPosts } from '../data/blog';
 import { BlogCard } from './Blog';
 import Seo from '../components/Seo';
-import { clinicJsonLd } from '../lib/seo';
+import { clinicJsonLd, websiteJsonLd } from '../lib/seo';
 
 const faqs = [
   {
@@ -48,14 +48,34 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  // The hero video is 14 MB: only load it on larger screens without data saver, after the page
+  // has loaded, so it never competes with the poster image for the first paint.
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const video = videoRef.current;
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+    if (!video || connection?.saveData || !window.matchMedia('(min-width: 768px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const start = () => {
+      video.src = '/hero-video.mp4';
+      video.play().catch(() => {});
+    };
+    if (document.readyState === 'complete') start();
+    else {
+      window.addEventListener('load', start, { once: true });
+      return () => window.removeEventListener('load', start);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Seo
-        title="Montis Specialist Clinic | Integrative & Regenerative Medicine in Kuala Lumpur"
-        description="Integrative and regenerative medicine clinic in Bangsar, Kuala Lumpur. Stem cell and cell therapy, IV drips, EECP heart therapy, chelation, detox, diabetes care and health screening."
+        title="Montis Specialist Clinic: Regenerative Medicine in KL"
+        description="Integrative & regenerative medicine clinic in Bangsar, Kuala Lumpur: stem cell therapy, IV drips, EECP heart therapy, detox, diabetes care & health screening."
         path="/"
         jsonLd={[
           clinicJsonLd,
+          websiteJsonLd,
           {
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
@@ -72,10 +92,10 @@ export default function Home() {
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
-            src="/hero-video.mp4"
+            ref={videoRef}
             poster="/hero-home.webp"
-            preload="metadata"
-            autoPlay
+            preload="none"
+            aria-hidden="true"
             muted
             loop
             playsInline
@@ -174,7 +194,7 @@ export default function Home() {
                   className="group block"
                 >
                   <div className="relative overflow-hidden mb-5">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={service.heroImage}
                       alt={service.title}
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
@@ -267,7 +287,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[560px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src="/hero-about.webp"
               alt="Montis Specialist Clinic Team"
               className="w-full h-full object-cover"
@@ -390,7 +410,7 @@ export default function Home() {
                 className="group"
               >
                 <div className="relative overflow-hidden rounded-2xl mb-4">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={member.image}
                     alt={member.name}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -451,7 +471,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[520px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src="/hero-contact.webp"
               alt="Montis Specialist Clinic consultation"
               className="w-full h-full object-cover"
@@ -484,7 +504,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img loading="lazy" decoding="async"
             src="/hero-services.webp"
             alt="Wellness Background"
             className="w-full h-full object-cover"

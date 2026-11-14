@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Calendar, Phone, Clock, CheckCircle } from 'luci
 import { services } from '../data/services';
 import { blogPosts } from '../data/blog';
 import Seo from '../components/Seo';
-import { breadcrumbJsonLd } from '../lib/seo';
+import { SITE_URL, absoluteUrl, breadcrumbJsonLd } from '../lib/seo';
 import { BlogCard } from './Blog';
 import NotFound from './NotFound';
 
@@ -31,17 +31,20 @@ export default function ServiceDetail() {
   return (
     <div className="min-h-screen">
       <Seo
-        title={`${service.title} in Kuala Lumpur`}
-        description={service.description}
+        title={service.seoTitle}
+        description={service.metaDescription}
         path={`/services/${service.id}`}
         image={service.heroImage}
+        imageAlt={`${service.title} at Montis Specialist Clinic, Kuala Lumpur`}
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'MedicalWebPage',
-            name: service.title,
-            description: service.description,
-            about: { '@type': 'MedicalTherapy', name: service.title },
+            name: service.seoTitle,
+            description: service.metaDescription,
+            url: absoluteUrl(`/services/${service.id}`),
+            about: { '@type': 'MedicalTherapy', name: service.title, description: service.description },
+            provider: { '@id': `${SITE_URL}/#clinic` },
           },
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
@@ -53,7 +56,7 @@ export default function ServiceDetail() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src={service.heroImage}
             alt={service.title}
             className="w-full h-full object-cover"

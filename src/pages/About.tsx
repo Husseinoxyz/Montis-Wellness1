@@ -49,7 +49,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src="/hero-about.webp"
             alt="Montis Specialist Clinic Team"
             className="w-full h-full object-cover"
@@ -117,7 +117,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src="/hero-home.webp"
               alt="Montis Specialist Clinic Interior"
               className="w-full h-full object-cover"
@@ -166,7 +166,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative overflow-hidden min-h-[420px] h-full lg:min-h-[620px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src="/approach.webp"
               alt="Our Approach"
               className="w-full h-full object-cover"
@@ -304,7 +304,7 @@ export default function About() {
                   style={{ backgroundColor: 'rgba(0, 122, 89, 0.1)' }}
                 >
                   {'iconImage' in value ? (
-                    <img src={value.iconImage} alt={value.title} className="w-full h-full object-cover" />
+                    <img loading="lazy" decoding="async" src={value.iconImage} alt={value.title} className="w-full h-full object-cover" />
                   ) : (
                     <value.icon className="w-10 h-10" style={{ color: '#007A59' }} />
                   )}
@@ -349,7 +349,7 @@ export default function About() {
                 className="group"
               >
                 <div className="relative overflow-hidden rounded-2xl mb-4">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={member.image}
                     alt={member.name}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"

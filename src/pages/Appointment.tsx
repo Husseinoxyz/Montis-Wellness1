@@ -56,7 +56,7 @@ export default function Appointment() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src="/hero-appointment.webp"
             alt="Book Appointment"
             className="w-full h-full object-cover"
@@ -173,7 +173,7 @@ export default function Appointment() {
                           className="sr-only"
                         />
                         <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={service.iconImage}
                             alt={service.title}
                             className="w-full h-full object-cover"

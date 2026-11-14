@@ -67,7 +67,7 @@ export default function Services() {
       {/* Hero */}
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <img fetchPriority="high"
             src="/hero-services.webp"
             alt="Montis Specialist Clinic Services"
             className="w-full h-full object-cover"
@@ -111,7 +111,7 @@ export default function Services() {
                 >
                   <div>
                     <div className="flex items-center gap-4 mb-5">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={service.iconImage}
                         alt={service.title}
                         className="w-24 h-24 object-cover shrink-0"
@@ -160,7 +160,7 @@ export default function Services() {
                   </div>
 
                   <div className="relative overflow-hidden">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={service.heroImage}
                       alt={service.title}
                       className="w-full h-[360px] md:h-[460px] object-cover"

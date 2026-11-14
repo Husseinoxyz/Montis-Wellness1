@@ -26,8 +26,9 @@ export default function ScreeningDetail() {
   return (
     <div className="min-h-screen">
       <Seo
-        title={`${screening.title} in Kuala Lumpur`}
-        description={screening.description}
+        title={screening.seoTitle}
+        description={screening.metaDescription}
+        imageAlt={`${screening.title} at Montis Specialist Clinic, Kuala Lumpur`}
         path={`/medical-screening/${screening.id}`}
         image={screening.image}
         jsonLd={breadcrumbJsonLd([
@@ -38,7 +39,7 @@ export default function ScreeningDetail() {
       />
       <section className="relative min-h-[680px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={screening.image} alt={screening.title} className="w-full h-full object-cover" />
+          <img fetchPriority="high" src={screening.image} alt={screening.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 

@@ -7,6 +7,10 @@ export interface Screening {
   icon: React.ElementType;
   image: string;
   description: string;
+  /** Search result title (without the clinic name). */
+  seoTitle: string;
+  /** Search result description, ideally 140-160 characters. */
+  metaDescription: string;
   content: React.ReactNode;
 }
 
@@ -18,6 +22,8 @@ export const screenings: Screening[] = [
     icon: Activity,
     image: '/screening/Bio-Resonance Scanning (BR Scan).webp',
     description: "See what standard tests can't before symptoms even appear.",
+    seoTitle: "Bio-Resonance Scanning (BR Scan) in Kuala Lumpur",
+    metaDescription: "Bio-Resonance Scanning at Montis, Bangsar KL: a non-invasive full-body scan that flags stress, toxin load and organ imbalances before symptoms appear.",
     content: (
       <div className="space-y-8">
         <section>
@@ -81,6 +87,8 @@ export const screenings: Screening[] = [
     icon: HeartPulse,
     image: '/screening/Heart Rate Variability (HRV) Analysis.webp',
     description: "Your heart tells the truth - even when you think you're fine.",
+    seoTitle: "Heart Rate Variability (HRV) Test in Kuala Lumpur",
+    metaDescription: "HRV analysis in Kuala Lumpur: a quick, non-invasive test of your stress, nervous system balance and heart health, so problems are found early.",
     content: (
       <div className="space-y-8">
         <section>
@@ -168,6 +176,8 @@ export const screenings: Screening[] = [
     icon: Droplets,
     image: '/screening/Dried Layer Blood Encryption (DLBE).webp',
     description: 'Uncover what your immune system has been hiding.',
+    seoTitle: "Dried Layer Blood Encryption (DLBE) in Kuala Lumpur",
+    metaDescription: "Dried Layer Blood Encryption (DLBE) at Montis, Bangsar KL: a single drop of blood shows oxidative stress, inflammation and hidden immune imbalances.",
     content: (
       <div className="space-y-8">
         <section>
@@ -277,6 +287,8 @@ export const screenings: Screening[] = [
     icon: Microscope,
     image: '/screening/Live Blood Analysis (LBA).webp',
     description: 'See your living biology in real time and understand your body like never before.',
+    seoTitle: "Live Blood Analysis (LBA) in Kuala Lumpur",
+    metaDescription: "Live Blood Analysis in Kuala Lumpur: see your living blood cells under a microscope in real time to spot nutrient gaps, inflammation and toxin load.",
     content: (
       <div className="space-y-8">
         <section>
