@@ -212,7 +212,7 @@ export default function BlogPost() {
                   to={`/services/${service.id}`}
                   className="mt-6 flex items-center gap-4 border-t border-gray-200 pt-6 group"
                 >
-                  <img loading="lazy" decoding="async" src={service.iconImage} alt="" className="h-12 w-12 shrink-0" />
+                  <img loading="lazy" decoding="async" src={service.iconImage} alt={`${service.title} icon`} className="h-12 w-12 shrink-0" />
                   <span>
                     <span className="block text-xs uppercase tracking-wide text-gray-400">Related service</span>
                     <span className="font-semibold text-gray-900 group-hover:text-[#007A59]">{service.title}</span>

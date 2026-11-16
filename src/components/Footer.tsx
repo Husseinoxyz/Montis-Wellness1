@@ -57,7 +57,7 @@ export default function Footer() {
                     className="text-gray-700 text-sm hover:text-[#007A59] transition-colors flex items-center gap-3"
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm">
-                      <img loading="lazy" decoding="async" src={service.iconImage} alt="" className="h-8 w-8 scale-[2.2] object-contain" />
+                      <img loading="lazy" decoding="async" src={service.iconImage} alt={`${service.title} icon`} className="h-8 w-8 scale-[2.2] object-contain" />
                     </span>
                     {service.title}
                   </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
                     className="text-gray-700 text-sm hover:text-[#007A59] transition-colors flex items-center gap-3"
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm">
-                      <img loading="lazy" decoding="async" src={service.iconImage} alt="" className="h-8 w-8 scale-[2.2] object-contain" />
+                      <img loading="lazy" decoding="async" src={service.iconImage} alt={`${service.title} icon`} className="h-8 w-8 scale-[2.2] object-contain" />
                     </span>
                     {service.title}
                   </Link>
