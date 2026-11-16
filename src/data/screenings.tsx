@@ -288,7 +288,7 @@ export const screenings: Screening[] = [
     image: '/screening/Live Blood Analysis (LBA).webp',
     description: 'See your living biology in real time and understand your body like never before.',
     seoTitle: "Live Blood Analysis (LBA) in Kuala Lumpur",
-    metaDescription: "Live Blood Analysis in Kuala Lumpur: one finger-prick drop of blood under a dark-field microscope shows your living blood cells and biological terrain in real time.",
+    metaDescription: "Live Blood Analysis in Kuala Lumpur: one finger-prick drop of blood under a dark-field microscope shows your living blood cells in real time.",
     content: (
       <div className="space-y-8">
         <section>

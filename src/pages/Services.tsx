@@ -60,7 +60,7 @@ export default function Services() {
     <div className="min-h-screen">
       <Seo
         title="Treatments & Services"
-        description="Explore Montis treatments in Kuala Lumpur: heart recovery and EECP, diabetic management, weight loss, detox and cleansing, digestive health, hormone balancing, healthy aging and more."
+        description="Montis treatments in Kuala Lumpur: EECP heart therapy, diabetes care, weight loss, detox, digestive health, hormone balancing, healthy aging and more."
         path="/services"
         image="/hero-services.webp"
       />

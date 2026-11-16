@@ -36,7 +36,7 @@ export default function MedicalScreening() {
     <div className="min-h-screen bg-white">
       <Seo
         title="Health Screening in Kuala Lumpur"
-        description="Health screening at Montis Specialist Clinic, Kuala Lumpur: Live Blood Analysis, Heart Rate Variability, Bio-Resonance Scanning, DLBE and screening packages to find root causes early."
+        description="Health screening in Kuala Lumpur: Live Blood Analysis, HRV, Bio-Resonance Scanning, DLBE and screening packages to find root causes early at Montis."
         path="/medical-screening"
         image="/screening/Medical Screening Hero.webp"
       />

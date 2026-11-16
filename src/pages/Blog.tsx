@@ -16,7 +16,7 @@ export default function Blog() {
     <div className="min-h-screen bg-white">
       <Seo
         title="Health Library"
-        description="Doctor-led guides from Montis Specialist Clinic, Kuala Lumpur: stem cell and cell therapy, IV drips, ozone, chelation, heavy metal detox, colon hydrotherapy, EECP, diabetes and kidney health."
+        description="Health guides from Montis Clinic, Kuala Lumpur: stem cell therapy, IV drips, ozone, chelation, detox, colon hydrotherapy, EECP, diabetes and gut health."
         path="/blog"
         jsonLd={[
           {

@@ -476,7 +476,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/hero-hormone.webp',
     description: 'Expert hormone screening, profiling, and Bioidentical Hormone Replacement Therapy (BHRT) for men and women.',
     seoTitle: "Hormone Balancing & BHRT in Kuala Lumpur",
-    metaDescription: "Hormone testing and Bioidentical Hormone Replacement Therapy (BHRT) for men and women in Bangsar, KL, for weight changes, poor sleep, low libido and mood swings.",
+    metaDescription: "Hormone testing and Bioidentical Hormone Replacement Therapy (BHRT) for men and women in Bangsar, KL: weight changes, poor sleep, libido and mood.",
     content: (
       <div className="space-y-8">
         <section>

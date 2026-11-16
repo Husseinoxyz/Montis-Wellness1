@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Skin Issues? Check Your Gut',
     seoTitle: 'Skin Issues? Check Your Gut: The Gut-Skin Axis',
     description:
-      'Breakouts that won’t clear up may start in your gut. A nutritionist explains the gut-skin axis, dysbiosis, and how fiber and fermented foods support clearer skin.',
+      'Breakouts that won’t clear may start in your gut. A nutritionist explains the gut-skin axis and how fiber and fermented foods support clearer skin.',
     excerpt:
       'You’ve probably thought of skin issues as merely cosmetic, but there’s much more happening inside your body. Here is how your gut and skin “talk” to each other.',
     category: 'Digestive Health',
@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Beyond Fiber: The Three-Tier Approach to Healing a Leaky Gut',
     seoTitle: 'Beyond Fiber: A Three-Tier Approach to Leaky Gut',
     description:
-      'Eating more fiber but still bloated? A nutritionist explains why fiber alone may not be enough, and how prebiotics, probiotics and postbiotics work together for gut health.',
+      'Eating more fiber but still bloated? A nutritionist explains why fiber alone may not be enough and how prebiotics, probiotics and postbiotics help.',
     excerpt:
       '“I’ve been eating more vegetables and whole grains… so why do I still feel bloated?” Why fiber sometimes isn’t enough on its own, and what your gut may need instead.',
     category: 'Digestive Health',
@@ -245,7 +245,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Silent Invader: How H. Pylori Hijacks Digestion (And How to Evict It)',
     seoTitle: 'H. Pylori: How It Hijacks Digestion and How to Evict It',
     description:
-      'Bloating, fatigue and low iron or B12 that keep coming back may point to H. pylori. A nutritionist explains how it affects digestion and how it is tested and managed.',
+      'Recurring bloating, fatigue or low iron and B12 may point to H. pylori. A nutritionist explains how it affects digestion and how it is tested and managed.',
     excerpt:
       '“I’ve been taking iron supplements for months, but I’m still exhausted.” Bloating, fatigue and recurring deficiencies can share one hidden culprit.',
     category: 'Digestive Health',
@@ -327,7 +327,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Why Do Some People Gain Weight on the Same Calories?',
     seoTitle: 'Why Do Some People Gain Weight on the Same Calories?',
     description:
-      'Two people eat the same, yet only one gains weight. A nutritionist explains metabolic adaptation, the gut microbiome, visceral fat, and a smarter way to support metabolism.',
+      'Same food, different weight gain? A nutritionist explains metabolic adaptation, the gut microbiome, visceral fat and a smarter way to support metabolism.',
     excerpt:
       'Most of us grow up believing weight management is simple: eat less, move more. So why can the results be so different from one person to another?',
     category: 'Metabolic Health',
@@ -418,7 +418,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Mineral Connection Between Your Metabolism and Magnesium and Calcium',
     seoTitle: 'Magnesium, Calcium and Your Metabolism',
     description:
-      'Feeling tired with a “slow” metabolism despite eating well? A nutritionist explains how magnesium and calcium power ATP, muscle and cell signalling, and why the basics come first.',
+      'Tired with a “slow” metabolism despite eating well? A nutritionist explains how magnesium and calcium power energy, muscles and cell signalling.',
     excerpt:
       'On paper, everything looked right, yet they still felt tired every afternoon. Sometimes it’s the small nutrients working behind the scenes that make all the difference.',
     category: 'Metabolic Health',
@@ -497,7 +497,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Healthy Lungs Begin in Your Gut',
     seoTitle: 'Healthy Lungs Begin in Your Gut: The Gut-Lung Axis',
     description:
-      'Seasonal allergies, eczema and frequent colds may be linked to your gut. A nutritionist explains the gut-lung axis, cytokine balance and supporting immunity from the inside out.',
+      'Allergies, eczema and frequent colds may be linked to your gut. A nutritionist explains the gut-lung axis and how to support immunity from the inside out.',
     excerpt:
       'A blocked nose every allergy season, eczema that flares for no reason, every cold going around. What if the real issue begins in your gut?',
     category: 'Immune Health',
@@ -579,7 +579,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Why Wharton’s Jelly Signaling Matters More Than Collagen',
     seoTitle: 'Why Wharton’s Jelly Signaling Matters More Than Collagen',
     description:
-      'Collagen provides the building blocks, but cells also need the right signals. A nutritionist explains the extracellular matrix, cell signalling and Wharton’s jelly for healthy ageing.',
+      'Collagen gives the building blocks, but cells also need signals. A nutritionist explains cell signalling and Wharton’s jelly for healthy ageing.',
     excerpt:
       '“I’ve finished so many tubs of collagen, but I don’t really know if it’s doing much anymore.” What if healthy ageing is about more than adding collagen?',
     category: 'Regenerative Medicine',
@@ -661,7 +661,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Stem Cell Therapy in Kuala Lumpur: What It Is, Who It May Help and What to Ask',
     seoTitle: 'Stem Cell Therapy in Kuala Lumpur: A Patient Guide',
     description:
-      'A clear guide to mesenchymal stem cell (MSC) therapy in Kuala Lumpur: how it works, the evidence so far, safety, regulation in Malaysia and questions to ask before treatment.',
+      'A clear guide to stem cell (MSC) therapy in Kuala Lumpur: how it works, the evidence, safety, regulation in Malaysia and questions to ask first.',
     excerpt:
       'Mesenchymal stem cells are one of the most talked-about areas in regenerative medicine. Here is what the science says, where the limits are, and how to choose a clinic safely.',
     category: 'Regenerative Medicine',
@@ -770,7 +770,7 @@ export const blogPosts: BlogPost[] = [
     title: 'IV Drip Therapy in Kuala Lumpur: NAD+, Myers’ Cocktail, CoQ10 and More',
     seoTitle: 'IV Drip Therapy in KL: NAD+, Myers’ Cocktail & More',
     description:
-      'What IV drip therapy is, popular drips such as NAD+, Myers’ cocktail, liver cleanse and CoQ10, who they may suit, safety checks and what to expect at a Kuala Lumpur clinic.',
+      'IV drip therapy explained: NAD+, Myers’ cocktail, liver cleanse and CoQ10 drips, who they may suit, safety checks and what to expect in Kuala Lumpur.',
     excerpt:
       'IV drips deliver vitamins, minerals and nutrients straight into the bloodstream. Learn which drips are popular, who they may help, and the safety checks that should always come first.',
     category: 'IV Therapy',
@@ -870,7 +870,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Ozone Therapy: How It Works, Possible Benefits and Safety Considerations',
     seoTitle: 'Ozone Therapy in Malaysia: Benefits, Safety & FAQs',
     description:
-      'Learn how medical ozone therapy works, how it is given, the conditions it is being studied for, its limitations, and who should avoid it, from Montis Specialist Clinic in Kuala Lumpur.',
+      'How medical ozone therapy works, how it is given, what it is being studied for, its limits and who should avoid it, from Montis Clinic in Kuala Lumpur.',
     excerpt:
       'Medical ozone therapy uses a precise oxygen–ozone mixture to stimulate the body’s antioxidant and immune responses. Here is a balanced look at how it works and who it may suit.',
     category: 'Detox & Oxygen Therapy',
@@ -960,7 +960,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Heavy Metal Detox: Sources, Symptoms, Testing and Safe Treatment Options',
     seoTitle: 'Heavy Metal Detox in Malaysia: Testing & Treatment',
     description:
-      'How heavy metals such as mercury, lead, arsenic and cadmium get into the body, symptoms of build-up, how testing works, and medically supervised heavy metal detox options in Kuala Lumpur.',
+      'How mercury, lead, arsenic and cadmium build up in the body, the symptoms, how testing works and supervised heavy metal detox in Kuala Lumpur.',
     excerpt:
       'Mercury, lead, arsenic and cadmium can build up quietly over years. Learn where exposure comes from, what testing can (and cannot) tell you, and how a supervised detox works.',
     category: 'Detox & Oxygen Therapy',
@@ -1057,7 +1057,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Chelation Therapy: What It Is, How It Works and Who It Is For',
     seoTitle: 'Chelation Therapy in Kuala Lumpur: A Complete Guide',
     description:
-      'A complete guide to IV chelation therapy in Kuala Lumpur: how EDTA and other chelating agents work, uses for heavy metal detox and heart health, the evidence, safety and what to expect.',
+      'IV chelation therapy in Kuala Lumpur: how EDTA works, its use for heavy metal detox and heart health, the evidence, safety and what to expect.',
     excerpt:
       'Chelation therapy uses medicines that bind heavy metals so the body can flush them out. Here is how it works, what the research says, and why medical supervision is essential.',
     category: 'Detox & Oxygen Therapy',
@@ -1138,7 +1138,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Colon Hydrotherapy in Kuala Lumpur: Procedure, Benefits and Who Should Avoid It',
     seoTitle: 'Colon Hydrotherapy in Kuala Lumpur: What to Expect',
     description:
-      'What colon hydrotherapy is, how a session works step by step, possible benefits, risks, who should avoid it, and how to prepare, from Montis Specialist Clinic, Bangsar, Kuala Lumpur.',
+      'What colon hydrotherapy is, how a session works, possible benefits and risks, who should avoid it and how to prepare, from Montis Clinic in Bangsar, KL.',
     excerpt:
       'Colon hydrotherapy gently flushes the large intestine with warm, filtered water. Here is a step-by-step look at the procedure, how to prepare, and the safety points to know.',
     category: 'Digestive Health',
@@ -1226,7 +1226,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Cell Therapy Explained: Types, Uses and How It Differs From Stem Cell Therapy',
     seoTitle: 'Cell Therapy in Malaysia: Types, Uses & Safety',
     description:
-      'What cell therapy is, how it differs from stem cell therapy, the main types (MSC, immune cell and cellular nutrition therapies), what they are used for, and how to choose a safe clinic in Malaysia.',
+      'What cell therapy is, how it differs from stem cell therapy, the main types and their uses, and how to choose a safe cell therapy clinic in Malaysia.',
     excerpt:
       '“Cell therapy” covers everything from stem cells to immune cell treatments. Learn the main types, what each is used for, and the questions to ask before choosing a clinic.',
     category: 'Regenerative Medicine',
@@ -1315,7 +1315,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Diabetes Treatment in Kuala Lumpur: An Integrated Approach to Blood Sugar Control',
     seoTitle: 'Diabetes Treatment in Kuala Lumpur: An Integrated Guide',
     description:
-      'Integrated diabetes treatment in Kuala Lumpur: diagnosis, HbA1c targets, nutrition, exercise, medication, complication screening and supportive therapies at Montis Specialist Clinic.',
+      'Integrated diabetes treatment in Kuala Lumpur: diagnosis, HbA1c targets, nutrition, exercise, medication and complication screening at Montis.',
     excerpt:
       'Roughly one in six Malaysian adults has diabetes. Learn how integrated care, combining medical treatment, nutrition, activity and complication screening, helps protect your long-term health.',
     category: 'Metabolic Health',
@@ -1399,7 +1399,7 @@ export const blogPosts: BlogPost[] = [
     title: 'EECP Treatment in Malaysia: A Non-Invasive Option for Angina and Heart Health',
     seoTitle: 'EECP Treatment in Malaysia: Non-Invasive Heart Therapy',
     description:
-      'Enhanced External Counterpulsation (EECP) explained: how it works, who it helps (including refractory angina), the typical 35-session course, safety and contraindications, at Montis in Kuala Lumpur.',
+      'EECP heart therapy explained: how it works, who it helps (including refractory angina), the 35-session course and safety, at Montis in Kuala Lumpur.',
     excerpt:
       'EECP uses timed cuff inflations on the legs to boost blood flow to the heart. It is a non-invasive, FDA-cleared option for chronic stable angina. Here is how it works and who it suits.',
     category: 'Heart Health',
@@ -1486,7 +1486,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Chronic Kidney Disease in Malaysia: Stages, Warning Signs and How to Protect Your Kidneys',
     seoTitle: 'Chronic Kidney Disease (CKD) in Malaysia: Stages & Care',
     description:
-      'A guide to chronic kidney disease (CKD) in Malaysia: causes, stages by eGFR, early warning signs, tests, and practical steps, including diabetes and blood pressure control, to slow progression.',
+      'Chronic kidney disease (CKD) in Malaysia: causes, stages, early warning signs, tests and practical steps, like blood sugar and pressure control, to slow it.',
     excerpt:
       'Chronic kidney disease often has no symptoms until it is advanced. Learn the stages, the tests that catch it early, and the everyday steps that help protect kidney function.',
     category: 'Kidney Health',
