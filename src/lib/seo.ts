@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import { team } from '../data/team';
 
 export const SITE_URL = 'https://wellness.montis-clinic.com';
 export const SITE_NAME = 'Montis Specialist Clinic';
@@ -115,6 +116,14 @@ export const clinicJsonLd = {
     opens: '09:00',
     closes: '18:00',
   },
+  employee: team.map((d) => ({
+    '@type': 'Physician',
+    name: d.name,
+    jobTitle: d.role,
+    description: d.bio,
+    image: `${SITE_URL}${encodeURI(d.image)}`,
+    worksFor: { '@id': `${SITE_URL}/#clinic` },
+  })),
   medicalSpecialty: ['Cardiovascular', 'Endocrine', 'Gastroenterologic', 'Renal'],
   hasMap: 'https://www.google.com/maps/search/?api=1&query=Montis+Specialist+Clinic+Menara+BRDB+Bangsar+Kuala+Lumpur',
   areaServed: [

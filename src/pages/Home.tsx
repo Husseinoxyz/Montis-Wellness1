@@ -455,7 +455,7 @@ export default function Home() {
                     <AccordionTrigger className="text-base md:text-lg font-semibold text-gray-900 hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                    <AccordionContent forceMount className="text-gray-600 text-base leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

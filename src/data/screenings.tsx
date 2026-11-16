@@ -177,7 +177,7 @@ export const screenings: Screening[] = [
     image: '/screening/Dried Layer Blood Encryption (DLBE).webp',
     description: 'Uncover what your immune system has been hiding.',
     seoTitle: "Dried Layer Blood Encryption (DLBE) in Kuala Lumpur",
-    metaDescription: "Dried Layer Blood Encryption (DLBE) at Montis, Bangsar KL: a single drop of blood shows oxidative stress, inflammation and hidden immune imbalances.",
+    metaDescription: "Dried Layer Blood Encryption (DLBE) at Montis, Bangsar KL: a small capillary blood sample maps your immune system to reveal silent imbalances and inflammation.",
     content: (
       <div className="space-y-8">
         <section>
@@ -288,7 +288,7 @@ export const screenings: Screening[] = [
     image: '/screening/Live Blood Analysis (LBA).webp',
     description: 'See your living biology in real time and understand your body like never before.',
     seoTitle: "Live Blood Analysis (LBA) in Kuala Lumpur",
-    metaDescription: "Live Blood Analysis in Kuala Lumpur: see your living blood cells under a microscope in real time to spot nutrient gaps, inflammation and toxin load.",
+    metaDescription: "Live Blood Analysis in Kuala Lumpur: one finger-prick drop of blood under a dark-field microscope shows your living blood cells and biological terrain in real time.",
     content: (
       <div className="space-y-8">
         <section>

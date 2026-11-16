@@ -168,7 +168,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/Overall Cleansing.webp',
     description: 'Safe and effective cleansing support to help remove toxins, strengthen natural detox pathways, and promote overall vitality.',
     seoTitle: "Detox & Full-Body Cleansing Programme in KL",
-    metaDescription: "Doctor-supervised detox in Kuala Lumpur: chelation, heavy metal and toxin removal, liver support and whole-body cleansing to restore energy and vitality.",
+    metaDescription: "Doctor-guided detox and cleansing in Kuala Lumpur: consultations, safe therapies to flush out toxins, and diet and lifestyle changes to support your liver.",
     content: (
       <div className="space-y-8">
         <section>
@@ -476,7 +476,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/hero-hormone.webp',
     description: 'Expert hormone screening, profiling, and Bioidentical Hormone Replacement Therapy (BHRT) for men and women.',
     seoTitle: "Hormone Balancing & BHRT in Kuala Lumpur",
-    metaDescription: "Hormone testing and Bioidentical Hormone Replacement Therapy (BHRT) for men and women in Bangsar, KL, for fatigue, weight gain, low libido and mood swings.",
+    metaDescription: "Hormone testing and Bioidentical Hormone Replacement Therapy (BHRT) for men and women in Bangsar, KL, for weight changes, poor sleep, low libido and mood swings.",
     content: (
       <div className="space-y-8">
         <section>
@@ -605,7 +605,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/hero-inflammation.webp',
     description: 'Comprehensive inflammation assessment and root-cause support for chronic conditions, immune balance, and long-term health.',
     seoTitle: "Chronic Inflammation Treatment in Kuala Lumpur",
-    metaDescription: "Find and treat the root causes of chronic inflammation in Kuala Lumpur: advanced testing, immune balance, gut repair and personalised anti-inflammatory plans.",
+    metaDescription: "Find and treat the root causes of chronic inflammation in Kuala Lumpur: CRP and live blood testing, antioxidant drips, oxygen therapy and lifestyle plans.",
     content: (
       <div className="space-y-8">
         <section>
@@ -734,7 +734,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/hero-men-up.webp',
     description: 'A holistic men’s health program addressing energy, hormonal balance, sexual health, lifestyle, and long-term vitality.',
     seoTitle: "Men's Health & Vitality Program in Kuala Lumpur",
-    metaDescription: "Men's health clinic in Bangsar, KL: low testosterone, erectile dysfunction, energy, weight and healthy aging, with discreet, doctor-led personalised care.",
+    metaDescription: "Men's health in Bangsar, KL: low testosterone, erectile dysfunction and low energy, treated with EECP, IV drips, oxygen and stem cell therapy by our doctors.",
     content: (
       <div className="space-y-8">
         <section>
@@ -854,7 +854,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/Autoimmune Treatment.webp',
     description: 'Personalized support for autoimmune concerns, immune resilience, inflammation patterns, and long-term symptom management.',
     seoTitle: "Autoimmune Disease Treatment in Kuala Lumpur",
-    metaDescription: "Integrative autoimmune care in Kuala Lumpur: root-cause testing, inflammation control, gut and immune support for thyroid, joint, skin and chronic conditions.",
+    metaDescription: "Integrative autoimmune care in Kuala Lumpur: antibody screening, detox and IV vitamin drips, chelation and Immune BREATH+ support for lupus, arthritis and IBD.",
     content: (
       <div className="space-y-8">
         <section>
@@ -989,7 +989,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/hero-menopause.webp',
     description: 'Compassionate menopause and perimenopause care with hormone testing, symptom support, and personalized treatment planning.',
     seoTitle: "Menopause & Perimenopause Treatment in KL",
-    metaDescription: "Menopause and perimenopause care in Bangsar, KL: hormone testing, BHRT and natural support for hot flushes, poor sleep, mood changes and weight gain.",
+    metaDescription: "Menopause and perimenopause care in Bangsar, KL: hormone and thyroid testing, HRT, vitamin D drips and support for hot flashes, night sweats, sleep and mood.",
     content: (
       <div className="space-y-8">
         <section>
@@ -1104,7 +1104,7 @@ const serviceCatalog: Service[] = [
     heroImage: '/hero-digestive.webp',
     description: 'Advanced digestive disease screening, colon hydrotherapy, detox programs, and our patented Gut+ Probiotic formulation.',
     seoTitle: "Digestive Health & Gut Treatment in Kuala Lumpur",
-    metaDescription: "Gut health clinic in Kuala Lumpur: digestive screening, colon hydrotherapy, leaky gut, bloating and IBS support, detox and our patented Gut+ probiotic.",
+    metaDescription: "Gut health clinic in Kuala Lumpur: digestive disease screening, colon hydrotherapy, detox drips and our patented Gut+ probiotic to restore healthy gut flora.",
     content: (
       <div className="space-y-8">
         <section>

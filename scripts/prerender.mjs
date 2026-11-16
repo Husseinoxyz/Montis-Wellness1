@@ -9,7 +9,7 @@ const SITE_URL = 'https://wellness.montis-clinic.com';
 const dist = path.resolve('dist');
 const ssrEntry = path.resolve('dist-ssr/entry-server.js');
 
-const { render, routes, blogDates } = await import(pathToFileURL(ssrEntry).href);
+const { render, routes, blogDates, buildLlmsTxt } = await import(pathToFileURL(ssrEntry).href);
 const template = await readFile(path.join(dist, 'index.html'), 'utf-8');
 
 const escape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -42,10 +42,27 @@ ${routes
 </urlset>
 `;
 await writeFile(path.join(dist, 'sitemap.xml'), sitemap);
+// AI search and assistant crawlers are named explicitly so the site can be cited in
+// ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews.
+const aiBots = [
+  'GPTBot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'PerplexityBot',
+  'Perplexity-User',
+  'ClaudeBot',
+  'Claude-SearchBot',
+  'Claude-User',
+  'Google-Extended',
+  'Applebot-Extended',
+  'Bingbot',
+  'CCBot',
+];
 await writeFile(
   path.join(dist, 'robots.txt'),
-  `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+  `User-agent: *\nAllow: /\n\n${aiBots.map((b) => `User-agent: ${b}\nAllow: /`).join('\n\n')}\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
 );
+await writeFile(path.join(dist, 'llms.txt'), buildLlmsTxt());
 
 await rm(path.resolve('dist-ssr'), { recursive: true, force: true });
-console.log(`Prerendered ${routes.length} pages, sitemap.xml and robots.txt`);
+console.log(`Prerendered ${routes.length} pages, sitemap.xml, robots.txt and llms.txt`);

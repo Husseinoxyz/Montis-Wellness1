@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calendar, Phone, Clock, CheckCircle } from 'lucide-react';
 import { services } from '../data/services';
 import { blogPosts } from '../data/blog';
+import { locationFaq, serviceFaqs } from '../data/serviceFaqs';
 import Seo from '../components/Seo';
 import { SITE_URL, absoluteUrl, breadcrumbJsonLd } from '../lib/seo';
 import { BlogCard } from './Blog';
@@ -27,6 +28,8 @@ export default function ServiceDetail() {
   ];
 
   const articles = blogPosts.filter((p) => p.relatedService === service.id);
+  const faqEntry = serviceFaqs[service.id];
+  const faqs = faqEntry ? [...faqEntry.faqs, locationFaq(faqEntry.treatmentName)] : [];
 
   return (
     <div className="min-h-screen">
@@ -46,6 +49,19 @@ export default function ServiceDetail() {
             about: { '@type': 'MedicalTherapy', name: service.title, description: service.description },
             provider: { '@id': `${SITE_URL}/#clinic` },
           },
+          ...(faqs.length
+            ? [
+                {
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: faqs.map((f) => ({
+                    '@type': 'Question',
+                    name: f.question,
+                    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+                  })),
+                },
+              ]
+            : []),
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
             { name: 'Services', path: '/services' },
@@ -111,6 +127,22 @@ export default function ServiceDetail() {
               <div className="prose prose-lg max-w-none">
                 {service.content}
               </div>
+
+              {faqs.length > 0 && (
+                <section className="mt-16 border-t border-gray-200 pt-12" aria-labelledby="faq-heading">
+                  <h2 id="faq-heading" className="text-2xl md:text-3xl font-semibold text-gray-900 mb-8">
+                    {service.title}: frequently asked questions
+                  </h2>
+                  <div className="space-y-6">
+                    {faqs.map((faq) => (
+                      <div key={faq.question} className="rounded-2xl bg-[#F6F6F2] p-6">
+                        <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                        <p className="mt-2 text-gray-700 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
             </motion.div>
 
             {/* Sidebar */}
